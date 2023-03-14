@@ -1,11 +1,29 @@
 const express = require('express')
+const connectDB=require('./config/db')
+// const morgan = require('morgan') 
+// morgan is used for logger.
+const cors=require('cors')
 const app = express()
 const PORT = process.env.PORT || 5000;
+// cross origin refernce is used to authroize a url to give requests to the backend.
+const corsOpt = {
+  origin: "http://localhost:3000",
+  credentials: true,
+  methodsb: ['GET','POST','DELETE'],
+  allowedHeaders: ['Content-Type', 'x-auth-token'],
+  exposedHeaders: ['Content-Type', 'x-auth-token']
+};
+app.use(cors(corsOpt));
 
+//connect database
+connectDB();
+// converts into json to assist 
+app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-
-
+app.use('/api/SignUp',require('./routes/api/signup'));
 app.listen(PORT,() => console.log(`Server started on port ${PORT}`));
+
+module.exports=app

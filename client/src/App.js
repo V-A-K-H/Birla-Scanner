@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import StudentCard from './components/StudentCard'
+import SignUp from './components/SignUp'
 function App() {
   return (
     <>    
-hello
+  <SignUp/>
     </>
   );
 }
 
-export default App;
+export default App;   
