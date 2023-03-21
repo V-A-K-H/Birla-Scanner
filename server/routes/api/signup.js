@@ -15,10 +15,9 @@ router.post('/', async (req, res) => {
     const Student = new student({
         name, email, password, phonenum, rollnum, year, branch, fathername, fatherphonenum, photolink, date
     })
-    const response= await Student.save()
-    console.log(response)
+    const response= await   Student.save()
     Encyppassword = await bcrypt.hash(password, salt);
-    console.log(name, email, Encyppassword, phonenum, rollnum, year, branch, fathername, fatherphonenum, photolink, date)
+
 
 })
 

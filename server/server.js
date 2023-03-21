@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/SignUp',require('./routes/api/signup'));
+app.use('/api/SignIn',require('./routes/api/signin'));
 app.listen(PORT,() => console.log(`Server started on port ${PORT}`));
 
 module.exports=app

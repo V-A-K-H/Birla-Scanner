@@ -9,7 +9,7 @@ const StudentSchema = new mongoose.Schema({
     email:{
         type:String,
         required:true,
-        unique:true
+        // unique:true
     },
     password:{
         type:String,
@@ -21,8 +21,8 @@ const StudentSchema = new mongoose.Schema({
     },
     rollnum: {
         type: Number,
-        unique: true,
-    },
+        // unique: true,
+        },
     year: {
         type: Number,
         required: true,
