@@ -1,0 +1,66 @@
+body {
+	font-family: Arial, sans-serif;
+  font-size: x-large;
+	margin: 0;
+	padding: 0;
+  background-color: #252525;
+  color: white;
+}
+tr{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+}
+.badge-late{
+    background-color: red;
+}
+.badge-Out{
+    background-color: #ffbf00 ;
+}
+.badge-In{
+    background-color: green;
+}
+main {
+	padding: 20px;
+    height: 99vh;
+    border-color: white;
+    border: solid 10px;
+    overflow-y: scroll;
+    overflow-x: scroll  
+}
+@media only screen and (min-width: 768px) {
+	main {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	main {
+		flex-wrap: nowrap;
+	}
+}
+.button {
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  } 
+  .button {
+    background-color: #252525; 
+    color: white; 
+    border: 2px solid white;
+    border-radius: 90px;
+  }
+  .button:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  
