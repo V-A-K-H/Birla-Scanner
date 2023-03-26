@@ -54,6 +54,7 @@ const QrScanner = () => {
             // chooseDeviceId={()=>selected}
             style={{ width: "700px" }}
             video=true
+audio=false
           />
         </>
       )}
