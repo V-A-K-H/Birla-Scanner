@@ -46,8 +46,7 @@ const QrScanner = () => {
           </select>
           <QrReader
           constraints={{
-            facingMode: selected,
-            video: { width: 1280, height: 720 },
+            video: { width: 1280, height: 720, facingMode: {exact: "environment"} },
             audio: false
           }}
             delay={1000}
