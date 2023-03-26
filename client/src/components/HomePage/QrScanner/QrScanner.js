@@ -48,7 +48,7 @@ const QrScanner = () => {
           constraints={{
             facingMode: selected,
             video: { width: 1280, height: 720 },
-            audio: true
+            audio: false
           }}
             delay={1000}
             onError={handleError}
