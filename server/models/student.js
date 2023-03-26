@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const StudentSchema = new mongoose.Schema({
     name:{
         type:String,
-        required:true
+        // required:true
     },
     email:{
         type:String,
@@ -17,7 +17,7 @@ const StudentSchema = new mongoose.Schema({
     },
     phonenum: {
         type: Number,
-        required: true,
+        // required: true,
     },
     rollnum: {
         type: Number,
@@ -25,27 +25,45 @@ const StudentSchema = new mongoose.Schema({
         },
     year: {
         type: Number,
-        required: true,
+        // required: true,
     },
     branch: {
         type: String,
-        required: true,
+        // required: true,
     },
     fathername: {
         type: String,
-        required: true,
+        // required: true,
     },
     fatherphonenum: {        
         type: Number,
-        required: true,
+        // required: true,
     },
     photolink: {
         type: String, 
-        required: true,
+        // required: true,
     },
-    date:{
-        type:Date,
-        default:Date.now
+    outinginfo: {
+        type: Array,
+        
+    },
+
+    // date:{
+    //     type:Date,
+    //     default:Date.now
+    // },
+    // purpose:{
+    //     type:String,
+    // },
+    // in: {
+    //     type: Date,
+    // },
+    // out: {
+    //     type: Date,
+    // },
+    access: {
+        type: Boolean,
     }
+
 })
-module.exports = student = mongoose.model('Student',StudentSchema);
+module.exports = student = mongoose.model('Student',StudentSchema); 

@@ -1,6 +1,6 @@
 
 {
-    "mongoURI": "mongodb+srv://KritikUser:Mongo%40123@atlascluster.hnlxspl.mongodb.net/?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://birlaUserInfo:tU72AI9pAfFTiJGI@cluster1234.jdmegpc.mongodb.net/?retryWrites=true&w=majority",
     "jwtSecret": "mysecrettoken"
 }
 

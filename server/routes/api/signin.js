@@ -1,8 +1,9 @@
+const jwt=require('jsonwebtoken')
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 // const auth = require('../../middleware/auth');
-const jwt = require('jsonwebtoken');
+/* global localStorage, */
 const config = require('config');
 const { check, validationResult } = require('express-validator');
 
@@ -29,43 +30,50 @@ router.post(
   check('email', 'Please include a valid email').isEmail(),
   check('password', 'Password is required').exists(),
   async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+    // const errors = validationResult(req);
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({ errors: errors.array() });
+    // }
+
 
     const { email, password } = req.body;
-
+    console.log(email,password)
     try {
       let user = await User.findOne({ email });
       if (!user) {
+        console.log(user)
         return res
           .status(400)
           .json({ errors: [{ msg: 'Invalid Credentials' }] });
       }
       // checks if the user exsists or not
-      const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await bcrypt.compare(password, user.password);
 
-      if (!isMatch) {
-        return res
-          .status(400)
-          .json({ errors: [{ msg: 'Invalid Credentials' }] });
-      }
+        if (!isMatch) {
+          console.log("in is match")
+          return res
+            .status(400)
+            .json({ errors: [{ msg: 'Invalid Credentials' }] });
+        }
+
       const payload = {
         user: {
           id: user.id
-        }
+        } 
       };
-      res.status(200).json(payload)
-    //   jwt.sign(
-    //     payload,
-    //     config.get('jwtSecret'),
-    //     { expiresIn: '200 days' },
-    //     (err, token) => {
-    //       if (err) throw+ err;
-    //       res.json({ token });
-    //     }
-    //   );
+      console.log(user.id)
+      jwt.sign(
+        payload,
+        config.get('jwtSecret'),
+        (err, token) => {
+          if (err) throw err;
+          res.json({ jwtToken:token });
+          console.log(token)
+          // try{localStorage.setItem("sessionUser",token);}
+          // catch( error) {console.log(error)}
+
+        }
+      );
     } catch (err) {
       console.error(err.message);
 

@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "./Admin.css";
 import { Link, NavLink } from "react-router-dom";
-import Loader from "../HomePage/Loader/Loader";
+import Loader from "../Loader/Loader";
 const Admin = () => {
   useEffect(()=> {
     setTimeout(()=> {
@@ -23,6 +23,7 @@ const Admin = () => {
             <tr>
               <th>Name</th>
               <th>Year</th>
+              <th>Date</th>
               <th>Purpose</th>
               <th>Out</th>
               <th>In</th>
@@ -51,6 +52,7 @@ const Admin = () => {
                 <p className="fw-normal mb-1">1st Year</p>
                 <p className="text-muted mb-0">CSE</p>
               </td>
+              <td>25/March/2023</td>
               <td>Market</td>
               <td>12:45 PM</td>
               <td>2:45 PM</td>
@@ -79,6 +81,7 @@ const Admin = () => {
                 <p className="fw-normal mb-1">1st Year</p>
                 <p className="text-muted mb-0">CSE</p>
               </td>
+              <td>25/March/2023</td>
               <td>Market</td>
               
               <td>12:45 PM</td>
@@ -108,6 +111,7 @@ const Admin = () => {
                 <p className="fw-normal mb-1">1st Year</p>
                 <p className="text-muted mb-0">CSE</p>
               </td>
+              <td>25/March/2023</td>
               <td>Market</td>
               
               <td>12:45 PM</td>

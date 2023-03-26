@@ -1,0 +1,10 @@
+.qr{
+    background-color: aliceblue;
+    display: flex;
+    color: pink;
+    justify-content: center;
+}
+#canvas{
+    border: solid 20px black;
+    border-radius: 80px;
+}

@@ -2,7 +2,6 @@ import { React, useState, useEffect } from "react";
 import "./HomePage.css";
 import { Link, NavLink } from "react-router-dom";
 import { API } from "../../config";
-<<<<<<< HEAD
 import Loader from "../Loader/Loader";
 const HomePage = () => {
   console.log("Rendering")
@@ -42,30 +41,10 @@ const HomePage = () => {
         <div className="p-4">
         <Link to='admin'><h5 className="text-white h4">Admin Page</h5></Link>
         </div>
-
-=======
-const FlipCard = (e) => {
-  e.classList.toggle("flip");
-};
-
-const HomePage = () => {
-  const URL = `${API}/SignIn`;
-  const [userData, setUserData] = useState(null);
-  // useEffect(async () => {
-  //     const res = await fetch(URL);
-  //     const data = await res.json();
-  //     setUserData(data)
-
-  // }, [])
-
-  return (
-    <body>
-      <div className="collapse" id="navbarToggleExternalContent" >
-        <div className=" p-4">
-          <h5 className="text-white h4">Collapsed content</h5>
-          <span className="text-muted">Toggleable via the navbar brand.</span>
+        <div className="p-4">
+        <Link to='Qrpage'><h5 className="text-white h4">Qr Page</h5></Link>
         </div>
->>>>>>> 6eecfc57b6d9e00f9636aab81f0ae0ba80916515
+
       </div>
       <nav className="navbar navbar-dark ">
         <div className="container-fluid">
@@ -103,11 +82,7 @@ const HomePage = () => {
                             <li ><a href="/profile.html">Profile</a></li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
-<<<<<<< HEAD
                           <li ></li>
-=======
-                          <li ><Link to='signup'>SignUp</Link></li>
->>>>>>> 6eecfc57b6d9e00f9636aab81f0ae0ba80916515
                         </ul>
                     </div>
                 </div>
@@ -119,11 +94,7 @@ const HomePage = () => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
-<<<<<<< HEAD
                   src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-=======
-                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
->>>>>>> 6eecfc57b6d9e00f9636aab81f0ae0ba80916515
                   alt="Profile Photo"
                   style={{ height: "300px", width: "300px" }}
                 />
