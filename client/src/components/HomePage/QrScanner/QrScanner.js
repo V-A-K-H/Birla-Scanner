@@ -40,12 +40,12 @@ const QrScanner = () => {
       </button>
       {startScan && (
         <>
-          <select onChange={(e) => setSelected(e.target.value)}>
+          {/* <select onChange={(e) => setSelected(e.target.value)}>
             <option value={"environment"}>Back Camera</option>
             <option value={"user"}>Front Camera</option>
-          </select>
+          </select> */}
           <QrReader
-            facingmode={selected}
+            facingmode={"environment"}
             delay={1000}
             onError={handleError}
             onScan={handleScan}
