@@ -1,4 +1,4 @@
-// versi "react-qr-reader" 1.0.0. component API harus disesuaikan dengan yg baru
+  // versi "react-qr-reader" 1.0.0. component API harus disesuaikan dengan yg baru
 import "./styles.css";
 import { useState } from "react";
 import QrReader from "react-qr-scanner";
@@ -45,7 +45,7 @@ const QrScanner = () => {
             <option value={"user"}>Front Camera</option>
           </select> */}
           <QrReader
-            facingmode={"environment"}
+            facingmode={"rear"}
             delay={1000}
             onError={handleError}
             onScan={handleScan}
