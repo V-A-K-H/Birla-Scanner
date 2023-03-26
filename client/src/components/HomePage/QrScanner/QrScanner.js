@@ -41,7 +41,7 @@ const QrScanner = () => {
       {startScan && (
         <>
           <select onChange={(e) => setSelected(e.target.value)}>
-            <option value={"environment"}>Back Camera</option>
+            <option value={"rear"}>Back Camera</option>
             <option value={"user"}>Front Camera</option>
           </select>
           <QrReader
