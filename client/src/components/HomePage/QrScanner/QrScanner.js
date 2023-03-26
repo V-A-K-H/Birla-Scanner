@@ -46,14 +46,16 @@ const QrScanner = () => {
           </select>
           <QrReader
           constraints={{
-            facingMode: selected
+            facingMode: selected,
+            video: { width: 1280, height: 720 },
+            audio: true
           }}
             delay={1000}
             onError={handleError}
             onScan={handleScan}
             // chooseDeviceId={()=>selected}
             style={{ width: "700px" }}
-            video={true}
+      
           />
         </>
       )}
