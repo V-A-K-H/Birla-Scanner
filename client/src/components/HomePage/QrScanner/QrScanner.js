@@ -45,9 +45,6 @@ const QrScanner = () => {
             <option value={"user"}>Front Camera</option>
           </select> */}
           <QrReader
-            constraints={{
-              facingMode: 'environment'
-            }}
             delay={1000}
             onError={handleError}
             onScan={handleScan}
