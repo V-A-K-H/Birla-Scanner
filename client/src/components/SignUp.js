@@ -143,7 +143,10 @@ const SignUp = () => {
                 <form>
                   {/* Email input */}
                   <div className="form-outline mb-4">
-                    <input
+
+                  <fieldset>
+                    <legend>Email</legend>
+                  <input
                       type="email"
                       name="email"
                       id="form3Example3"
@@ -152,9 +155,11 @@ const SignUp = () => {
                       value={email}
                       required
                     />
-                    <label className="form-label" htmlFor="form3Example3">
+                  </fieldset>
+                   
+                    {/* <label className="form-label" htmlFor="form3Example3">
                       Email address
-                    </label>
+                    </label> */}
                   </div>
                   {/* Password input */}
                   <div className="form-outline mb-4">

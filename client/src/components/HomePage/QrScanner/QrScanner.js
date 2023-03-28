@@ -1,8 +1,6 @@
-  // versi "react-qr-reader" 1.0.0. component API harus disesuaikan dengan yg baru
 import "./styles.css";
 import { useState } from "react";
 import QrReader from "react-qr-scanner";
-
 const QrScanner = () => {
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
@@ -24,14 +22,12 @@ const QrScanner = () => {
     console.error(err);
   };
   return (
+
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>
-        Last Scan:
-        {selected}
-      </h2>
+      
 
       <button
+        className="openscanner"
         onClick={() => {
           setStartScan(!startScan);
         }}
@@ -40,13 +36,14 @@ const QrScanner = () => {
       </button>
       {startScan && (
         <>
-          <select onChange={(e) => setSelected(e.target.value)}>
-            <option value={"rear"}>Back Camera</option>
-            <option value={"user"}>Front Camera</option>
+          <select className="cameramode" onChange={(e) => setSelected(e.target.value)}>
+            <option value={"environment"}><span className="cameramodeoption">Back Camera</span></option>
+            <option value={"user"}><span className="cameramodeoption">Front Camera</span></option>
           </select>
+         
           <QrReader
           constraints={{
-            video: { width: 1280, height: 720, facingMode: {exact: "environment"} },
+            video: { width: 1280, height: 720, facingMode: selected==="user"? "user": {exact: "environment"} },
             audio: false
           }}
             delay={1000}
@@ -62,7 +59,6 @@ const QrScanner = () => {
       {data !== "" && <p>{data.text}</p>}
     </div>
   );
-};
-  
+};  
 export default QrScanner;
   

@@ -94,8 +94,8 @@ const HomePage = () => {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <img
-                  src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                  alt="Profile Photo"
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                  alt="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                   style={{ height: "300px", width: "300px" }}
                 />
               </div>
