@@ -1,6 +1,8 @@
-import "./styles.css";
+import "./QrScanner.css";
 import { useState } from "react";
 import QrReader from "react-qr-scanner";
+import { API } from "../../../config";
+
 const QrScanner = () => {
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
@@ -11,7 +13,29 @@ const QrScanner = () => {
     setLoadingScan(true);
     if (scanData && scanData !== "") {
       console.log(`loaded >>>`, scanData);
-      console.log(new Date(scanData.timestamp*1000).toTimeString())
+      // try {
+      //   const result = await fetch(`${API}/SignIn`, {
+      //     method: "POST",
+      //     mode: "cors",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({ email, password }),
+      //   })
+  
+      //   const response = await result.json()
+      //   console.log(response)
+      //   if (response.jwtToken) {
+      //     localStorage.setItem('sessionUser', response.jwtToken)
+      //     navigate('/')
+  
+      //   }
+      // }
+      //   catch (error) {
+      //     console.log(error)
+      //     // window.alert(error)
+      //   }
+      // console.log(new Date(scanData.timestamp*1000).toTimeString())
       setData(scanData);
       setStartScan(false);
       setLoadingScan(false);
@@ -41,16 +65,15 @@ const QrScanner = () => {
             <option value={"user"}><span className="cameramodeoption">Front Camera</span></option>
           </select>
          
-          <QrReader
+          <QrReader className="qrreader"
           constraints={{
-            video: { width: 1280, height: 720, facingMode: selected==="user"? "user": {exact: "environment"} },
+            video: {  facingMode: selected==="user"? "user": {exact: "environment"} },
             audio: false
           }}
             delay={1000}
             onError={handleError}
             onScan={handleScan}
             // chooseDeviceId={()=>selected}
-            style={{ width: "700px" }}
       
           />
         </>

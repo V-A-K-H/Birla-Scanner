@@ -1,29 +1,51 @@
 import { React, useState, useEffect } from "react";
 import "./HomePage.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, Navigate } from "react-router-dom";
 import { API } from "../../config";
-import Loader from "../Loader/Loader";
+import Loader from "../MainComponents/Loader/Loader";
+import SignUp from "../SignUp/SignUp";
 const HomePage = () => {
   console.log("Rendering")
-  const URL = `${API}/SignIn`;
   const [userData, setUserData] = useState(null);
   
   const FlipCard = (e) => {
     e.classList.toggle("flip");
   };
+  const fetchData=async ()=> {
+    try {
+      const result = await fetch(`${API}/StudentInfo/columns/name phonenum year`,{
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": localStorage.getItem('sessionUser')
+        }
+      })
+      const response=await result.json()
+      setUserData(response[0])
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
   const [load,setLoad]=useState(false);
   useEffect(()=> {
     setTimeout(()=> {
+    fetchData()
     setLoad(true)
   },1125)
   },[])
 
   
-  if (!load) return (
+  if (!load || !userData) return (
     <>
     <Loader/>
+    <div>
+    {!userData&& "fetching dta"}
+    </div>
     </>
   )
+  
   
   return (
     <body>
@@ -42,7 +64,7 @@ const HomePage = () => {
         <Link to='admin'><h5 className="text-white h4">Admin Page</h5></Link>
         </div>
         <div className="p-4">
-        <Link to='Qrpage'><h5 className="text-white h4">Qr Page</h5></Link>
+        <Link to='QrGenerator'><h5 className="text-white h4">Qr Page</h5></Link>
         </div>
 
       </div>
@@ -61,32 +83,7 @@ const HomePage = () => {
           </button>
         </div>
       </nav>
-      {/* <nav classNameName="navbar navbar-inverse">
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <button
-                            type="button"
-                            className="navbar-toggle"
-                            data-toggle="collapse"
-                            data-target="#myNavbar"
-                        >
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-
-                    </div>
-                    <div className="collapse navbar-collapse" id="myNavbar">
-                        <ul className="nav navbar-nav">
-                            <li className="active"><a href="/index.html">Home</a></li>
-                            <li ><a href="/profile.html">Profile</a></li>
-                        </ul>
-                        <ul className="nav navbar-nav navbar-right">
-                          <li ></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav> */}
+      
 
       <div className="container">
         <div className="profile">
@@ -102,9 +99,9 @@ const HomePage = () => {
               <div className="flip-card-back" style={{ color: "white" }}>
                 <p style={{ paddingTop: "100px" }}>
                   <h4 style={{ lineHeight: "normal" }}>
-                    Name: MANGAL PANDEY PRITHVIRAJ CHAUHAN<br></br>
-                    Phone No.: XXXX XXXX XX<br></br>
-                    Year: 2
+                    {`Name: ${userData.name}`}<br></br>
+                    {`Phone No.: ${userData.phonenum}`}<br></br>
+                    {`Year: ${userData.year}`}
                   </h4>
                 </p>
               </div>

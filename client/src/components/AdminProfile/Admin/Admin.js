@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "./Admin.css";
 import { Link, NavLink } from "react-router-dom";
-import Loader from "../Loader/Loader";
+import Loader from "../../MainComponents/Loader/Loader";
 const Admin = () => {
   useEffect(()=> {
     setTimeout(()=> {

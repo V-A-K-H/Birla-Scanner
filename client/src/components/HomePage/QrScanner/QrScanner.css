@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-.App {
+ .App {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   width: 100%;
@@ -10,7 +10,7 @@
   align-items: center;
   height: 100vh;
   background-color: aqua;
-}
+} 
 
 /* QR Scanner button*/
 .openscanner {
@@ -75,4 +75,17 @@
  background-color: aqua;
 }
  
+ .qrreader{
+  margin-top: 20px;
+  height: 70%;
+  border: 5px solid black;
+  border-radius: 20px;
+ }
  
+ @media only screen and (max-width: 550px) {
+  .qrreader{
+    margin-top: 20px;
+    width: 98%;
+    height: auto;
+   }
+ }
