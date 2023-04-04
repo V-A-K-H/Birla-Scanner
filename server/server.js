@@ -10,7 +10,7 @@ const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({ extended: true }));
 // cross origin refernce is used to authroize a url to give requests to the backend.
 const corsOpt = {
-  origin: "http://localhost:3000",
+  origin: ["http://localhost:3000","https://qr-birlagate.onrender.com"],
   credentials: true,
   methodsb: ['GET','POST','DELETE'],
   allowedHeaders: ['Content-Type', 'x-auth-token'],

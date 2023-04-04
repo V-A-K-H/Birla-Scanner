@@ -78,7 +78,6 @@
  .qrreader{
   margin-top: 20px;
   height: 70%;
-  border: 5px solid black;
   border-radius: 20px;
  }
  
@@ -87,5 +86,6 @@
     margin-top: 20px;
     width: 98%;
     height: auto;
+  border: 5px solid black;
    }
  }
