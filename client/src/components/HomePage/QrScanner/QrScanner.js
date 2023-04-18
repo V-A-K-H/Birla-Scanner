@@ -1,41 +1,36 @@
 import "./QrScanner.css";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import QrReader from "react-qr-scanner";
 import { API } from "../../../config";
-
+import { useLocation } from "react-router-dom";
 const QrScanner = () => {
+  const location=useLocation()
+  const {purpose}=location.state
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
   const [data, setData] = useState("");
-
+  const UpdateTime=async()=> {
+    try {
+      const result=await fetch(`${API}/StudentInfo`,{
+        method:"PUT",
+        mode: "cors",
+        headers: {
+          "content-type": "application/json",
+          "x-auth-token": localStorage.getItem('sessionUser')
+        },
+      })
+      console.log(result)
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
   const handleScan = async (scanData) => {
     setLoadingScan(true);
     if (scanData && scanData !== "") {
       console.log(`loaded >>>`, scanData);
-      // try {
-      //   const result = await fetch(`${API}/SignIn`, {
-      //     method: "POST",
-      //     mode: "cors",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({ email, password }),
-      //   })
-  
-      //   const response = await result.json()
-      //   console.log(response)
-      //   if (response.jwtToken) {
-      //     localStorage.setItem('sessionUser', response.jwtToken)
-      //     navigate('/')
-  
-      //   }
-      // }
-      //   catch (error) {
-      //     console.log(error)
-      //     // window.alert(error)
-      //   }
-      // console.log(new Date(scanData.timestamp*1000).toTimeString())
+      UpdateTime()
       setData(scanData);
       setStartScan(false);
       setLoadingScan(false);
@@ -45,11 +40,14 @@ const QrScanner = () => {
   const handleError = (err) => {
     console.error(err);
   };
+  console.log(purpose)
   return (
 
     <div className="App">
       
-
+      <div>
+        {purpose}
+      </div>
       <button
         className="openscanner"
         onClick={() => {

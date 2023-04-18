@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { API } from '../../config';
 import './SignUp.css'
 import Loader from '../MainComponents/Loader/Loader';
 const SignUp = () => {
-  // console.log(localStorage.getItem('sessionUser'))
+
   const navigate = useNavigate()
   const [formData, setFormData] = useState(
     {

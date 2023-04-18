@@ -1,0 +1,22 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar {
+    background-color: #252525;
+  }
+  
+  .navbar-toggler {
+    color: #fff;
+  }
+  
+  .collapse {
+    background-color: #252525;
+  }
+  
