@@ -83,6 +83,10 @@
     --mdb-nav-pills-link-active-bg: white;
     --mdb-nav-pills-link-active-color: black;
   }
+  .nav-pills .nav-link {
+    --mdb-nav-pills-link-hover-bg: #252525;
+    --mdb-nav-pills-link-color: white;
+  }
   .button3:hover {
     background-color: blue;
     color: white;
