@@ -252,20 +252,7 @@ const StudentInfo = [
         "access": false
     },
    
-    {
-        "name": "student24",
-        "email": "student24@gmail.com",
-        "password": "2679009",
-        "phonenum": 1111111134,
-        "rollnum": 24,
-        "year": 2,
-        "branch": "cse",
-        "fathername": "father24",
-        "fatherphonenum": 2222222245,
-        "photolink": "https://05.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": false
-    },
+  
     {
         "name": "student25",
         "email": "student25@gmail.com",

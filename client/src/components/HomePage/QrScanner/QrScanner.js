@@ -10,8 +10,13 @@ const QrScanner = () => {
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
   const [data, setData] = useState("");
-  const UpdateTime=async()=> {
+  const UpdateTime=async(scanTime)=> {
+    console.log("connecting backend...")
     try {
+    const ScanData={
+      time:Date(scanTime),
+      purpose: purpose,
+    }
       const result=await fetch(`${API}/StudentInfo`,{
         method:"PUT",
         mode: "cors",
@@ -19,6 +24,7 @@ const QrScanner = () => {
           "content-type": "application/json",
           "x-auth-token": localStorage.getItem('sessionUser')
         },
+        body: JSON.stringify(ScanData)
       })
       console.log(result)
     }
@@ -30,7 +36,7 @@ const QrScanner = () => {
     setLoadingScan(true);
     if (scanData && scanData !== "") {
       console.log(`loaded >>>`, scanData);
-      UpdateTime()
+      UpdateTime(scanData.text)
       setData(scanData);
       setStartScan(false);
       setLoadingScan(false);

@@ -16,9 +16,9 @@ const QrGenerator = () => {
   const generateQR = async () => {
     if (timerId) clearInterval(timerId);
     const abc = setInterval(() => {
-      let time = new Date().getSeconds().toString();
+      let time = new Date();
       console.log(time);
-      QRCode.toDataURL(document.getElementById("canvas"), `${time} ${"555"}`, function (error) {
+      QRCode.toDataURL(document.getElementById("canvas"), `${time}`, function (error) {
         if (error) console.error(error);
       });
       //media query 
@@ -42,7 +42,7 @@ const QrGenerator = () => {
     }, 5000);
     setTimerId(abc);
     console.log("waiting for timeout");
-    let time = new Date().getSeconds().toString();
+    let time = new Date();
     console.log(time);
     QRCode.toCanvas(document.getElementById("canvas"), `${time}`, function (error) {
       if (error) console.error(error);

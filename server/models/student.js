@@ -44,25 +44,13 @@ const StudentSchema = new mongoose.Schema({
         // required: true,
     },
     outinginfo: {
-        type: Array,
-        
+        type: Array,  
     },
-
-    // date:{
-    //     type:Date,
-    //     default:Date.now
-    // },
-    // purpose:{
-    //     type:String,
-    // },
-    // in: {
-    //     type: Date,
-    // },
-    // out: {
-    //     type: Date,
-    // },
     access: {
         type: Boolean,
+    },
+    devices: {
+        type: String,
     }
 
 })
