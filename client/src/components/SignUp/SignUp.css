@@ -66,12 +66,7 @@
   }
   
   
-  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    --mdb-nav-pills-link-active-bg: #252525;
-    --mdb-nav-pills-link-active-color: white;
-    background-color: var(--mdb-nav-pills-link-active-bg);
-    color: var(--mdb-nav-pills-link-active-color);
-}
+
   
   .button3 {
     margin-top: 20px;
@@ -81,21 +76,24 @@
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
-  }
-  
-  .button3:hover {
-    background-color: white;
+    background-color: #009FBD;
     color: black;
+  }
+  .nav-pills .nav-link.active{
+    --mdb-nav-pills-link-active-bg: white;
+    --mdb-nav-pills-link-active-color: black;
+  }
+  .button3:hover {
+    background-color: blue;
+    color: white;
   }
 
   @media only screen and (max-width: 550px) {
     .mainsignup{
       object-position: center;
-        height: 100vh;  
         padding-left: 3%;
-        padding-top: 10%;
+        padding-top: 25%;
+        padding-bottom: 40%;
         padding-right: 3%;
   }
     .form{
