@@ -1,3 +1,6 @@
+html{
+  background-color: #0B2447;
+}
 .socket {
     width: 200px;
     height: 200px;
@@ -323,7 +326,7 @@
   
   @keyframes fade00 {
     0% {
-      background: white;
+      background: black;
     }
   
     50% {
