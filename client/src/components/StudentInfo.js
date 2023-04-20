@@ -10,8 +10,9 @@ const StudentInfo = [
         "fathername": "father1",
         "fatherphonenum": 2222222222,
         "photolink": "https://01.jpeg",
-        "outinginfo":  { date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" },  
-        "access": true
+        "outinginfo": { date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" },
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student2",
@@ -25,7 +26,9 @@ const StudentInfo = [
         "fatherphonenum": 2222222223,
         "photolink": "https://02.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01",
+
     },
     {
         "name": "student3",
@@ -39,7 +42,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222224,
         "photolink": "https://03.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student4",
@@ -53,7 +57,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222225,
         "photolink": "https://04.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
     {
         "name": "student5",
@@ -67,7 +72,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222226,
         "photolink": "https://05.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student6",
@@ -81,7 +87,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222227,
         "photolink": "https://06.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
     {
         "name": "student7",
@@ -95,7 +102,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222228,
         "photolink": "https://07.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student8",
@@ -109,7 +117,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222229,
         "photolink": "https://09.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
     {
         "name": "student9",
@@ -123,7 +132,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222230,
         "photolink": "https://00.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student10",
@@ -137,7 +147,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222231,
         "photolink": "https://00.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
     {
         "name": "student11",
@@ -151,7 +162,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222232,
         "photolink": "https://01.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student12",
@@ -165,7 +177,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222233,
         "photolink": "https://02.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
     {
         "name": "student13",
@@ -179,7 +192,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222234,
         "photolink": "https://03.jpeg",
         "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student14",
@@ -193,12 +207,13 @@ const StudentInfo = [
         "fatherphonenum": 2222222235,
         "photolink": "https://04.jpeg",
         "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
     {
         "name": "student15",
         "email": "student15@gmail.com",
-        "password":"1679010",
+        "password": "1679010",
         "phonenum": 1111111125,
         "rollnum": 15,
         "year": 2,
@@ -207,7 +222,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222236,
         "photolink": "https://05.jpeg",
         "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student16",
@@ -221,7 +237,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222237,
         "photolink": "https://06.jpeg",
         "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
     {
         "name": "student17",
@@ -235,7 +252,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222238,
         "photolink": "https://07.jpeg",
         "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student18",
@@ -249,10 +267,99 @@ const StudentInfo = [
         "fatherphonenum": 2222222239,
         "photolink": "https://09.jpeg",
         "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
-   
-  
+    {
+        "name": "student19",
+        "email": "student19@gmail.com",
+        "password": "2123454",
+        "phonenum": 1111111129,
+        "rollnum": 19,
+        "year": 2,
+        "branch": "cse",
+        "fathername": "father19",
+        "fatherphonenum": 2222222240,
+        "photolink": "https://00.jpeg",
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "access": true,
+        "devices": "D01"
+    },
+    {
+        "name": "student20",
+        "email": "student20@gmail.com",
+        "password": "2234565",
+        "phonenum": 1111111130,
+        "rollnum": 20,
+        "year": 2,
+        "branch": "cse",
+        "fathername": "father20",
+        "fatherphonenum": 2222222241,
+        "photolink": "https://01.jpeg",
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "access": false,
+        "devices": "D01"
+    },
+    {
+        "name": "student21",
+        "email": "student21@gmail.com",
+        "password": "2345676",
+        "phonenum": 1111111131,
+        "rollnum": 21,
+        "year": 2,
+        "branch": "cse",
+        "fathername": "father21",
+        "fatherphonenum": 2222222242,
+        "photolink": "https://02.jpeg",
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "access": true,
+        "devices": "D01"
+    },
+    {
+        "name": "student22",
+        "email": "student22@gmail.com",
+        "password": "2456787",
+        "phonenum": 1111111132,
+        "rollnum": 22,
+        "year": 2,
+        "branch": "cse",
+        "fathername": "father22",
+        "fatherphonenum": 2222222243,
+        "photolink": "https://03.jpeg",
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "access": false,
+        "devices": "D01"
+    },
+    {
+        "name": "student23",
+        "email": "student23@gmail.com",
+        "password": "2567898",
+        "phonenum": 1111111133,
+        "rollnum": 23,
+        "year": 2,
+        "branch": "cse",
+        "fathername": "father23",
+        "fatherphonenum": 2222222244,
+        "photolink": "https://04.jpeg",
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "access": true,
+        "devices": "D01"
+    },
+    {
+        "name": "student24",
+        "email": "student24@gmail.com",
+        "password": "2679009",
+        "phonenum": 1111111134,
+        "rollnum": 24,
+        "year": 2,
+        "branch": "cse",
+        "fathername": "father24",
+        "fatherphonenum": 2222222245,
+        "photolink": "https://05.jpeg",
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "access": false,
+        "devices": "D01"
+    },
     {
         "name": "student25",
         "email": "student25@gmail.com",
@@ -265,7 +372,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222246,
         "photolink": "https://06.jpeg",
         "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     },
     {
         "name": "student26",
@@ -279,7 +387,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222247,
         "photolink": "https://07.jpeg",
         "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": false
+        "access": false,
+        "devices": "D01"
     },
     {
         "name": "student27",
@@ -293,7 +402,8 @@ const StudentInfo = [
         "fatherphonenum": 2222222248,
         "photolink": "https://09.jpeg",
         "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
-        "access": true
+        "access": true,
+        "devices": "D01"
     }
 ]
 

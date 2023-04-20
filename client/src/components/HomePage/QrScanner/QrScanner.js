@@ -3,6 +3,7 @@ import { useState,useContext } from "react";
 import QrReader from "react-qr-scanner";
 import { API } from "../../../config";
 import { useLocation } from "react-router-dom";
+import { DecryptData } from "../../../EncryptDevice";
 const QrScanner = () => {
   const location=useLocation()
   const {purpose}=location.state
@@ -12,10 +13,13 @@ const QrScanner = () => {
   const [data, setData] = useState("");
   const UpdateTime=async(scanTime)=> {
     console.log("connecting backend...")
+    const arr=scanTime.split("$$")
+    console.log(arr)
     try {
     const ScanData={
-      time:Date(scanTime),
+      time:Date(arr[0]),
       purpose: purpose,
+      deviceId: arr[1]
     }
       const result=await fetch(`${API}/StudentInfo`,{
         method:"PUT",

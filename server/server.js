@@ -29,7 +29,9 @@ app.get('/', (req, res) => {
 
 app.use('/api/SignUp',require('./routes/api/signup'));
 app.use('/api/SignIn',require('./routes/api/signin'));
+app.use('/api/AdminSignIn',require('./routes/api/adminsignin'))
 app.use('/api/StudentInfo',require('./routes/api/studentinfo'))
+
 app.listen(PORT,() => console.log(`Server started on port ${PORT}`));
 
 module.exports=app

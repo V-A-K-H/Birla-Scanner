@@ -51,10 +51,17 @@
   
   .input-icon {
     height: 1.3em;
-    width: 1.3em;
+    width: 1.3em; 
     fill: white;
     background-color: #171717;
   }
+
+  .input-icon path{
+    height: 1.3em;
+    width: 1.3em;
+  }
+
+
   
   .input-field {
     background: none;

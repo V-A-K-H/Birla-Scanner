@@ -5,26 +5,35 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 // const config = require('config');
 const { check, validationResult } = require('express-validator');
-const student = require('../../models/student');
+const admin = require('../../models/admin');
 
 // const User = require('../../models/User');
 
 router.post('/', async (req, res) => {
-    console.log(req.body['outinginfo'])
-    let { name,email, password, phonenum, rollnum, year, branch, fathername, fatherphonenum, photolink, outinginfo,access } = req.body;
-    console.log(outinginfo,name)
-    const salt = await bcrypt.genSalt(10);
-    password = await bcrypt.hash(password, salt);
-    const Student = new student({
-        name, email, password, phonenum, rollnum, year, branch, fathername, fatherphonenum, photolink, outinginfo,access
+    const AdminInfo=[{
+        "name": "admin1",
+        "email": "admin1@gmail.com",
+        "passowrd": "111111",
+        "number": 1111111111,
+        
+    },{
+        "name": "admin2",
+        "email": "admin2@gmail.com",
+        "passowrd": "222222",
+        "number": 2222222222,
+        
+    }]
+    AdminInfo.map(async (elem)=> {
+        const salt=await bcrypt.genSalt(10);
+        elem.passowrd=await bcrypt.hash(elem.passowrd,salt);
+        console.log(elem)
+        await new admin(elem).save()
+        res.status(200).send("sucess")
     })
-    const response= await  Student.save()
-
 
 
 
 
 })
 
-module.exports = router;
-    
+module.exports=router

@@ -1,7 +1,8 @@
 
 {
     "mongoURI": "mongodb+srv://birlaUserInfo:tU72AI9pAfFTiJGI@cluster1234.jdmegpc.mongodb.net/?retryWrites=true&w=majority",
-    "jwtSecret": "mysecrettoken"
+    "jwtSecret": "mysecrettoken",
+    "SecretPass": "R7fT9zK6"
 }
 
 

@@ -9,22 +9,22 @@ import Admin from './components/AdminProfile/Admin/Admin';
 import QrGenerator from './components/AdminProfile/Admin/QrGenerator';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import QrScanner from './components/HomePage/QrScanner/QrScanner';
-
+import { API } from './config';
 import { useEffect,useContext } from 'react';
-
+import { AdminRoute, UserRoute } from './components/AdminProfile/Admin/PrivateRoute';
 function App() {
   console.log("renderingi n app ", localStorage.getItem('sessionUser'))
   return (
     <>
         <Router>
           <Routes>
-            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/" element={<UserRoute element={<HomePage/>}/>}></Route>
             <Route path="signup" element={<SignUp />}></Route>
-            <Route path="qrscanner" element={<QrScanner />} >  </Route>
-            <Route path="profile" element={<Profile />} >  </Route>
+            <Route path="qrscanner" element={<UserRoute element={<QrScanner/>}/>}></Route>
+            <Route path="profile" element={<UserRoute element={<Profile/>}/>} >  </Route>
             <Route path="loader" element={<Loader />} >  </Route>
-            <Route path="admin" element={<Admin />} >  </Route>
-            <Route path="QrGenerator" element={<QrGenerator />} >  </Route>
+            <Route path="admin" element={<AdminRoute element={<Admin/>}/>} >  </Route>
+            <Route path="QrGenerator" element={<AdminRoute element={<QrGenerator/>}/>} >  </Route>
           </Routes>
         </Router>
     

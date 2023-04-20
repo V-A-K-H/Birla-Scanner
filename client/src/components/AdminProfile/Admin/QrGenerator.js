@@ -2,6 +2,7 @@ import { React, useEffect, useState, useContext } from "react";
 import "./QrGenerator.css";
 import ReactDOM from "react-dom";
 import QRCode from 'qrcode'
+import { EncryptData } from "../../../EncryptDevice";
 const QrGenerator = () => {
   const [timerId, setTimerId] = useState(null);
   useEffect(() => {
@@ -16,7 +17,7 @@ const QrGenerator = () => {
   const generateQR = async () => {
     if (timerId) clearInterval(timerId);
     const abc = setInterval(() => {
-      let time = new Date();
+      let time = `${new Date()}$$${EncryptData("D01")}`
       console.log(time);
       QRCode.toDataURL(document.getElementById("canvas"), `${time}`, function (error) {
         if (error) console.error(error);
@@ -42,7 +43,8 @@ const QrGenerator = () => {
     }, 5000);
     setTimerId(abc);
     console.log("waiting for timeout");
-    let time = new Date();
+    console.log(`${EncryptData("D01")}`)
+    let time = `${new Date()}$$${EncryptData("D01")}`;
     console.log(time);
     QRCode.toCanvas(document.getElementById("canvas"), `${time}`, function (error) {
       if (error) console.error(error);
