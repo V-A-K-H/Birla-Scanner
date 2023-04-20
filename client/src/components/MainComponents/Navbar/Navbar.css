@@ -11,6 +11,9 @@
   .navbar {
     background-color: #252525;
   }
+  .active {
+    background-color: #252525;
+  }
   
   .navbar-toggler {
     color: #fff;

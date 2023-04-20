@@ -55,9 +55,7 @@
     if (!load || !userData) return (
       <>
         <Loader />
-        <div>
-          {!userData && "fetching dta"}
-        </div>
+        
       </>
     )
     // const StudentHomePage = () => {
