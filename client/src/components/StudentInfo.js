@@ -10,7 +10,7 @@ const StudentInfo = [
         "fathername": "father1",
         "fatherphonenum": 2222222222,
         "photolink": "https://01.jpeg",
-        "outinginfo": { date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" },
+        "outinginfo": { date: new Date("2023-03-26"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" },
         "access": true,
         "devices": "D01"
     },
@@ -41,7 +41,7 @@ const StudentInfo = [
         "fathername": "father3",
         "fatherphonenum": 2222222224,
         "photolink": "https://03.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-25"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -71,7 +71,7 @@ const StudentInfo = [
         "fathername": "father5",
         "fatherphonenum": 2222222226,
         "photolink": "https://05.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-25"), entry: "", exit: new Date("2023-03-25 16:30:50"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -101,7 +101,7 @@ const StudentInfo = [
         "fathername": "father7",
         "fatherphonenum": 2222222228,
         "photolink": "https://07.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-25"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -131,7 +131,7 @@ const StudentInfo = [
         "fathername": "father9",
         "fatherphonenum": 2222222230,
         "photolink": "https://00.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-25"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -161,7 +161,7 @@ const StudentInfo = [
         "fathername": "father11",
         "fatherphonenum": 2222222232,
         "photolink": "https://01.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-25"), entry:"",exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -191,7 +191,7 @@ const StudentInfo = [
         "fathername": "father13",
         "fatherphonenum": 2222222234,
         "photolink": "https://03.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-25"), entry: new Date("2023-03-25 16:30:50"), exit: new Date("2023,03,25,16:50:55"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-25"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -221,7 +221,7 @@ const StudentInfo = [
         "fathername": "father15",
         "fatherphonenum": 2222222236,
         "photolink": "https://05.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -251,7 +251,7 @@ const StudentInfo = [
         "fathername": "father17",
         "fatherphonenum": 2222222238,
         "photolink": "https://07.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: "", exit: new Date("2023-03-25 16:30:50"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -281,7 +281,7 @@ const StudentInfo = [
         "fathername": "father19",
         "fatherphonenum": 2222222240,
         "photolink": "https://00.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -311,7 +311,7 @@ const StudentInfo = [
         "fathername": "father21",
         "fatherphonenum": 2222222242,
         "photolink": "https://02.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-26"), entry:"", exit: new Date("2023-03-25 16:30:50"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -341,7 +341,7 @@ const StudentInfo = [
         "fathername": "father23",
         "fatherphonenum": 2222222244,
         "photolink": "https://04.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -371,7 +371,7 @@ const StudentInfo = [
         "fathername": "father25",
         "fatherphonenum": 2222222246,
         "photolink": "https://06.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     },
@@ -401,7 +401,7 @@ const StudentInfo = [
         "fathername": "father27",
         "fatherphonenum": 2222222248,
         "photolink": "https://09.jpeg",
-        "outinginfo": [{ date: new Date("2023-03-26"), entry: new Date("2023-03-26 15:10:20"), exit: new Date("2023,03,25,17:35:25"), purpose: "market" }],
+        "outinginfo": [{ date: new Date("2023-03-26"), entry: "", exit: new Date("2023-03-25 16:30:50"), purpose: "market" }],
         "access": true,
         "devices": "D01"
     }

@@ -1,12 +1,15 @@
 import {Children, React, useEffect} from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import Navbar from './MainComponents/Navbar/Navbar';
-const whouse=localStorage.getItem('Auth')
+
 export const AdminRoute=({
     element:element})=> {
+        let whouse=localStorage.getItem('Auth')
         const navigate = useNavigate()
     useEffect(()=> {
-        if (whouse!="admin") {
+        whouse=localStorage.getItem('Auth')
+        if (whouse!=="admin") {
+            
             window.alert("Not an admin, Unauthorized access login as admin  ")
             navigate('/signup')
         }
@@ -25,9 +28,11 @@ export const AdminRoute=({
 export const UserRoute=({
     element: element
 })=> {
+    let whouse=localStorage.getItem('Auth')
     const navigate=useNavigate()
     useEffect(()=> {
-        if (whouse!="user") {
+        whouse=localStorage.getItem('Auth')
+        if (whouse!=="user") {
             window.alert("not signed in")
             navigate('/signup')
         }

@@ -37,7 +37,6 @@ const SignUp = () => {
         },
         body: JSON.stringify({ email, password }),
       })
-
       const response = await result.json()
       console.log(response)
       if (response.jwtToken) {

@@ -3,6 +3,7 @@ const config=require('config')
 
 module.exports=function(req,res,next) {
     const token=req.header('x-auth-token')
+    const whouse=req.params.auth?req.params.auth:null
     if (!token) {
             return res.status(401).json({msg: "No token, authorization denied"})
     }
@@ -13,8 +14,16 @@ module.exports=function(req,res,next) {
                 return res.json(401).json("The jwt key is not valid")
             }
             else {
+                // console.log(localStorage.getItem('Auth'))
+                if (whouse=="admin") {
+                    req.admin=decoded.admin
+                    console.log("the user is given by",req.admin,config.get('jwtSecret'),token)
+                
+                }
                 req.user=decoded.user
                 next()
+
+
             }
         })
     }

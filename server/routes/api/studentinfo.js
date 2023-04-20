@@ -21,9 +21,8 @@ router.put('/', authenticate, async (req, res) => {
     try {
         if (FullstudentProfile.access) {
             const outinginfoLength=Object.values(FullstudentProfile.outinginfo).length
-            FullstudentProfile.outinginfo[outinginfoLength-1].exit=time ;
-            FullstudentProfile.access = false;  
-            console.log(FullstudentProfile);
+            FullstudentProfile.outinginfo[outinginfoLength-1].exit=new Date(time) ;
+            FullstudentProfile.access = false;
             await new student(FullstudentProfile).save();
             res.status(200)
             // new student saves the data helps to save in a new format
@@ -32,7 +31,7 @@ router.put('/', authenticate, async (req, res) => {
         }
         else {
             console.log("access is false")
-            FullstudentProfile.outinginfo.push({ date: time  , entry: time, exit: "", purpose: purpose })
+            FullstudentProfile.outinginfo.push({ date: time, entry: "", exit:time, purpose: purpose })
             FullstudentProfile.access=true
             console.log(FullstudentProfile)
             await new student(FullstudentProfile).save();

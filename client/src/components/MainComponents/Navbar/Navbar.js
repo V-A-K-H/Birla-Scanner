@@ -8,12 +8,7 @@ const Navbar = () => {
         return (
             <>
                 <div className="collapse" id="navbarToggleExternalContent" >
-                    <div className="p-4 active">
-                        <Link to='/'><h5 className="text-white h4">Home</h5></Link>
-                    </div>
-                    <div className="p-4">
-                        <Link to='/profile'><h5 className="text-white h4">Profile</h5></Link>
-                    </div>
+                    
                 </div>
                 <nav className="navbar navbar-dark ">
                     <div className="container-fluid">

@@ -14,7 +14,7 @@ const QrScanner = () => {
       navigate("/");
     }
   }, [purpose, navigate]);
-
+  const [timerCount,setTimerCount]=useState(false)
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
@@ -58,7 +58,7 @@ const QrScanner = () => {
   };
   const handleError = (err) => {
     console.error(err);
-  };
+  };  
   return (
     <div className="App">
       <div>

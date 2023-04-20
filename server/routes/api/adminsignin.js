@@ -1,4 +1,5 @@
 const jwt=require('jsonwebtoken')
+const authenticate = require('../../middleware/authenticate');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
@@ -7,6 +8,14 @@ const bcrypt = require('bcryptjs');
 const config = require('config');
 const { check, validationResult } = require('express-validator');
 const Admin = require('../../models/admin');
+const student = require('../../models/student');
+router.get(
+  '/auth/:auth',authenticate,async (req,res)=> {
+    const adminProfile = await student.find()
+    console.log((adminProfile[5].outinginfo[0].entry).getMinutes())
+    res.status(200).json(adminProfile)
+  }
+)
 router.post(
     '/',
     check('email', 'Please include a valid email').isEmail(),
@@ -38,13 +47,12 @@ router.post(
               .status(400)
               .json({ errors: [{ msg: 'Invalid Credentials' }] });
           }
-        console.log(admin.id)
         const payload = {
-          admin: {
+          user: {
             id: admin.id
           } 
         };
-        console.log(admin.id)
+
         jwt.sign(
           payload,
           config.get('jwtSecret'),

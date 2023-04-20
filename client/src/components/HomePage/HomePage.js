@@ -99,7 +99,7 @@
             </div>
             <textarea type="text" className="textbox" placeholder="Purpose" value={purpose} onChange={(e)=> {setPurpose(e.target.value)}} />
             <Link to="qrscanner" state={{purpose: purpose }}>
-              <button disabled={purpose?false: true} style={{backgroundColor: purpose?"aqua": "black"}} className="buttonqr"> Open QR Scanner</button>
+              <button disabled={purpose?false: true} style={{backgroundColor: purpose?"#088395": "black"}} className="buttonqr"> Open QR Scanner</button>
             </Link>
           </div>
         </body>
