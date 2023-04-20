@@ -10,15 +10,18 @@ import QrGenerator from './components/AdminProfile/Admin/QrGenerator';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import QrScanner from './components/HomePage/QrScanner/QrScanner';
 import { API } from './config';
-import { useEffect,useContext } from 'react';
-import { AdminRoute, UserRoute } from './components/AdminProfile/Admin/PrivateRoute';
+import { useEffect } from 'react';
+import Navbar from './components/MainComponents/Navbar/Navbar';
+import { UserRoute,AdminRoute } from './components/PrivateRoute';
 function App() {
   console.log("renderingi n app ", localStorage.getItem('sessionUser'))
   return (
+    
     <>
+    {/* <Navbar/> */}
         <Router>
           <Routes>
-            <Route path="/" element={<UserRoute element={<HomePage/>}/>}></Route>
+            <Route path="/" element={<HomePage/>}></Route>
             <Route path="signup" element={<SignUp />}></Route>
             <Route path="qrscanner" element={<UserRoute element={<QrScanner/>}/>}></Route>
             <Route path="profile" element={<UserRoute element={<Profile/>}/>} >  </Route>

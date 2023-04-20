@@ -1,16 +1,25 @@
 import "./QrScanner.css";
-import { useState,useContext } from "react";
+import { useState,useEffect } from "react";
 import QrReader from "react-qr-scanner";
 import { API } from "../../../config";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { DecryptData } from "../../../EncryptDevice";
 const QrScanner = () => {
+  const navigate=useNavigate()
   const location=useLocation()
-  const {purpose}=location.state
+  const {purpose}=location.state?location.state: {purpose: null};
+  useEffect(() => {
+    if (!purpose) {
+      window.alert("Fill Purpose then come");
+      navigate("/");
+    }
+  }, [purpose, navigate]);
+
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
   const [data, setData] = useState("");
+  
   const UpdateTime=async(scanTime)=> {
     console.log("connecting backend...")
     const arr=scanTime.split("$$")
@@ -50,11 +59,8 @@ const QrScanner = () => {
   const handleError = (err) => {
     console.error(err);
   };
-  console.log(purpose)
   return (
-
     <div className="App">
-      
       <div>
         {purpose}
       </div>

@@ -6,6 +6,7 @@ import Loader from '../MainComponents/Loader/Loader';
 const SignUp = () => {
 
   const navigate = useNavigate()
+  const [visible,setVisible]=useState(false)
   const [formData, setFormData] = useState(
     {
       email: "",
@@ -22,8 +23,9 @@ const SignUp = () => {
     )
   }
   const onSubmit = async (e) => {
-    const whoUse = admin ? "SignIn" : "AdminSignIn";
-    console.log(email, password)
+    const whoUse = admin ? "AdminSignIn" : "SignIn";
+    const auth=admin?"admin": "user";
+    console.log(auth,whoUse,email, password)
     e.preventDefault()
     // ASYNC keyword makes the followoing staement asynchronous, which means that other part of code could be executed while the async functions wait for promise resolution. AWAIT keywords waits for promise resoulution, if successful then it's following statements are executed, if promise returns false, then the execution jumps to catch block
     try {
@@ -40,11 +42,11 @@ const SignUp = () => {
       console.log(response)
       if (response.jwtToken) {
         localStorage.setItem('sessionUser', response.jwtToken)
-        localStorage.setItem('Auth',whoUse)
+        localStorage.setItem('Auth',auth)
         navigate('/')
 
       }
-    }
+    } 
     catch (error) {
       console.log(error)
       window.confirm(error)
@@ -80,8 +82,13 @@ const SignUp = () => {
           <i class="fa-solid fa-lock fa-sm"></i>
             <input placeholder="Password" className="input-field" name='password' value={password} onChange={(e) => {
               onchange(e)
-            }} type="password" />
-            <i class="fa-solid fa-eye-slash fa-sm"></i>
+            }} type={visible?"text":"password"} />
+            <i onClick={()=> {
+              console.log("Icon clicked")
+              setVisible((prev)=> {
+                return (!prev)
+              })
+            }} class={visible?"fa-solid fa-eye fa-sm":"fa-solid fa-eye-slash fa-sm"}></i>
           </div>
 
 

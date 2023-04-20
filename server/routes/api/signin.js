@@ -40,6 +40,7 @@ router.post(
     console.log(email,password)
     try {
       let user = await User.findOne({ email });
+      console.log(user)
       if (!user) {
         console.log(user)
         return res

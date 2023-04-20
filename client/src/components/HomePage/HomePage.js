@@ -1,13 +1,15 @@
   import { React, useState, useEffect } from "react";
   import "./HomePage.css";
-  import { Link, NavLink, Navigate, redirect } from "react-router-dom";
+  import { Link, NavLink, Navigate, redirect, useNavigate } from "react-router-dom";
   import { API } from "../../config";
   import Loader from "../MainComponents/Loader/Loader";
   import SignUp from "../SignUp/SignUp";
   import Navbar from "../MainComponents/Navbar/Navbar";
   import QrGenerator from "../AdminProfile/Admin/QrGenerator";
-
+  import { AdminRoute } from "../PrivateRoute";
   const HomePage = () => {
+    let whoUse=localStorage.getItem('Auth')
+    const navigate=useNavigate()
     const [userData, setUserData] = useState(null);
     const [purpose,setPurpose]=useState()
     let admin = false;
@@ -35,15 +37,21 @@
 
       }
     }
+    console.log(whoUse)
     const [load, setLoad] = useState(false);
     useEffect(() => {
+      whoUse=localStorage.getItem('Auth')
       setTimeout(() => {
         fetchData()
         setLoad(true)
       }, 1125)
-    }, [])
+    }, [whoUse])
 
-
+    if (whoUse=="admin") {
+      return (
+        <AdminRoute element={<QrGenerator/>}/>
+      )
+    }
     if (!load || !userData) return (
       <>
         <Loader />
@@ -64,12 +72,10 @@
         </>
       )
     }
+    
     return (
-      admin
-        ?
-        <AdminHomePage />
-        :  <>
-        <body>
+
+        <body className="homebody">
           <div className="container">
             <div className="profile">
               <div className="flip-card" onClick={(e) => FlipCard(e)}>
@@ -95,11 +101,11 @@
             </div>
             <textarea type="text" className="textbox" placeholder="Purpose" value={purpose} onChange={(e)=> {setPurpose(e.target.value)}} />
             <Link to="qrscanner" state={{purpose: purpose }}>
-              <button disabled={purpose?false: true} style={{backgroundColor: purpose?"blue": "red"}} className="buttonqr"> Open QR Scanner</button>
+              <button disabled={purpose?false: true} style={{backgroundColor: purpose?"aqua": "black"}} className="buttonqr"> Open QR Scanner</button>
             </Link>
           </div>
         </body>
-      </>
+    
     );
   };
   export default HomePage;

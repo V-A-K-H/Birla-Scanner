@@ -6,7 +6,6 @@ const bcrypt = require('bcryptjs');
 /* global localStorage, */
 const config = require('config');
 const { check, validationResult } = require('express-validator');
-
 const Admin = require('../../models/admin');
 router.post(
     '/',
@@ -23,6 +22,7 @@ router.post(
       console.log(email,password)
       try {
         let admin = await Admin.findOne({ email });
+        console.log(admin)
         if (!admin) {
           console.log(admin)
           return res
@@ -30,7 +30,7 @@ router.post(
             .json({ errors: [{ msg: 'Invalid Credentials' }] });
         }
         // checks if the user exsists or not
-          const isMatch = await bcrypt.compare(password, user.password);
+          const isMatch = await bcrypt.compare(password, admin.password);
   
           if (!isMatch) {
             console.log("in is match")
@@ -38,7 +38,7 @@ router.post(
               .status(400)
               .json({ errors: [{ msg: 'Invalid Credentials' }] });
           }
-  
+        console.log(admin.id)
         const payload = {
           admin: {
             id: admin.id

@@ -50,7 +50,7 @@ const Profile = () => {
   return (
     <body>
 
-      <div className="collapse" id="navbarToggleExternalContent" >
+      {/* <div className="collapse" id="navbarToggleExternalContent" >
         <div className="p-4">
           <Link to='/'><h5 className="text-white h4">Home</h5></Link>
         </div>
@@ -76,7 +76,7 @@ const Profile = () => {
             <i className="fas fa-bars"></i>
           </button>
         </div>
-      </nav>
+      </nav> */}
       <div className="container">
         <div className="profile">
           <img
