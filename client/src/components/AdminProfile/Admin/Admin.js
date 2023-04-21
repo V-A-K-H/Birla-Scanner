@@ -76,7 +76,7 @@ const Admin = () => {
               {/* <td>{Date(outingInfo.date)}</td>
               <td>{`${Date(outingInfo.entry).getHours()}:${Date(outingInfo.entry).getMinutes()}`}</td>
               <td>{`${Date(outingInfo.exit).getHours()}:${Date(outingInfo.exit).getMinutes()}`}</td> */}
-              <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth()}-${new Date(outingInfo.date).getFullYear()}`}</td>
+              <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth()+1}-${new Date(outingInfo.date).getFullYear()}`}</td>
               <td>{outingInfo.purpose}</td>
 
               <td>{`${new Date(outingInfo.exit).getHours()}:${new Date(outingInfo.exit).getMinutes()}`}</td>
