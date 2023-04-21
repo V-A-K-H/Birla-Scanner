@@ -19,7 +19,7 @@ const QrGenerator = () => {
     const abc = setInterval(() => {
       let time = `${new Date()}$$${EncryptData("D01")}`
       console.log(time);
-      QRCode.toDataURL(document.getElementById("canvas"), `${time}`, function (error) {
+      QRCode.toCanvas(document.getElementById("canvas"), `${time}`, function (error) {
         if (error) console.error(error);
       });
       //media query 

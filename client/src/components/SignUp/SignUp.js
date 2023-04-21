@@ -47,6 +47,7 @@ const SignUp = () => {
       }
     } 
     catch (error) {
+      window.alert(error)
       console.log(error)
       window.confirm(error)
     }
@@ -61,7 +62,9 @@ const SignUp = () => {
           <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
             <li className="nav-item" role="presentation" >
               <a className="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
-                aria-controls="pills-login" aria-selected="true">User</a>
+                aria-controls="pills-login" aria-selected="true" onClick={()=> {
+                  setAdmin(false)
+                }}>User</a>
             </li>
             <li className="nav-item" role="presentation">
               <a className="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"

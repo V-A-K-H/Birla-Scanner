@@ -52,12 +52,16 @@
         <AdminRoute element={<QrGenerator/>}/>
       )
     }
-    if (whoUse==null) {
-      window.alert("Not signed in")
-      return (
-        <SignUp/>
-      )
-    }
+    if (whoUse==null)
+    return (
+      navigate('/signup')
+    )
+    // if (whoUse==null) {
+    //   window.alert("Noghfgt signed in")
+    //   return (
+    //     <SignUp/>
+    //   )
+    // }
     if (!load || !userData) return (
       <>
         <Loader />

@@ -1,3 +1,5 @@
+
+
 import { React, useState, useEffect } from "react";
 import "./Admin.css";
 import { Link, NavLink } from "react-router-dom";
@@ -21,7 +23,12 @@ const Admin = () => {
       response.map((elem) => {
         StudentArray.push(elem)
       })
-      setStudentData(StudentArray)
+      
+      setStudentData(StudentArray.sort((a,b) => {
+        return (
+          (b.access - a.access)
+        )
+      }))
     }
     catch (err) {
       console.warn(err)
@@ -34,7 +41,7 @@ const Admin = () => {
       setTimeout(() => {
         setLoad(true)
       }, 1125)
-    }, 50000);
+    }, 5000);
   }, [])
   const [load, setLoad] = useState(false)
 
@@ -76,7 +83,7 @@ const Admin = () => {
               {/* <td>{Date(outingInfo.date)}</td>
               <td>{`${Date(outingInfo.entry).getHours()}:${Date(outingInfo.entry).getMinutes()}`}</td>
               <td>{`${Date(outingInfo.exit).getHours()}:${Date(outingInfo.exit).getMinutes()}`}</td> */}
-              <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth()+1}-${new Date(outingInfo.date).getFullYear()}`}</td>
+              <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth() + 1}-${new Date(outingInfo.date).getFullYear()}`}</td>
               <td>{outingInfo.purpose}</td>
 
               <td>{`${new Date(outingInfo.exit).getHours()}:${new Date(outingInfo.exit).getMinutes()}`}</td>
@@ -96,11 +103,22 @@ const Admin = () => {
   }
   return (
     <body>
-      <button onClick={() => {
-        fetchStudentData()
-      }}>
-        LoadDatabase
-      </button>
+      
+      <div style={{ marginLeft: "3%", marginBottom: "2%", marginTop: "2%" }}>
+        
+        <button className="button button" onClick={() => {
+          setYear(1)
+        }}>1st Year</button>
+        <button className="button button" onClick={() => {
+          setYear(2)
+        }}>2nd Year</button>
+        <button className="button button" onClick={() => {
+          setYear(4)
+        }}>3rd Year</button>
+        <button className="button button" onClick={() => {
+          setYear(4)
+        }}>4th Year</button>
+      </div>
       <main>
         <table className="table align-middle mb-0 bg-white">
           <thead className="bg-light">
@@ -121,21 +139,7 @@ const Admin = () => {
           </tbody>
         </table>
       </main  >
-      <div style={{ marginLeft: "3%", marginBottom: "2%", marginTop: "2%" }}>
-        <h1>Outing History</h1>
-        <button className="button button" onClick={() => {
-          setYear(1)
-        }}>1st Year</button>
-        <button className="button button" onClick={() => {
-          setYear(2)
-        }}>2nd Year</button>
-        <button className="button button" onClick={() => {
-          setYear(4)
-        }}>3rd Year</button>
-        <button className="button button" onClick={() => {
-          setYear(4)
-        }}>4th Year</button>
-      </div>
+      
     </body>
   );
 };
