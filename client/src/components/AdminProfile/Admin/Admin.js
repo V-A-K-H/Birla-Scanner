@@ -5,7 +5,7 @@ import Loader from "../../MainComponents/Loader/Loader";
 import { API } from "../../../config";
 const Admin = () => {
   const [studentData, setStudentData] = useState(null)
-  const [year,setYear]=useState(1)
+  const [year, setYear] = useState(1)
   const fetchStudentData = async () => {
     try {
       const result = await fetch(`${API}/AdminSignIn/auth/${localStorage.getItem('Auth')}`, {
@@ -34,7 +34,7 @@ const Admin = () => {
       setTimeout(() => {
         setLoad(true)
       }, 1125)
-    }, 10000);
+    }, 50000);
   }, [])
   const [load, setLoad] = useState(false)
 
@@ -47,11 +47,11 @@ const Admin = () => {
     if (studentData) {
       // return is necessary to run the code
       return studentData.map((elem) => {
-        if (elem.year==year) {}
+        if (elem.year == year) { }
         const outingInfo = elem.outinginfo[Object.keys(elem.outinginfo).length - 1];
         // use new date to convert string into date object, not only Date()
-        const Status=elem.access?"out":"In"
-        if (elem.year==year) {
+        const Status = elem.access ? "out" : "In"
+        if (elem.year == year) {
           return (
             <tr>
               <td>
@@ -72,23 +72,24 @@ const Admin = () => {
                 <p className="fw-normal mb-1">{elem.year}</p>
                 <p className="text-muted mb-0">{elem.branch}</p>
               </td>
-              
+
               {/* <td>{Date(outingInfo.date)}</td>
               <td>{`${Date(outingInfo.entry).getHours()}:${Date(outingInfo.entry).getMinutes()}`}</td>
               <td>{`${Date(outingInfo.exit).getHours()}:${Date(outingInfo.exit).getMinutes()}`}</td> */}
-              <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth()}-${new Date(outingInfo.date).getFullYear()}`}</td>
+              <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth()+1}-${new Date(outingInfo.date).getFullYear()}`}</td>
               <td>{outingInfo.purpose}</td>
 
               <td>{`${new Date(outingInfo.exit).getHours()}:${new Date(outingInfo.exit).getMinutes()}`}</td>
-                            <td>{outingInfo.entry?`${new Date(outingInfo.entry).getHours()}:${new Date(outingInfo.entry).getMinutes()}`: `---`}</td>
-  
+              <td>{outingInfo.entry ? `${new Date(outingInfo.entry).getHours()}:${new Date(outingInfo.entry).getMinutes()}` : `---`}</td>
+
               <td>
-              <span className={elem.access?"badge badge-late rounded-pill d-inline":"badge badge-In rounded-pill d-inline"}>
+                <span className={elem.access ? "badge badge-late rounded-pill d-inline" : "badge badge-In rounded-pill d-inline"}>
                   {Status}
-                  </span>
+                </span>
               </td>
             </tr>
-          )}
+          )
+        }
       }
       )
     }
@@ -114,24 +115,24 @@ const Admin = () => {
             </tr>
           </thead>
           <tbody>
-            
-              <TableRow />
+
+            <TableRow />
 
           </tbody>
         </table>
       </main  >
       <div style={{ marginLeft: "3%", marginBottom: "2%", marginTop: "2%" }}>
         <h1>Outing History</h1>
-        <button className="button button" onClick={()=> {
+        <button className="button button" onClick={() => {
           setYear(1)
         }}>1st Year</button>
-        <button className="button button" onClick={()=> {
+        <button className="button button" onClick={() => {
           setYear(2)
         }}>2nd Year</button>
-        <button className="button button" onClick={()=> {
+        <button className="button button" onClick={() => {
           setYear(4)
         }}>3rd Year</button>
-        <button className="button button" onClick={()=> {
+        <button className="button button" onClick={() => {
           setYear(4)
         }}>4th Year</button>
       </div>

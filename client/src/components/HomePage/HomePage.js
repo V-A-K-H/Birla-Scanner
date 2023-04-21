@@ -52,12 +52,19 @@
         <AdminRoute element={<QrGenerator/>}/>
       )
     }
+    if (whoUse==null) {
+      window.alert("Not signed in")
+      return (
+        <SignUp/>
+      )
+    }
     if (!load || !userData) return (
       <>
         <Loader />
         
       </>
     )
+
     // const StudentHomePage = () => {
     //   return (
        
