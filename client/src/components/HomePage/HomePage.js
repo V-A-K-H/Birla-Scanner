@@ -12,6 +12,7 @@
     const navigate=useNavigate()
     const [userData, setUserData] = useState(null);
     const [purpose,setPurpose]=useState()
+    const [load, setLoad] = useState(false);
     let admin = false;
     const FlipCard = (e) => {
       e.classList.toggle("flip");
@@ -19,7 +20,7 @@
     const fetchData = async () => {
       console.log(localStorage.getItem('sessionUser'))
       try {
-        setLoad(true)
+        setLoad(false)
         const result = await fetch(`${API}/StudentInfo/columns/name phonenum year`, {
           method: "GET",
           mode: "cors",
@@ -30,7 +31,7 @@
         })
         const response = await result.json()
         console.log(response)
-        setLoad(false)
+        
         setUserData(response[0])
       }
       catch (err) {
@@ -38,9 +39,10 @@
         redirect('/signup')
 
       }
+      setLoad(true)
     }
     console.log(whoUse)
-    const [load, setLoad] = useState(false);
+
     useEffect(() => {
       whoUse=localStorage.getItem('Auth')
       setTimeout(() => {
