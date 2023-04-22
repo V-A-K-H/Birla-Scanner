@@ -1,2 +1,2 @@
-# Qr_Bias
+# Dwarpal
 Qr code scanner to facilitate outing purpose
