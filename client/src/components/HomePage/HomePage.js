@@ -19,6 +19,7 @@
     const fetchData = async () => {
       console.log(localStorage.getItem('sessionUser'))
       try {
+        setLoad(true)
         const result = await fetch(`${API}/StudentInfo/columns/name phonenum year`, {
           method: "GET",
           mode: "cors",
@@ -29,6 +30,7 @@
         })
         const response = await result.json()
         console.log(response)
+        setLoad(false)
         setUserData(response[0])
       }
       catch (err) {

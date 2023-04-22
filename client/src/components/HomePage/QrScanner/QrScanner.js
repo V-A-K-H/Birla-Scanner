@@ -92,8 +92,7 @@ const QrScanner = () => {
           />
         </>
       )}
-      {loadingScan && <p>Loading</p>}
-      {data !== "" && <p>{data.text}</p>}
+      
     </div>
   );
 };  
