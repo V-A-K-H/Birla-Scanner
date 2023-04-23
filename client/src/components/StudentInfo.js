@@ -361,7 +361,7 @@ const StudentInfo = [
         "devices": "D01"
     },
     {
-        "name": "student25",
+        "name": "sxtudent25",
         "email": "student25@gmail.com",
         "password": "2790120",
         "phonenum": 1111111135,

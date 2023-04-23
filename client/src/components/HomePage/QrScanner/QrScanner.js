@@ -28,9 +28,9 @@ const QrScanner = () => {
     const ScanData={
       time:Date(arr[0]),
       purpose: purpose,
-      deviceId: arr[1]
+      deviceId: "D"
     }
-      const result=await fetch(`${API}/StudentInfo`,{
+      const result=await fetch(`${API}/Studen tInfo`,{
         method:"PUT",
         mode: "cors",
         headers: {
@@ -42,6 +42,7 @@ const QrScanner = () => {
       console.log(result)
     }
     catch (err) {
+      navigate('/')
       console.log(err)
     }
   }
