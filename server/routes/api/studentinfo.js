@@ -16,7 +16,7 @@ router.put('/', authenticate, async (req, res) => {
     const {purpose,time,deviceId}=req.body
     const bytes = CryptoJS.AES.decrypt(deviceId, config.get('SecretPass'));
     const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-    if (data!=FullstudentProfile.devices) return res.status(500).send("Device Not recognized, Qr Invalid")
+    if (data!=FullstudentProfile.devices) {console.log("Non-encry",data); return res.status(500).send("Device Not recognized, Qr Invalid")}
     // find returns an array of documents matching the query even if it is only one document, whereas findone return the plan document
     try {
         if (FullstudentProfile.access) {
