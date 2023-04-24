@@ -60,31 +60,12 @@
     return (
       navigate('/signup')
     )
-    // if (whoUse==null) {
-    //   window.alert("Noghfgt signed in")
-    //   return (
-    //     <SignUp/>
-    //   )
-    // }
     if (!load || !userData) return (
       <>
         <Loader />
         
       </>
     )
-
-    // const StudentHomePage = () => {
-    //   return (
-       
-    //   )
-    // }
-    const AdminHomePage = () => {
-      return (
-        <>
-          <QrGenerator />
-        </>
-      )
-    }
     
     return (
 

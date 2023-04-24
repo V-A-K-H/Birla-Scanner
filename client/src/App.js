@@ -27,7 +27,6 @@ function App() {
             <Route path="scanconfirm" element={<UserRoute element={<ScanConfirm/>}/>}></Route>
             <Route path="profile" element={<UserRoute element={<Profile/>}/>} >  </Route>
             <Route path="loader" element={<Loader />} >  </Route>
-
             <Route path="admin" element={<AdminRoute element={<Admin/>}/>} >  </Route>
             <Route path="QrGenerator" element={<AdminRoute element={<QrGenerator/>}/>} >  </Route>
           </Routes>

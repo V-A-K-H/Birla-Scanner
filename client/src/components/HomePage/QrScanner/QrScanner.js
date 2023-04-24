@@ -28,7 +28,7 @@ const QrScanner = () => {
     const ScanData={
       time:Date(arr[0]),
       purpose: purpose,
-      deviceId: "D"
+      deviceId: arr[1]
     }
       const result=await fetch(`${API}/Studen tInfo`,{
         method:"PUT",

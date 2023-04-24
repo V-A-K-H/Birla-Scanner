@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import './styles.css'
+import './ScanConfirm.css'
 const ScanConfirm = () => {
     const [time,setTime]=useState({
         hours:0,
