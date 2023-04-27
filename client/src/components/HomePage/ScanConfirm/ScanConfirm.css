@@ -1,13 +1,6 @@
-body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
 
-}
 
-.main-div {
+.main-conf {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +11,7 @@ body {
     padding: 20px;
 }
 
-.opt-div {
+.opt-div-conf {
     border: 3px solid white;
     border-radius: 20px;
     margin-top: 10px;
@@ -36,20 +29,18 @@ body {
     justify-content: center;
 }
 
-#image {
-    border: none
-}
 
-.opt-div img {
+
+.opt-div-conf img {
     width: 150px;
 }
 
-.opt-div p {
+.opt-div-conf p {
     padding: 5px;
     margin: 0;
 }
 
-button {
+.entry-in {
     border: none;
     font-size: large;
     font-weight: bolder;
