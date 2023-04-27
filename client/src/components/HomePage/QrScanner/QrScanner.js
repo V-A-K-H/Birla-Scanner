@@ -94,7 +94,7 @@ const QrScanner = () => {
   };  
   return (
     <div className="App">
-      <div>
+      <div className="purpose-show">
         {access?"I am out ":"I am out"}
       </div>
       <button
