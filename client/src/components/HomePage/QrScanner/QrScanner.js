@@ -74,6 +74,7 @@ const QrScanner = () => {
       console.log(result)
     }
     catch (err) {
+      window.alert(err);
       console.log(err)
     }
   }
