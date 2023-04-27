@@ -25,15 +25,15 @@ const ScanConfirm = () => {
         }, 1000);
     return (
         <>
-            <div className="main-div">
-                <div className="opt-div" id="image"><img
+            <div className="main-scanconf">
+                <div className="opt-div-conf" id="image"><img
                     src="https://icon-library.com/images/person-image-icon/person-image-icon-18.jpg" alt="Photo" /></div>
-                <div className="opt-div" id="name">Aryan Raj</div>
-                <div className="opt-div" id="timer">
+                <div className="opt-div-conf" id="name">Aryan Raj</div>
+                <div className="opt-div-conf" id="timer">
                     <p>Remaining time</p>
                     <div id="countdown">{`${time.hours} Hr ${time.minutes} Min ${time.seconds} Sec`}</div>
                 </div>
-                <div className="opt-div" id="button"><button>Open Scanner</button></div>
+                <div className="opt-div-conf" ><button className="entry-in" >Open Scanner</button></div>
             </div>
         </>
     )
