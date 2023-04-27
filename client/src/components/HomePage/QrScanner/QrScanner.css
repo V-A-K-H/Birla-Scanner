@@ -74,7 +74,10 @@
  .cameramodeoption {
  background-color: aqua;
 }
- 
+.purpose-shown{
+margin-bottom: 8px;
+ color:black;
+}
  .qrreader{
   margin-top: 20px;
   height: 70%;
