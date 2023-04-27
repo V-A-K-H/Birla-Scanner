@@ -22,7 +22,6 @@ router.put('/', authenticate, async (req, res) => {
         if (FullstudentProfile.access) {
             const outinginfoLength=Object.values(FullstudentProfile.outinginfo).length
             FullstudentProfile.outinginfo[outinginfoLength-1].entry=new Date(time) ;
-            FullstudentProfile.outinginfo[outinginfoLength-1].purpose=purpose;
             FullstudentProfile.access = false;
             await new student(FullstudentProfile).save();
             res.status(200)
