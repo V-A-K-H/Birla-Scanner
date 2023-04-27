@@ -1,4 +1,5 @@
 import { React, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './ScanConfirm.css'
 const ScanConfirm = () => {
     const [time,setTime]=useState({
@@ -33,7 +34,7 @@ const ScanConfirm = () => {
                     <p>Remaining time</p>
                     <div id="countdown">{`${time.hours} Hr ${time.minutes} Min ${time.seconds} Sec`}</div>
                 </div>
-                <div className="opt-div" id="button"><button>Open Scanner</button></div>
+                <Link  to="/qrscanner"><h5 className="opt-div" id="button">Open Scanner</h5></Link>
             </div>
         </>
     )

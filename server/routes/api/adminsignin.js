@@ -1,5 +1,5 @@
 const jwt=require('jsonwebtoken')
-const authenticate = require('../../middleware/authenticate');
+const adminauthenticate = require('../../middleware/adminauthenticate');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
@@ -10,9 +10,8 @@ const { check, validationResult } = require('express-validator');
 const Admin = require('../../models/admin');
 const student = require('../../models/student');
 router.get(
-  '/auth/:auth',authenticate,async (req,res)=> {
+  '/auth/:auth',adminauthenticate,async (req,res)=> {
     const adminProfile = await student.find()
-    console.log((adminProfile[5].outinginfo[0].entry).getMinutes())
     res.status(200).json(adminProfile)
   }
 )

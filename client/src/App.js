@@ -15,6 +15,7 @@ import Navbar from './components/MainComponents/Navbar/Navbar';
 import { UserRoute,AdminRoute } from './components/PrivateRoute';
 import ScanConfirm from './components/HomePage/ScanConfirm/ScanConfirm';
 function App() {
+
   console.log("renderingi n app ", localStorage.getItem('sessionUser'))
   return (
     

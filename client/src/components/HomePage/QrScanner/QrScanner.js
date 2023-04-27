@@ -8,18 +8,50 @@ const QrScanner = () => {
   const navigate=useNavigate()
   const location=useLocation()
   const {purpose}=location.state?location.state: {purpose: null};
-  useEffect(() => {
-    if (!purpose) {
-      window.alert("Fill Purpose then come");
-      navigate("/");
+  const [access,setAccess]=useState(false)
+  useEffect(()=> {
+    const FetchAccess=async ()=> {
+      const result=await fetch(`${API}/StudentInfo/columns/access`,{
+        mode: "cors",
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": localStorage.getItem('sessionUser')
+        }
+      })
+      const response=await result.json()
+      console.log(response[0].access)
+      if (!response[0].access) {
+        console.log(response)
+        if (!purpose) {
+          window.alert("Fill Purpose then come");
+          navigate("/");
+        }
+      
+      }
+      setAccess(response[0].access)
+
     }
-  }, [purpose, navigate]);
+    FetchAccess()
+  },[access])
+
+  // useEffect(() => {
+  //   // fetch acccess if it's true he is already ourtisde and purpose is the last element of the array's
+      // if (!purpose) {
+      //   window.alert("Fill Purpose then come");
+      //   navigate("/");
+      // }
+    
+  //   else {  
+  //     console.log("bye")
+  //   }
+  
+  // }, [purpose, navigate,access]);
   const [timerCount,setTimerCount]=useState(false)
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
   const [data, setData] = useState("");
-  
   const UpdateTime=async(scanTime)=> {
     console.log("connecting backend...")
     const arr=scanTime.split("$$")
@@ -30,7 +62,7 @@ const QrScanner = () => {
       purpose: purpose,
       deviceId: arr[1]
     }
-      const result=await fetch(`${API}/Studen tInfo`,{
+      const result=await fetch(`${API}/StudentInfo`,{
         method:"PUT",
         mode: "cors",
         headers: {
@@ -42,7 +74,6 @@ const QrScanner = () => {
       console.log(result)
     }
     catch (err) {
-      navigate('/')
       console.log(err)
     }
   }
@@ -54,6 +85,7 @@ const QrScanner = () => {
       setData(scanData);
       setStartScan(false);
       setLoadingScan(false);
+      return (navigate('/'))
       // setPrecScan(scanData);
     }
   };
@@ -63,7 +95,7 @@ const QrScanner = () => {
   return (
     <div className="App">
       <div>
-        {purpose}
+        {access?"I am out ":"I am out"}
       </div>
       <button
         className="openscanner"
