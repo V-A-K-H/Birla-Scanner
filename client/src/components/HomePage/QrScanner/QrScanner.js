@@ -62,7 +62,7 @@ const QrScanner = () => {
   };  
   return (
     <div className="App">
-      <div>
+      <div className="purpose-shown">
         {purpose}
       </div>
       <button
