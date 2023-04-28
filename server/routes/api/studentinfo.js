@@ -40,7 +40,7 @@ router.put('/', authenticate, async (req, res) => {
     }
     catch (err) {
         console.log(err)
-        req.status(500)
+        res.status(500)
     }
 })
 module.exports = router

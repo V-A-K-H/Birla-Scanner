@@ -58,10 +58,10 @@ const QrScanner = () => {
     console.log(arr)
     try {
     const ScanData={
-      time:Date(arr[0]),
+      time:new Date(arr[0]),
       purpose: purpose,
       deviceId: arr[1]
-    }
+    } 
       const result=await fetch(`${API}/StudentInfo`,{
         method:"PUT",
         mode: "cors",
@@ -79,8 +79,13 @@ const QrScanner = () => {
     }
   }
   const handleScan = async (scanData) => {
-    setLoadingScan(true);
+ 
     if (scanData && scanData !== "") {
+      if ((((new Date().getTime())-(new Date(scanData.text.split("$$")[0]).getTime()))/1000)>7) {
+        window.alert("Invalid / Old Qr ")
+        return window.location.reload(false)
+      }
+      setLoadingScan(true);
       console.log(`loaded >>>`, scanData);
       UpdateTime(scanData.text)
       setData(scanData);
@@ -93,10 +98,11 @@ const QrScanner = () => {
   const handleError = (err) => {
     console.error(err);
   };  
+  
   return (
-    <div className="App">
+    <div className="App" >
       <div className="purpose-show">
-        {access?"I am out ":"I am out"}
+        Status : {access?"I am out ":"I am in"}
       </div>
       <button
         className="openscanner"
