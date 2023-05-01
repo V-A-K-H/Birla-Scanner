@@ -38,18 +38,15 @@ const SignUp = () => {
         body: JSON.stringify({ email, password }),
       })
       const response = await result.json()
-      console.log(response)
+      if (response.errors) window.alert(response.errors[0].msg)
       if (response.jwtToken) {
         localStorage.setItem('sessionUser', response.jwtToken)
         localStorage.setItem('Auth',auth)
         navigate('/')
-
       }
     } 
-    catch (error) {
-      window.alert(error)
-      console.log(error)
-      window.confirm(error)
+    catch (err) {
+      console.log("the following are encountered",err)
     }
 
 

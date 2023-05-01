@@ -16,6 +16,7 @@ router.get('/',  async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     res.json(user);
+    if (!user) {res.status(500).send("invalid credential")}
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -42,9 +43,9 @@ router.post(
       let user = await User.findOne({ email });
       console.log(user)
       if (!user) {
-        console.log(user)
+        console.log("invalid user",user)
         return res
-          .status(400)
+          .status(500)
           .json({ errors: [{ msg: 'Invalid Credentials' }] });
       }
       // checks if the user exsists or not
