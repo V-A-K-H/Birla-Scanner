@@ -81,8 +81,8 @@ const QrScanner = () => {
   const handleScan = async (scanData) => {
  
     if (scanData && scanData !== "") {
-      if ((((new Date().getTime())-(new Date(scanData.text.split("$$")[0]).getTime()))/1000)>70) {
-        console.log((((new Date().getTime())-(new Date(scanData.text.split("$$")[0]).getTime()))/1000)<=8)
+      if ((((new Date().getTime())-(new Date(scanData.text.split("$$")[0]).getTime()))/1000)<=7) {
+        console.log((((new Date().getTime())-(new Date(scanData.text.split("$$")[0]).getTime()))/1000)<=7)
         window.alert("Invalid / Old Qr ")
         return window.location.reload(false)
       }
