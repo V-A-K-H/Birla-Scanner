@@ -7,7 +7,7 @@ import Loader from "../../MainComponents/Loader/Loader";
 import { API } from "../../../config";
 const Admin = () => {
   const [studentData, setStudentData] = useState(null)
-  const [year, setYear] = useState(1)
+  const [year, setYear] = useState(0)
   const fetchStudentData = async () => {
     try {
       const result = await fetch(`${API}/AdminSignIn/auth/${localStorage.getItem('Auth')}`, {
@@ -53,13 +53,16 @@ const Admin = () => {
   )
   const TableRow = () => {
     if (studentData) {
+      console.log("Student Data running")
       // return is necessary to run the code
       return studentData.map((elem) => {
-        if (elem.year == year) { }
+        // if (elem.year == year) { }
         const outingInfo = elem.outinginfo[Object.keys(elem.outinginfo).length - 1];
         // use new date to convert string into date object, not only Date()
         const Status = elem.access ? "out" : "In"
+        console.log(year,elem.year)
         if (elem.year == year) {
+          console.log("running")
           return (
             <tr>
               <td>
@@ -114,7 +117,7 @@ const Admin = () => {
           setYear(2)
         }}>2nd Year</button>
         <button className="button button" onClick={() => {
-          setYear(4)
+          setYear(3)
         }}>3rd Year</button>
         <button className="button button" onClick={() => {
           setYear(4)
