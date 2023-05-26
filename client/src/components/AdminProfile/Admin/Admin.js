@@ -43,6 +43,7 @@ const Admin = () => {
       }, 1125)
     }, 5000);
   }, [])
+  console.log(studentData)
   const [load, setLoad] = useState(false)
 
   if (!load) return (
