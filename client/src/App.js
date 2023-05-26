@@ -17,27 +17,11 @@ import ScanConfirm from './components/HomePage/ScanConfirm/ScanConfirm';
 function App() {
 
   console.log("renderingi n app ", localStorage.getItem('sessionUser'))
-  const PushData=()=> {
-    try {
-      const res=fetch(`${API}/SignUp`, {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-type": "application/json"
-        }
-      })
-    }
-    catch (e) {
-      console.log(e)
-    }
-  }
+  
   return (
 
     <>
-      <button onClick={()=>{
-        PushData()
-      }}>PUSH</button>
-       {/* <Router>
+       <Router>
           <Routes>
             <Route path="/" element={<HomePage/>}></Route>
             <Route path="signup" element={<SignUp />}></Route>
@@ -48,7 +32,7 @@ function App() {
             <Route path="admin" element={<AdminRoute element={<Admin/>}/>} >  </Route>
             <Route path="QrGenerator" element={<AdminRoute element={<QrGenerator/>}/>} >  </Route>
           </Routes>
-        </Router> */}
+        </Router>
     
     </>
   );
