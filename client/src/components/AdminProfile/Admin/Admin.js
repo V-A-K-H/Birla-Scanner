@@ -41,7 +41,7 @@ const Admin = () => {
       setTimeout(() => {
         setLoad(true)
       }, 1125)
-    }, 5000);
+    }, 1000);
   }, [])
   console.log(studentData)
   const [load, setLoad] = useState(false)
