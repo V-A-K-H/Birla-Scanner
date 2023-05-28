@@ -74,7 +74,7 @@ const Admin = () => {
                     className="rounded-circle"
                   />
                   <div className="ms-3">
-                    <p className="fw-bold mb-1">Roy Lodu</p>
+                    <p className="fw-bold mb-1">{elem.name}</p>
                     <p className="text-muted mb-0">{elem.phonenum}</p>
                   </div>
                 </div>
