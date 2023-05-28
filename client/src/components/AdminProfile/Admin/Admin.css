@@ -9,6 +9,7 @@ body {
 
 .rounded-circle:hover{
 	margin-left:100px;
+	margin-right:10px;
 	-ms-transform: scale(1.5); 
   -webkit-transform: scale(1.5);
   transform: scale(3.5);
