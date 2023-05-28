@@ -68,7 +68,7 @@ const Admin = () => {
               <td>
                 <div className="d-flex align-items-center">
                   <img
-                    src="https://drive.google.com/file/d/1xUlHPSPutZu-219bIaDzDYL7DsqKyb0I/view?usp=share_link"
+                    src="https://drive.google.com/uc?id=1xUlHPSPutZu-219bIaDzDYL7DsqKyb0I"
                     alt=""
                     style={{ width: "45px", height: "45px" }}
                     className="rounded-circle"
