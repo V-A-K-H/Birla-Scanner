@@ -43,7 +43,7 @@ const Admin = () => {
       }, 1125)
     }, 1000);
   }, [])
-  console.log(studentData)
+  
   const [load, setLoad] = useState(false)
 
   if (!load) return (
@@ -62,7 +62,7 @@ const Admin = () => {
         const Status = elem.access ? "out" : "In"
         
         if (elem.year == year) {
-          console.log("running")
+          
           return (
             <tr>
               <td>
