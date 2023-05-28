@@ -70,7 +70,7 @@ const Admin = () => {
                   <img
                     src={elem.photolink}
                     alt=""
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "50px", height: "50px" }}
                     className="rounded-circle"
                   />
                   <div className="ms-3">
