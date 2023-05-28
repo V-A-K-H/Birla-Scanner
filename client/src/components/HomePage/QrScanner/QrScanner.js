@@ -10,6 +10,7 @@ const QrScanner = () => {
   const {purpose}=location.state?location.state: {purpose: null};
   const [access,setAccess]=useState(false)
   useEffect(()=> {
+    
     const FetchAccess=async ()=> {
       const result=await fetch(`${API}/StudentInfo/columns/access`,{
         mode: "cors",
@@ -32,7 +33,13 @@ const QrScanner = () => {
       setAccess(response[0].access)
 
     }
-    FetchAccess()
+    try {
+        FetchAccess()
+    }
+    catch (err) {
+       window.err(err)
+    }
+
   },[access])
 
   // useEffect(() => {
