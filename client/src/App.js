@@ -15,31 +15,12 @@ import Navbar from './components/MainComponents/Navbar/Navbar';
 import { UserRoute,AdminRoute } from './components/PrivateRoute';
 import ScanConfirm from './components/HomePage/ScanConfirm/ScanConfirm';
 function App() {
-  const FetchData=()=> {
-    try {
-      const result=fetch(`${API}/SignUp`,{
-        method:"POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-    }
-    catch (err) {
-      console.warn(err)
-    }
-  }
   console.log("renderingi n app ", localStorage.getItem('sessionUser'))
   
   return (
 
     <>
-        <button onClick={()=> {
-          FetchData()
-        }}>
-          PushData
-        </button>
-       {/* <Router>
+        <Router>
           <Routes>
             <Route path="/" element={<HomePage/>}></Route>
             <Route path="signup" element={<SignUp />}></Route>
@@ -50,7 +31,7 @@ function App() {
             <Route path="admin" element={<AdminRoute element={<Admin/>}/>} >  </Route>
             <Route path="QrGenerator" element={<AdminRoute element={<QrGenerator/>}/>} >  </Route>
           </Routes>
-        </Router> */}
+        </Router> 
     
     </>
   );
