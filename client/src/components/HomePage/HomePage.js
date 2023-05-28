@@ -80,7 +80,7 @@ const HomePage = () => {
                 <div className="flip-card-front">
                   <img
                     src={userData.photolink}
-                    alt="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                    alt=""
                     style={{ height: "300px", width: "300px" }}
                   />
                 </div>
