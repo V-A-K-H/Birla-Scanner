@@ -21,7 +21,7 @@ const HomePage = () => {
     console.log(localStorage.getItem('sessionUser'))
     try {
       setLoad(false)
-      const result = await fetch(`${API}/StudentInfo/columns/name phonenum year access`, {
+      const result = await fetch(`${API}/StudentInfo/columns/name phonenum year access photolink`, {
         method: "GET",
         mode: "cors",
         headers: {
