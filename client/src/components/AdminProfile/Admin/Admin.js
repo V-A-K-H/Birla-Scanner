@@ -92,11 +92,11 @@ const Admin = () => {
               <td>{outingInfo.purpose}</td>
               let exit = new Date()
               let exithours =new Date(outingInfo.exit).getHours()
-              if(exithours) >12{
-              exithours -= 12
+              if (exithours>12){
+                  exithours -= 12
               }
               if(exithours <=9){
-              exithours = `0${hours}`
+                exithours = `0${hours}`
               } 
               let exitmin = new Date(outingInfo.exit).getMinutes()
               if(exitmin <=9){
