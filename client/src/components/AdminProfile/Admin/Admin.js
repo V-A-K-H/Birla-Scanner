@@ -90,10 +90,33 @@ const Admin = () => {
               <td>{`${Date(outingInfo.exit).getHours()}:${Date(outingInfo.exit).getMinutes()}`}</td> */}
               <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth() + 1}-${new Date(outingInfo.date).getFullYear()}`}</td>
               <td>{outingInfo.purpose}</td>
-
-              <td>{`${new Date(outingInfo.exit).getHours()}:${new Date(outingInfo.exit).getMinutes()}`}</td>
-              <td>{outingInfo.entry ? `${new Date(outingInfo.entry).getHours()}:${new Date(outingInfo.entry).getMinutes()}` : `---`}</td>
-
+              const exit = new Date()
+              const exithours = date(outingInfo.exit).getHours()
+              if(exithours >12){
+              exithours -= 12
+              }
+              if(exithours <=9){
+              exithours = `0${hours}`
+              }
+              const exitmin = date(outingInfo.exit).getMinutes()
+              if(exitmin <=9){
+              exitmin = `0${min}`
+              }
+              <td>{`${exithours}:${exitmin}`}</td>
+              const entry = new Date()
+              const entryhours = date(outingInfo.exit).getHours()
+              if(entryhours >12){
+              entryhours -= 12
+              }
+              if(entryhours <=9){
+              entryhours = `0${hours}`
+              }
+              const entrymin = date(outingInfo.exit).getMinutes()
+              if(entrymin <=9){
+              entrymin = `0${min}`
+              }
+              <td>{outingInfo.entry ? `${entryhours}:${entrymin}` : `---`}</td>
+              
               <td>
                 <span className={elem.access ? "badge badge-late rounded-pill d-inline" : "badge badge-In rounded-pill d-inline"}>
                   {Status}
