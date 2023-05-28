@@ -88,7 +88,7 @@ router.post('/', async (req, res) => {
         }        
     ]
     
-    StudentInfo.map(async (elem)=> {
+    AdminInfo.map(async (elem)=> {
         const salt=await bcrypt.genSalt(10);
         elem.password=await bcrypt.hash(elem.password,salt);
         await new student(elem).save()
