@@ -53,14 +53,14 @@ const Admin = () => {
   )
   const TableRow = () => {
     if (studentData) {
-      console.log("Student Data running")
+      
       // return is necessary to run the code
       return studentData.map((elem) => {
         // if (elem.year == year) { }
         const outingInfo = elem.outinginfo[Object.keys(elem.outinginfo).length - 1];
         // use new date to convert string into date object, not only Date()
         const Status = elem.access ? "out" : "In"
-        console.log(year,elem.year)
+        
         if (elem.year == year) {
           console.log("running")
           return (
@@ -68,7 +68,7 @@ const Admin = () => {
               <td>
                 <div className="d-flex align-items-center">
                   <img
-                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                    src={elem.photolink}
                     alt=""
                     style={{ width: "45px", height: "45px" }}
                     className="rounded-circle"
