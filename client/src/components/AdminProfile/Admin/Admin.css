@@ -6,10 +6,9 @@ body {
   background-color: black;
   color: white;
 }
-.rounded-circle{
-margin-left:10px;
-}
+
 .rounded-circle:hover{
+	margin-left:20px;
 	-ms-transform: scale(1.5); 
   -webkit-transform: scale(1.5);
   transform: scale(3.5);
