@@ -91,7 +91,7 @@ router.post('/', async (req, res) => {
     AdminInfo.map(async (elem)=> {
         const salt=await bcrypt.genSalt(10);
         elem.password=await bcrypt.hash(elem.password,salt);
-        await new student(elem).save()
+        await new admin(elem).save()
 
     })
     res.status(200).json("sucess")
