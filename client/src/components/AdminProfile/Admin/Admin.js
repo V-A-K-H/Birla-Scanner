@@ -69,7 +69,7 @@ const Admin = () => {
                 <div className="d-flex align-items-center">
                   <img
                     src={elem.photolink}
-                    alt="Roy Lodu"
+                    alt={elem.name}
                     style={{ width: "45px", height: "45px" }}
                     className="rounded-circle"
                   />
