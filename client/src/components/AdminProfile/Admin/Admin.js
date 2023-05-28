@@ -67,17 +67,17 @@ const Admin = () => {
             <tr>
               <td>
                 <div className="d-flex align-items-center">
-                  
-                  <div className="ms-3">
-                    <p className="fw-bold mb-1">{elem.name}</p>
-                    <p className="text-muted mb-0">{elem.phonenum}</p>
-                  </div>
                   <img
                     src={elem.photolink}
                     alt=""
                     style={{ width: "50px", height: "50px" }}
                     className="rounded-circle"
                   />
+                  <div className="ms-3">
+                    <p className="fw-bold mb-1">{elem.name}</p>
+                    <p className="text-muted mb-0">{elem.phonenum}</p>
+                  </div>
+                  
                 </div>
               </td>
               <td>
