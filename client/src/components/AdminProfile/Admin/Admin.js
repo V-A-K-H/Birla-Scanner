@@ -62,7 +62,30 @@ const Admin = () => {
         const Status = elem.access ? "out" : "In"
         
         if (elem.year == year) {
-          
+            let exit = new Date()
+              let exithours =new Date(outingInfo.exit).getHours()
+              if (Number(exithours)>12){
+                  exithours -= 12
+              }
+              if(exithours <=9){
+                exithours = `0${hours}`
+              } 
+              let exitmin = new Date(outingInfo.exit).getMinutes()
+              if(exitmin <=9){
+              exitmin = `0${min}`
+              }
+              let entry = new Date()
+              let entryhours = new Date(outingInfo.exit).getHours()
+              if(entryhours >12){
+                entryhours -= 12
+              }
+              if(entryhours <=9){
+                entryhours = `0${hours}`
+              }
+              let entrymin = new Date(outingInfo.exit).getMinutes()
+              if(int(entrymin)   <=9){
+                entrymin = `0${min}`
+              }
           return (
             <tr>
               <td>
@@ -90,31 +113,8 @@ const Admin = () => {
               <td>{`${Date(outingInfo.exit).getHours()}:${Date(outingInfo.exit).getMinutes()}`}</td> */}
               <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth() + 1}-${new Date(outingInfo.date).getFullYear()}`}</td>
               <td>{outingInfo.purpose}</td>
-              let exit = new Date()
-              let exithours =new Date(outingInfo.exit).getHours()
-              if (exithours>12){
-                  exithours -= 12
-              }
-              if(exithours <=9){
-                exithours = `0${hours}`
-              } 
-              let exitmin = new Date(outingInfo.exit).getMinutes()
-              if(exitmin <=9){
-              exitmin = `0${min}`
-              }
+
               <td>{`${exithours}:${exitmin}`}</td>
-              let entry = new Date()
-              let entryhours = new Date(outingInfo.exit).getHours()
-              if(entryhours >12){
-                entryhours -= 12
-              }
-              if(entryhours <=9){
-                entryhours = `0${hours}`
-              }
-              let entrymin = new Date(outingInfo.exit).getMinutes()
-              if(entrymin <=9){
-                entrymin = `0${min}`
-              }
               <td>{outingInfo.entry ? `${entryhours}:${entrymin}` : `---`}</td>
               
               <td>
