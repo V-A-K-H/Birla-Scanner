@@ -75,14 +75,14 @@ const Admin = () => {
                         exitmin = `0${exitmin}`
                     }
                     let entry = new Date()
-                    let entryhours = new Date(outingInfo.exit).getHours()
+                    let entryhours = new Date(outingInfo.entry).getHours()
                     if (entryhours > 12) {
                         entryhours -= 12
                     }
                     if (entryhours <= 9) {
                         entryhours = `0${entryhours}`
                     }
-                    let entrymin = new Date(outingInfo.exit).getMinutes()
+                    let entrymin = new Date(outingInfo.entry).getMinutes()
                     if (entrymin <= 9) {
                         entrymin = `0${entrymin}`
                     }
