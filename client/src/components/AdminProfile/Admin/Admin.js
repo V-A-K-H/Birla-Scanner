@@ -68,13 +68,13 @@ const Admin = () => {
               <td>
                 <div className="d-flex align-items-center">
                   <img
-                    src="https://drive.google.com/uc?id=1xUlHPSPutZu-219bIaDzDYL7DsqKyb0I"
-                    alt=""
+                    src="https://drive.google.com/uc?export=view&id=12orR1VZ_dIS2B3p7dcAdfsI_8eUA3Evi"
+                    alt="Roy Lodu"
                     style={{ width: "45px", height: "45px" }}
                     className="rounded-circle"
                   />
                   <div className="ms-3">
-                    <p className="fw-bold mb-1">{elem.name}</p>
+                    <p className="fw-bold mb-1">Roy Lodu</p>
                     <p className="text-muted mb-0">{elem.phonenum}</p>
                   </div>
                 </div>
