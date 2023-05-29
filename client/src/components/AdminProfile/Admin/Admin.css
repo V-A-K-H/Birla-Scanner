@@ -6,12 +6,7 @@ body {
   background-color: black;
   color: white;
 }
-.rounded-circle:hover{
-  margin: auto;
-  width: 120px;
-  border: 3px solid #73AD21;
-  padding: 10px;
-}
+
 tr{
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
