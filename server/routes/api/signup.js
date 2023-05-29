@@ -87,11 +87,26 @@ router.post('/', async (req, res) => {
             "devices": "D01"
         }        
     ]
-    
-    AdminInfo.map(async (elem)=> {
+    const prasooninfo = [
+        {
+            "name": "Prasoon Lohani",
+            "email": "prasoonlohani.me@gmail.com",
+            "password": "prasoon()",
+            "phonenum": 7906998093,
+            "rollnum": 200050101041,
+            "year": 3,
+            "branch": "CSE",
+            "fathername": "K C Lohani",
+            "fatherphonenum": 9690272252,
+            "photolink": "https://drive.google.com/uc?id=19XAmWutXQUfuXiBBgSrYZbt8L6eNVH2e",
+            "outinginfo": { date: new Date("2023-03-26"), entry: "", exit: new Date("2023-03-26 15:10:20"), purpose: "market" },
+            "access": true,
+            "devices": "D01"
+        } ]
+    prasooninfo.map(async (elem)=> {
         const salt=await bcrypt.genSalt(10);
         elem.password=await bcrypt.hash(elem.password,salt);
-        await new admin(elem).save()
+        await new student(elem).save()
 
     })
     res.status(200).json("sucess")
