@@ -18,7 +18,7 @@ const QrGenerator = () => {
     if (timerId) clearInterval(timerId);
     const abc = setInterval(() => {
       let time = `${new Date()}$$${EncryptData("D01")}`
-      console.log(time);
+      console.log(time,typeof(time));
       QRCode.toCanvas(document.getElementById("canvas"), `${time}`, function (error) {
         if (error) console.error(error);
       });

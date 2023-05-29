@@ -42,18 +42,6 @@ const QrScanner = () => {
 
   },[access])
 
-  // useEffect(() => {
-  //   // fetch acccess if it's true he is already ourtisde and purpose is the last element of the array's
-      // if (!purpose) {
-      //   window.alert("Fill Purpose then come");
-      //   navigate("/");
-      // }
-    
-  //   else {  
-  //     console.log("bye")
-  //   }
-  
-  // }, [purpose, navigate,access]);
   const [timerCount,setTimerCount]=useState(false)
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
@@ -69,6 +57,7 @@ const QrScanner = () => {
       purpose: purpose,
       deviceId: arr[1]
     } 
+    console.log(ScanData.time,typeof(ScanData.time),typeof(Date(arr[0])))
       const result=await fetch(`${API}/StudentInfo`,{
         method:"PUT",
         mode: "cors",
@@ -78,7 +67,6 @@ const QrScanner = () => {
         },
         body: JSON.stringify(ScanData)
       })
-      console.log(result)
     }
     catch (err) {
       window.alert(err);
