@@ -117,8 +117,8 @@ const Admin = () => {
                             <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth() + 1}-${new Date(outingInfo.date).getFullYear()}`}</td>
                             <td>{outingInfo.purpose}</td>
 
-                            <td>{`${exithours}:${exitmin}${exitsession}`}</td>
-                            <td>{outingInfo.entry ? `${entryhours}:${entrymin}${entrysession}` : `---`}</td>
+                            <td>{`${exithours}:${exitmin} ${exitsession}`}</td>
+                            <td>{outingInfo.entry ? `${entryhours}:${entrymin} ${entrysession}` : `---`}</td>
 
                             <td>
                                 <span className={elem.access ? "badge badge-late rounded-pill d-inline" : "badge badge-In rounded-pill d-inline"}>
