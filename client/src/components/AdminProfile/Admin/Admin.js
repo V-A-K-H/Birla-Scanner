@@ -60,12 +60,13 @@ const Admin = () => {
                 const outingInfo = elem.outinginfo[Object.keys(elem.outinginfo).length - 1];
                 // use new date to convert string into date object, not only Date()
                 const Status = elem.access ? "out" : "In"
-
+                let exitsession = "AM"
                 if (elem.year == year) {
                     let exit = new Date()
                     let exithours = new Date(outingInfo.exit).getHours()
                     if (exithours > 12) {
                         exithours -= 12
+                        exitsession = "PM"
                     }
                     if (exithours <= 9) {
                         exithours = `0${exithours}`
@@ -75,9 +76,11 @@ const Admin = () => {
                         exitmin = `0${exitmin}`
                     }
                     let entry = new Date()
+                    let entrysession = "AM"
                     let entryhours = new Date(outingInfo.entry).getHours()
                     if (entryhours > 12) {
                         entryhours -= 12
+                        entrysession = "PM"
                     }
                     if (entryhours <= 9) {
                         entryhours = `0${entryhours}`
@@ -114,8 +117,8 @@ const Admin = () => {
                             <td>{`${new Date(outingInfo.date).getDate()}-${new Date(outingInfo.date).getMonth() + 1}-${new Date(outingInfo.date).getFullYear()}`}</td>
                             <td>{outingInfo.purpose}</td>
 
-                            <td>{`${exithours}:${exitmin}`}</td>
-                            <td>{outingInfo.entry ? `${entryhours}:${entrymin}` : `---`}</td>
+                            <td>{`${exithours}:${exitmin}${exitsession}`}</td>
+                            <td>{outingInfo.entry ? `${entryhours}:${entrymin}${entrysession}` : `---`}</td>
 
                             <td>
                                 <span className={elem.access ? "badge badge-late rounded-pill d-inline" : "badge badge-In rounded-pill d-inline"}>
