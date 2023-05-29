@@ -6,7 +6,7 @@ body {
   background-color: black;
   color: white;
 }
-.rounded-circle{
+.rounded-circle:hover{
   margin: auto;
   width: 60%;
   border: 3px solid #73AD21;
