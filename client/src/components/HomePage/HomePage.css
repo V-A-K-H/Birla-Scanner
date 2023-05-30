@@ -15,7 +15,6 @@ footer {
   bottom: 0px;
   right:0px;
   left: 0px;
-  top-margin: 20%;
 }
 
 .footer-logo {
@@ -57,21 +56,7 @@ footer {
   margin: 10px 4px;
 }
 
-.fa-instagram {
-  background-color:#833ab4;
-}
 
-.fa-twitter {
-  background-color: #55acee;
-}
-
-.fa-facebook {
-  background-color: #3b5998;
-}
-
-.fa-google-plus {
-  background-color: #d34836;
-}
 
 .fa {
   width: 50px;
