@@ -104,13 +104,14 @@ const HomePage = () => {
         <footer className="footer">
 	<div className="row full-width align-spaced">
     <div className="large-2 medium-3 hide-for-small-only columns">
-      <h4 className="footer-heading">Categories</h4>
+    <hr>
+      <h4 className="footer-heading">Developers</h4>
     </div>
     <div className="large-5 medium-12 small-12 columns social-container">
-      <a href="#"><i className="fa fa-twitter social-icon" aria-hidden="true"></i></a>
-      <a href="#"><i className="fa fa-instagram social-icon" aria-hidden="true"></i></a>
-      <a href="#"><i className="fa fa-facebook social-icon" aria-hidden="true"></i></a>
-      <a href="#"><i className="fa fa-google-plus social-icon" aria-hidden="true"></i></a>
+      <a href="#"><img className="social-icon" aria-hidden="true"/></a>
+      <a href="#"><img className="social-icon" aria-hidden="true"/></a>
+      <a href="#"><img className="social-icon" aria-hidden="true"/></a>
+      <a href="#"><img className="social-icon" aria-hidden="true"/></a>
     </div>
   </div>
 </footer>
