@@ -31,7 +31,7 @@ router.put('/', authenticate, async (req, res) => {
         }
         else {
             console.log("access is false")
-            FullstudentProfile.outinginfo.push({ date: time, entry: "", exit:time, purpose: purpose })
+            FullstudentProfile.outinginfo.push({ date: new Date(time), entry: "", exit:new Date(time), purpose: purpose })
             FullstudentProfile.access=true
             console.log(FullstudentProfile)
             await new student(FullstudentProfile).save();
