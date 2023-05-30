@@ -53,11 +53,11 @@ const QrScanner = () => {
     console.log(arr)
     try {
     const ScanData={
-      time:new Date(arr[0]),
+      time:arr[0],
       purpose: purpose,
       deviceId: arr[1]
     } 
-    console.log(ScanData.time,typeof(ScanData.time),typeof(Date(arr[0])))
+    console.log(ScanData.time,typeof(ScanData.time),typeof(arr[0]))
       const result=await fetch(`${API}/StudentInfo`,{
         method:"PUT",
         mode: "cors",
@@ -76,7 +76,8 @@ const QrScanner = () => {
   const handleScan = async (scanData) => {
  
     if (scanData && scanData !== "") {
-      if ((((new Date().getTime())-(new Date(scanData.text.split("$$")[0]).getTime())))>=7000) {
+      if ((((new Date().getTime())-(new Date(scanData.text.split("$$")[0]).getTime())))>=7000) 
+      {
         console.log((((new Date().getTime()/1000)-(new Date(scanData.text.split("$$")[0]).getTime()))/1000)<=7)
         window.alert("Invalid / Old Qr ")
         return window.location.reload(false)
