@@ -108,9 +108,9 @@ const HomePage = () => {
       <h4 className="footer-heading">Developers</h4>
     </div>
     <div className="large-5 medium-12 small-12 columns social-container">
-      <a href="#"><img className="social-icon" src="https://drive.google.com/uc?id=1PtrkJYwYb0StZMDte8xgE-UUN6sIi5Zi" aria-hidden="true"/></a>
-      <a href="#"><img className="social-icon" src="https://drive.google.com/uc?id=1hGmBe8YlXE5OXoFCAlU9R5D_KJ4OOjZa" aria-hidden="true"/></a>
-      <a href="#"><img className="social-icon" src="https://drive.google.com/uc?id=12orR1VZ_dIS2B3p7dcAdfsI_8eUA3Evi" aria-hidden="true"/></a>
+      <a href="#"><img className="fa social-icon" src="https://drive.google.com/uc?id=1PtrkJYwYb0StZMDte8xgE-UUN6sIi5Zi" aria-hidden="true"/></a>
+      <a href="#"><img className="fa social-icon" src="https://drive.google.com/uc?id=1hGmBe8YlXE5OXoFCAlU9R5D_KJ4OOjZa" aria-hidden="true"/></a>
+      <a href="#"><img className="fa social-icon" src="https://drive.google.com/uc?id=12orR1VZ_dIS2B3p7dcAdfsI_8eUA3Evi" aria-hidden="true"/></a>
       <a href="#"><img className="social-icon" src="https://drive.google.com/uc?id=1xUlHPSPutZu-219bIaDzDYL7DsqKyb0I" aria-hidden="true"/></a>
     </div>
   </div>
