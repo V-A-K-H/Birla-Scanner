@@ -103,26 +103,8 @@ const HomePage = () => {
         </div>
         <footer className="footer">
 	<div className="row full-width align-spaced">
-    <div className="large-3 medium-6 small-12 columns"><img className="footer-logo" src="http://shopify.irishdealsdaily.com/images/logos/p-logo.png"/></div>
     <div className="large-2 medium-3 hide-for-small-only columns">
       <h4 className="footer-heading">Categories</h4>
-      <ul className="footer-links">
-            <li><a href="#">What I Do</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">FAQ's</a></li>
-        </ul>
-    </div>
-    <div className="large-2 medium-3 hide-for-small-only columns">
-      <h4 className="footer-heading">Store</h4>
-      <ul className="footer-links">
-            <li><a href="#">What I Do</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">FAQ's</a></li>
-        </ul>
     </div>
     <div className="large-5 medium-12 small-12 columns social-container">
       <a href="#"><i className="fa fa-twitter social-icon" aria-hidden="true"></i></a>
