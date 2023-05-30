@@ -215,8 +215,8 @@ footer {
   font-weight: 700;
   transition: 0.2s;
   transition-property: box-shadow;
+  margin-top: 25%;
   margin-top: 20%;
-
   width: 320%;
 }
 
