@@ -69,10 +69,10 @@ const Admin = () => {
                         exitsession = "PM"
                     }
                     if(exithours==12 && session == "AM") {
-                    session = "PM"
+                    exitsession = "PM"
                     }
                     if(exithours==12 && session == "PM") {
-                    session = "AM"
+                    exitsession = "AM"
                     }
                     if (exithours <= 9) {
                         exithours = `0${exithours}`
@@ -89,10 +89,10 @@ const Admin = () => {
                         entrysession = "PM"
                     }
                     if(entryhours==12 && session == "PM") {
-                    session = "AM"
+                    entrysession = "AM"
                     }
                     if(entryhours==12 && session == "AM") {
-                    session = "PM"
+                    entrysession = "PM"
                     }
                     if (entryhours <= 9) {
                         entryhours = `0${entryhours}`
