@@ -62,7 +62,6 @@ const Admin = () => {
                 const Status = elem.access ? "out" : "In"
                 let exitsession = "AM"
                 if (elem.year == year) {
-                    let exit = new Date()
                     let exithours = new Date(outingInfo.exit).getHours()
                     if (exithours > 12) {
                         exithours -= 12
@@ -81,7 +80,6 @@ const Admin = () => {
                     if (exitmin <= 9) {
                         exitmin = `0${exitmin}`
                     }
-                    let entry = new Date()
                     let entrysession = "AM"
                     let entryhours = new Date(outingInfo.entry).getHours()
                     if (entryhours > 12) {
