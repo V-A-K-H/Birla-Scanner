@@ -112,7 +112,7 @@ const HomePage = () => {
             <li><a href="#">Events</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">FAQ's</a></li>
-        <ul>
+        </ul>
     </div>
     <div className="large-2 medium-3 hide-for-small-only columns">
       <h4 className="footer-heading">Store</h4>
@@ -122,7 +122,7 @@ const HomePage = () => {
             <li><a href="#">Events</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">FAQ's</a></li>
-        <ul>
+        </ul>
     </div>
     <div className="large-5 medium-12 small-12 columns social-container">
       <a href="#"><i className="fa fa-twitter social-icon" aria-hidden="true"></i></a>
