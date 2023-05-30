@@ -12,6 +12,7 @@ footer {
   background-size: 100% 3px;
   background-position: 0% 0%, 0% 100%;
   background-repeat: no-repeat;
+  position: absolute;
   bottom: 0px;
   right:0px;
   left: 0px;
@@ -216,7 +217,7 @@ footer {
   transition: 0.2s;
   transition-property: box-shadow;
   margin-top: 25%;
-  margin-bottom: 20%;
+  margin-bottom: 35%;
   width: 330%;
 }
 
