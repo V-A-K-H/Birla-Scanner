@@ -21,7 +21,7 @@ router.put('/', authenticate, async (req, res) => {
     try {
         if (FullstudentProfile.access) {
             const outinginfoLength=Object.values(FullstudentProfile.outinginfo).length
-            FullstudentProfile.outinginfo[outinginfoLength-1].entry=new Date(time) ;
+            FullstudentProfile.outinginfo[outinginfoLength-1].entry=time ;
             FullstudentProfile.access = false;
             await new student(FullstudentProfile).save();
             res.status(200)
@@ -32,7 +32,7 @@ router.put('/', authenticate, async (req, res) => {
         else {
             if(purpose){
             console.log("access is false")
-            FullstudentProfile.outinginfo.push({ date: new Date(time), entry: "", exit:new Date(time), purpose: purpose })
+            FullstudentProfile.outinginfo.push({ date: time, entry: "", exit:time, purpose: purpose })
             FullstudentProfile.access=true
             console.log(FullstudentProfile)
             await new student(FullstudentProfile).save();
