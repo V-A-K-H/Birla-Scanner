@@ -101,12 +101,12 @@ const HomePage = () => {
             <button disabled={purpose ? false : true} style={{ backgroundColor: purpose ? "#088395" : "black" }} className="buttonqr"> Open QR Scanner</button>
           </Link>
         </div>
-        <footer class="footer">
-	<div class="row full-width align-spaced">
-    <div class="large-3 medium-6 small-12 columns"><img class="footer-logo" src="http://shopify.irishdealsdaily.com/images/logos/p-logo.png"></div>
-    <div class="large-2 medium-3 hide-for-small-only columns">
-      <h4 class="footer-heading">Categories</h4>
-      <ul class="footer-links">
+        <footer className="footer">
+	<div className="row full-width align-spaced">
+    <div className="large-3 medium-6 small-12 columns"><img className="footer-logo" src="http://shopify.irishdealsdaily.com/images/logos/p-logo.png"/></div>
+    <div className="large-2 medium-3 hide-for-small-only columns">
+      <h4 className="footer-heading">Categories</h4>
+      <ul className="footer-links">
             <li><a href="#">What I Do</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Events</a></li>
@@ -114,9 +114,9 @@ const HomePage = () => {
             <li><a href="#">FAQ's</a></li>
         <ul>
     </div>
-    <div class="large-2 medium-3 hide-for-small-only columns">
-      <h4 class="footer-heading">Store</h4>
-      <ul class="footer-links">
+    <div className="large-2 medium-3 hide-for-small-only columns">
+      <h4 className="footer-heading">Store</h4>
+      <ul className="footer-links">
             <li><a href="#">What I Do</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Events</a></li>
@@ -124,11 +124,11 @@ const HomePage = () => {
             <li><a href="#">FAQ's</a></li>
         <ul>
     </div>
-    <div class="large-5 medium-12 small-12 columns social-container">
-      <a href="#"><i class="fa fa-twitter social-icon" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-instagram social-icon" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-facebook social-icon" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-google-plus social-icon" aria-hidden="true"></i></a>
+    <div className="large-5 medium-12 small-12 columns social-container">
+      <a href="#"><i className="fa fa-twitter social-icon" aria-hidden="true"></i></a>
+      <a href="#"><i className="fa fa-instagram social-icon" aria-hidden="true"></i></a>
+      <a href="#"><i className="fa fa-facebook social-icon" aria-hidden="true"></i></a>
+      <a href="#"><i className="fa fa-google-plus social-icon" aria-hidden="true"></i></a>
     </div>
   </div>
 </footer>
