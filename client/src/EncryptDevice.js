@@ -3,13 +3,10 @@ import CryptoJS from 'crypto-js';
 import { SecretPass } from './config';
 
 export const EncryptData = (Indata) => {
-    console.log(SecretPass,process.env)
-    console.log(Indata)
     const data = CryptoJS.AES.encrypt(
         JSON.stringify(Indata),
         SecretPass
     ).toString();
-    console.log(data)
     return (data)
         
     
