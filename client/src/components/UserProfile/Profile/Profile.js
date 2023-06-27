@@ -48,7 +48,7 @@ const Profile = () => {
   //   console.log(name)
   // }
   return (
-    <body>
+    <body className="profile-body">
 
       {/* <div className="collapse" id="navbarToggleExternalContent" >
         <div className="p-4">
@@ -82,25 +82,30 @@ const Profile = () => {
           <img
             src="https://em-content.zobj.net/source/noto-emoji-animations/344/smiling-face-with-smiling-eyes_1f60a.gif"
             alt="Profile Photo"
-            style={{ height: "300px", width: "300px" }}
+            style={{ height: "250px", width: "250px" }}
           />
         </div>
         <div>
+        <h4>Name</h4>
           <input type="text" className="textbox" placeholder={userData.name?userData.name:"mera naam"} readOnly />
-  
+          <h4>Roll Number</h4>
           <input type="text" className="textbox" placeholder={userData.rollnum?userData.rollnum:"Roll Number"} readOnly />
+          <h4>Father Name</h4>
           <input
             type="text"
             className="textbox"
             placeholder={userData.fathername?userData.fathername:"Father Name"}
             readOnly
           />
+          <h4>Father Mobile Number</h4>
           <input type="text" className="textbox" placeholder={userData.fatherphonenum?userData.fatherphonenum:"Father Phone Number"} readOnly />
+          
+          <h4>Branch</h4>
           <input type="text" className="textbox" placeholder={userData.branch?userData.branch:"branch"} readOnly />
-
+          <h4>Year</h4>
           <input type="text" className="textbox" placeholder={userData.year?userData.year:"Year"} readOnly />
-
-          <input type="text" className="textbox" placeholder="Alternate Phone Number" readOnly />
+          <h4>Alternate Phone Number</h4>
+          <input type="text" className="textbox" placeholder="N/a" readOnly />
         </div>
       </div>
     </body>
