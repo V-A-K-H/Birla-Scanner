@@ -46,7 +46,10 @@
   padding: 10px;
   font-size: 16px;
   color: white;
-
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   background-color: #202020;
   border: 2px solid white;
   width: 80%;
@@ -112,6 +115,12 @@
   transition-property: box-shadow;
   margin-top: 25%;
   width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .buttonqr {
