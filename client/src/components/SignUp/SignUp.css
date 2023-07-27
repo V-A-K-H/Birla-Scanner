@@ -1,6 +1,6 @@
 
 .mainsignup{
-    background-image: url('https://drive.google.com/uc?id=1d5nLFLuZ5qMuvEGrhRas13wEN8K7wUA_');
+    background-image: url('https://drive.google.com/uc?id=1UBk_pFOTEHOxT1Jhcl3qDlEoH6WzqbfJ');
     background-size: cover;
      min-height: 100vh;
     padding-left: 30%;
@@ -89,13 +89,13 @@
     --mdb-nav-pills-link-color: white;
   }
   .button3:hover {
-    background-color: #0B2447;
+    background-color: #0047ab;
     color: white;
   }
 
   @media only screen and (max-width: 550px) {
     .mainsignup{
-      background-image: url('https://drive.google.com/uc?id=1uZCoysIk_wxU40nehPA1Qo0D34zOaWvE');
+      background-image: url('https://drive.google.com/uc?id=1EFZP7RISSSpLM9tzro6ugbJz4t2PGrRu');
       object-position: center;
         padding-left: 3%;
         padding-top: 35%;
