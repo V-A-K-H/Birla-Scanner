@@ -1,12 +1,11 @@
 
 .mainsignup{
-    background-image: linear-gradient(to bottom , purple , blue);
+    background-image: url('https://drive.google.com/uc?id=1d5nLFLuZ5qMuvEGrhRas13wEN8K7wUA_');
     background-size: cover;
      min-height: 100vh;
     padding-left: 30%;
     padding-right:30%;
     padding-top: 8%;
-     padding-bottom: 8%;
     display: flex;
     object-position: center; 
 }
@@ -16,10 +15,12 @@
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 0.4em;
-    background-color: #171717;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
     transition: .4s ease-in-out;
     width: 600px;
+    height: fit-content;
+    padding-bottom: 40px;
   }
   .form:hover {
     transform: scale(1.05);
@@ -28,10 +29,10 @@
   
   #heading {
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1em;
     color: rgb(255, 255, 255);
     font-size: 1.5em;
-    background-color: #171717;
+    background-color: rgba(0, 0, 0, 0);
   }
   
   .field {
@@ -44,8 +45,9 @@
     border: none;
     outline: none;
     color: white;
-    background-color: #171717;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    background-color: rgba(0, 0, 0, 0);
+    
+    border-bottom:#d3d3d3;
   }
   
   .input-icon {
@@ -58,10 +60,7 @@
   .input-icon path{
     height: 1.3em;
     width: 1.3em;
-  }
-
-
-  
+  }  
   .input-field {
     background: none;
     border: none;
@@ -70,37 +69,15 @@
     color: #d3d3d3;
     font-size: medium;
   }
-  
-  
 
-  
   .button3 {
     margin-top: 20px;
-    margin-bottom: 3em;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     padding: 0.5em;
     border-radius: 25px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: #009FBD;
+    background-color: #ffffff;
     color: black;
   }
   .nav-pills .nav-link.active{
@@ -108,19 +85,20 @@
     --mdb-nav-pills-link-active-color: black;
   }
   .nav-pills .nav-link {
-    --mdb-nav-pills-link-hover-bg: #252525;
+    --mdb-nav-pills-link-hover-bg: rgba(0,0,0,0.3);
     --mdb-nav-pills-link-color: white;
   }
   .button3:hover {
-    background-color: blue;
+    background-color: #0B2447;
     color: white;
   }
 
   @media only screen and (max-width: 550px) {
     .mainsignup{
+      background-image: url('https://drive.google.com/uc?id=1uZCoysIk_wxU40nehPA1Qo0D34zOaWvE');
       object-position: center;
         padding-left: 3%;
-        padding-top: 25%;
+        padding-top: 35%;
         padding-bottom: 40%;
         padding-right: 3%;
   }
