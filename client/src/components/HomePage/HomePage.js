@@ -1,79 +1,79 @@
 import { React, useState, useEffect } from "react";
 import "./HomePage.css";
-import { Link, NavLink, Navigate, redirect, useNavigate } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Navigate,
+  redirect,
+  useNavigate,
+} from "react-router-dom";
 import { API } from "../../config";
 import Loader from "../MainComponents/Loader/Loader";
 import SignUp from "../SignUp/SignUp";
 import Navbar from "../MainComponents/Navbar/Navbar";
 import QrGenerator from "../AdminProfile/Admin/QrGenerator";
 import { AdminRoute } from "../PrivateRoute";
+
 const HomePage = () => {
-  let whoUse = localStorage.getItem('Auth')
-  const navigate = useNavigate()
+  let whoUse = localStorage.getItem("Auth");
+  const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
-  const [purpose, setPurpose] = useState()
+  const [purpose, setPurpose] = useState();
   const [load, setLoad] = useState(false);
   let admin = false;
-  const FlipCard = (e) => {
-    e.classList.toggle("flip");
-  };
   const fetchData = async () => {
-    console.log(localStorage.getItem('sessionUser'))
+    console.log(localStorage.getItem("sessionUser"));
     try {
-      setLoad(false)
-      const result = await fetch(`${API}/StudentInfo/columns/name phonenum year access photolink`, {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": localStorage.getItem('sessionUser')
+      setLoad(false);
+      const result = await fetch(
+        `${API}/StudentInfo/columns/name phonenum year access photolink`,
+        {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": localStorage.getItem("sessionUser"),
+          },
         }
-      })
-      const response = await result.json()
-      console.log(response)
+      );
+      const response = await result.json();
+      console.log(response);
 
-      setUserData(response[0])
+      setUserData(response[0]);
+    } catch (err) {
+      console.log(err);
+      redirect("/signup");
     }
-    catch (err) {
-      console.log(err)
-      redirect('/signup')
-
-    }
-    setLoad(true)
-  }
-  console.log(whoUse)
+    setLoad(true);
+  };
+  console.log(whoUse);
 
   useEffect(() => {
-    whoUse = localStorage.getItem('Auth')
+    whoUse = localStorage.getItem("Auth");
     setTimeout(() => {
-      fetchData()
-      setLoad(true)
-    }, 1125)
-  }, [whoUse])
+      fetchData();
+      setLoad(true);
+    }, 1125);
+  }, [whoUse]);
 
   if (whoUse == "admin") {
-    return (
-      <AdminRoute element={<QrGenerator />} />
-    )
+    return <AdminRoute element={<QrGenerator />} />;
   }
-  if (whoUse == null)
+  if (whoUse == null) return navigate("/signup");
+  if (!load || !userData)
     return (
-      navigate('/signup')
-    )
-  if (!load || !userData) return (
-    <>
-      <Loader />
-
-    </>
-  )
+      <>
+        <Loader />
+      </>
+    );
   if (userData.access) {
-      navigate('/qrscanner')
+    navigate("/qrscanner");
   }
- return (
+  return (
     <>
       <body className="homebody">
         <Navbar />
-        <div className="container">
+        <div className="container0">
           <div className="profile">
             <div className="flip-card">
               <div className="flip-card-inner">
@@ -96,29 +96,34 @@ const HomePage = () => {
               setPurpose(e.target.value);
             }}
           />
-          <Link to="qrscanner" state={{ purpose: purpose }}>
+          
             <button
               disabled={purpose ? false : true}
-              style={{ backgroundColor: purpose ? "blue" : "black" }}
+              style={{ backgroundColor: purpose ? "#0B2447" : "black" }}
               className="buttonqr"
             >
+            <Link to="qrscanner" state={{ purpose: purpose }}>
               {" "}
               Open QR Scanner
+              </Link>
             </button>
-          </Link>
+          
         </div>
-        <div className="footer" style={{ marginTop: "70px" }}>
-          <div class="container">
+        <div className="footer" >
+          <div class="container1">
             <div className="footer-cta pt-5 pb-5">
               <div className="row">
                 <div className="col-xl-12 col-lg-12 mb-50">
                   <div className="footer-widget">
+                  <div className="companyinfo">
                   <div className="footer-logo">
+                  
                       <img
                         src="https://drive.google.com/uc?id=1Rtbcsaaf63qnF5GI1rVnbz6Wzk_HxOkQ"
                         className="img-fluid"
                         alt="logo"
                       />
+                      s
                     </div>
                     <div className="footer-text">
                       <p>
@@ -127,6 +132,7 @@ const HomePage = () => {
                         record of their in and out history for monitoring and
                         security purposes.
                       </p>
+                    </div>
                     </div>
                     <div className="footer-social-icon">
                       <span>Developers</span>
@@ -155,33 +161,7 @@ const HomePage = () => {
                         />
                       </a>
                     </div>
-                    
-                  </div>
-                </div>
-                <div
-                  class="col-xl-12 col-md-12 mb-30"
-                  style={{ marginTop: "50px" }}
-                >
-                  <div class="single-cta">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div class="cta-text">
-                      <h4>
-                        Find us
-                        <br />
-                        <h5>B3 Top Floor BIAS Bhimtal</h5>
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-                {/* <div className="col-xl-4 col-md-4 mb-30">
-                  <div className="single-cta">
-                    <i className="fas fa-phone"></i>
-                    <div className="cta-text">
-                      <h4>Call us</h4>
-                      <span></span>
-                    </div>
-                  </div>
-                </div> */}
+                    <div className="info">
                 <div className="col-xl-6 col-md-6 mb-30">
                   <div className="single-cta">
                     <i className="far fa-envelope-open"></i>
@@ -194,11 +174,27 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
+                <div class="col-xl-6 col-md-6 mb-30">
+                  <div class="single-cta">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="cta-text">
+                      <h4>
+                        Find us
+                        <br />
+                        <h5>B3 Top Floor BIAS Bhimtal</h5>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                  </div>
+                </div>
+                
+                </div>
               </div>
             </div>
           </div>
           <div className="copyright-area">
-            <div className="container">
+            <div className="container3">
               <div className="row">
                 <div className="col-xl-12 col-lg-12 text-center text-lg-left">
                   <div className="copyright-text">
