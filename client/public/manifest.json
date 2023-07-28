@@ -1,6 +1,6 @@
 {
   "short_name": "Dwarpal",
-  "name": "Welcome to Dwarpal",
+  "name": "Dwarpal",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +8,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "Logo1.png",
+      "src": "blogo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "Logo1.png",
+      "src": "blogo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#0B2447",
   "background_color": "#ffffff"
 }
