@@ -4,16 +4,61 @@
   font-family: Calibri, sans-serif;
   background-color: #0B2447;
 }
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+.container0 {
+  max-width: 100%;
+  background-color: rgba(255,255,255,0.2);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin:20px;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
-
+.footer-social-icon{
+  max-width: 100%;
+  background-color: rgba(255,255,255,0.2);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin:10px;
+  padding: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.info{
+  max-width: 100%;
+  background-color: rgba(255,255,255,0.2);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin:10px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.companyinfo{
+  max-width: 100%;
+  background-color: rgba(255,255,255,0.2);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin:10px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
 .navbar {
   background-color: #252525;
 }
@@ -50,7 +95,7 @@
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  background-color: #202020;
+  background-color: #0B2447;
   border: 2px solid white;
   width: 80%;
   height: 50px;
@@ -104,16 +149,19 @@
 .flip-card-front {
   z-index: 1;
 }
-
+a{
+  color: white;
+}
 .buttonqr {
   padding: 10px 20px;
   border: none;
   font-size: 20px;
-  color: #fff;
+  color: white;
   font-weight: 700;
   transition: 0.2s;
   transition-property: box-shadow;
-  margin-top: 25%;
+  margin-top: 10%;
+  margin-bottom: 5%;
   width: 100%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -121,10 +169,6 @@
   border-bottom-right-radius: 30px;
   padding-left: 2px;
   padding-right: 2px;
-}
-
-.buttonqr {
-  background: rgb(0, 140, 255);
 }
 
 
@@ -167,7 +211,7 @@ font-weight: 600;
 margin-bottom: 2px;
 }
 .cta-text span {
-color: #757575;
+color: white;
 font-size: 15px;
 }
 .footer-content {
@@ -191,7 +235,7 @@ margin-bottom: 30px;
 .footer-text p {
 margin-bottom: 14px;
 font-size: 14px;
-    color: #7e7e7e;
+    color: white;
 line-height: 28px;
 }
 .footer-social-icon span {
