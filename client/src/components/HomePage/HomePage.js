@@ -119,11 +119,15 @@ const HomePage = () => {
                   <div className="footer-logo">
                   
                       <img
-                        src="https://drive.google.com/uc?id=1Rtbcsaaf63qnF5GI1rVnbz6Wzk_HxOkQ"
+                        src="https://drive.google.com/uc?id=1k9dYyjsqDekK0owqjR3Hpj0ok3UrrNuk"
                         className="img-fluid"
                         alt="logo"
                       />
-                      s
+                      <img
+                        src="https://drive.google.com/uc?id=1VQm_fOAUPY-TQDLLCVVVbuM2db3fLlq8"
+                        className="img-fluid2"
+                        alt="logo"
+                      />
                     </div>
                     <div className="footer-text">
                       <p>
@@ -136,25 +140,25 @@ const HomePage = () => {
                     </div>
                     <div className="footer-social-icon">
                       <span>Developers</span>
-                      <a href="#">
+                      <a href="https://www.linkedin.com/in/aryan-raj7">
                         <img
                           className="dev-photo"
                           src="https://drive.google.com/uc?id=12orR1VZ_dIS2B3p7dcAdfsI_8eUA3Evi"
                         />
                       </a>
-                      <a href="#">
+                      <a href="https://www.linkedin.com/in/harshit-roy">
                         <img
                           className="dev-photo"
                           src="https://drive.google.com/uc?id=1xUlHPSPutZu-219bIaDzDYL7DsqKyb0I"
                         />
                       </a>
-                      <a href="#">
+                      <a href="https://www.linkedin.com/in/kritik-srivastava">
                         <img
                           className="dev-photo"
                           src="https://drive.google.com/uc?id=1PtrkJYwYb0StZMDte8xgE-UUN6sIi5Zi"
                         />
                       </a>
-                      <a href="#">
+                      <a href="https://www.linkedin.com/in/vivekbhatt3011">
                         <img
                           className="dev-photo"
                           src="https://drive.google.com/uc?id=1hGmBe8YlXE5OXoFCAlU9R5D_KJ4OOjZa"
