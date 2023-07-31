@@ -77,19 +77,26 @@ const Profile = () => {
           </button>
         </div>
       </nav> */}
-      <div className="container">
+      <div className="containerpro">
+      <div className="photopro">
         <div className="profile">
           <img
-            src="https://em-content.zobj.net/source/noto-emoji-animations/344/smiling-face-with-smiling-eyes_1f60a.gif"
-            alt="Profile Photo"
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+            alt="photo"
             style={{ height: "250px", width: "250px" }}
           />
         </div>
-        <div>
-        <h4>Name</h4>
+        </div>
+        <div className="informationpro">
+          <div className="profileinfo">
+          <h4>Name</h4>
           <input type="text" className="textbox" placeholder={userData.name?userData.name:"mera naam"} readOnly />
+          </div>
+          <div className="profileinfo">
           <h4>Roll Number</h4>
           <input type="text" className="textbox" placeholder={userData.rollnum?userData.rollnum:"Roll Number"} readOnly />
+          </div>
+          <div className="profileinfo">
           <h4>Father Name</h4>
           <input
             type="text"
@@ -97,17 +104,126 @@ const Profile = () => {
             placeholder={userData.fathername?userData.fathername:"Father Name"}
             readOnly
           />
+          </div>
+          <div className="profileinfo">
           <h4>Father Mobile Number</h4>
           <input type="text" className="textbox" placeholder={userData.fatherphonenum?userData.fatherphonenum:"Father Phone Number"} readOnly />
-          
+          </div>
+          <div className="profileinfo">
           <h4>Branch</h4>
           <input type="text" className="textbox" placeholder={userData.branch?userData.branch:"branch"} readOnly />
+          </div>
+          <div className="profileinfo">
           <h4>Year</h4>
           <input type="text" className="textbox" placeholder={userData.year?userData.year:"Year"} readOnly />
+          </div>
+          <div className="profileinfo">
           <h4>Alternate Phone Number</h4>
           <input type="text" className="textbox" placeholder="N/a" readOnly />
+          </div>
         </div>
       </div>
+
+      <div className="footer" >
+          <div class="container1">
+            <div className="footer-cta pt-5 pb-5">
+              <div className="row">
+                <div className="col-xl-12 col-lg-12 mb-50">
+                  <div className="footer-widget">
+                  <div className="companyinfo">
+                  <div className="footer-logo">
+                  
+                      <img
+                        src="https://drive.google.com/uc?id=1k9dYyjsqDekK0owqjR3Hpj0ok3UrrNuk"
+                        className="img-fluid"
+                        alt="logo"
+                      />
+                      <img
+                        src="https://drive.google.com/uc?id=1VQm_fOAUPY-TQDLLCVVVbuM2db3fLlq8"
+                        className="img-fluid2"
+                        alt="logo"
+                      />
+                    </div>
+                    <div className="footer-text">
+                      <p>
+                        The security system uses QR code scanning to track the
+                        entry and exit of students in college, maintaining a
+                        record of their in and out history for monitoring and
+                        security purposes.
+                      </p>
+                    </div>
+                    </div>
+                    <div className="footer-social-icon">
+                      <span>Developers</span>
+                      <a href="https://www.linkedin.com/in/aryan-raj7">
+                        <img
+                          className="dev-photo"
+                          src="https://drive.google.com/uc?id=12orR1VZ_dIS2B3p7dcAdfsI_8eUA3Evi"
+                        />
+                      </a>
+                      <a href="https://www.linkedin.com/in/harshit-roy">
+                        <img
+                          className="dev-photo"
+                          src="https://drive.google.com/uc?id=1xUlHPSPutZu-219bIaDzDYL7DsqKyb0I"
+                        />
+                      </a>
+                      <a href="https://www.linkedin.com/in/kritik-srivastava">
+                        <img
+                          className="dev-photo"
+                          src="https://drive.google.com/uc?id=1PtrkJYwYb0StZMDte8xgE-UUN6sIi5Zi"
+                        />
+                      </a>
+                      <a href="https://www.linkedin.com/in/vivekbhatt3011">
+                        <img
+                          className="dev-photo"
+                          src="https://drive.google.com/uc?id=1hGmBe8YlXE5OXoFCAlU9R5D_KJ4OOjZa"
+                        />
+                      </a>
+                    </div>
+                    <div className="info">
+                <div className="col-xl-6 col-md-6 mb-30">
+                  <div className="single-cta">
+                    <i className="far fa-envelope-open"></i>
+                    <div className="cta-text">
+                      <h4>
+                        Mail us
+                        <br />
+                        <h5>dwarpalsystem@gmail.com</h5>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-md-6 mb-30">
+                  <div class="single-cta">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="cta-text">
+                      <h4>
+                        Find us
+                        <br />
+                        <h5>B3 Top Floor BIAS Bhimtal</h5>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                  </div>
+                </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="copyright-area">
+            <div className="container3">
+              <div className="row">
+                <div className="col-xl-12 col-lg-12 text-center text-lg-left">
+                  <div className="copyright-text">
+                    <p>Copyright &copy; 2023, All Right Reserved by Dwarpal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </body>
   );
 };
