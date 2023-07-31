@@ -10,7 +10,7 @@ const Profile = () => {
   const [load, setLoad] = useState(false);
   const fetchData = async () => {
     try {
-      const result = await fetch(`${API}/StudentInfo/columns/name rollnum fathername fatherphonenum branch year`, {
+      const result = await fetch(`${API}/StudentInfo/columns/name rollnum fathername fatherphonenum branch year photolink`, {
         method: "GET",
         mode: "cors",
         headers: {
@@ -81,7 +81,7 @@ const Profile = () => {
       <div className="photopro">
         <div className="profile">
           <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+            src={userData.photolink?userData.photolink:"photo"}
             alt="photo"
             style={{ height: "250px", width: "250px" }}
           />
@@ -90,7 +90,7 @@ const Profile = () => {
         <div className="informationpro">
           <div className="profileinfo">
           <h4>Name</h4>
-          <input type="text" className="textbox" placeholder={userData.name?userData.name:"mera naam"} readOnly />
+          <input type="text" className="textbox" placeholder={userData.name?userData.name:"Name"} readOnly />
           </div>
           <div className="profileinfo">
           <h4>Roll Number</h4>
