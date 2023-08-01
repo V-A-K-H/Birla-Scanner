@@ -9,13 +9,13 @@ const Navbar = () => {
             <>
                 <div className="collapse" id="navbarToggleExternalContent" >
                       <div className="p-4">
-                        <Link to='/'><h5 className="text-white h4">Home Page</h5></Link>
+                        <Link to='/'><h5 className="text-white h4"><i class="fa-solid fa-house" style={{marginRight:"10px"}}></i>Home Page</h5></Link>
                     </div>
                     <div className="p-4">
-                        <Link to='/profile'><h5 className="text-white h4">Profile</h5></Link>
+                        <Link to='/profile'><h5 className="text-white h4" ><i class="fa-solid fa-user" style={{marginRight:"10px"}}></i>Profile</h5></Link>
                     </div>
                 </div>
-                <nav className="navbar navbar-dark ">
+                <nav className="navbar ">
                     <div className="container-fluid">
                         <button
                             className="navbar-toggler"
@@ -26,7 +26,7 @@ const Navbar = () => {
                             aria-expanded="false"
                             aria-label="Toggle navigation"
                         >
-                            <i className="fas fa-bars"></i>
+                            <i className="fa-solid fa-bars"></i>
                         </button>
                     </div>
                 </nav>
@@ -38,13 +38,13 @@ const Navbar = () => {
             <>
                 <div className="collapse" id="navbarToggleExternalContent" >
                     <div className="p-4">
-                        <Link to='/admin'><h5 className="text-white h4">Admin Page</h5></Link>
+                        <Link to='/admin'><h5 className="text-white h4"><i class="fa-solid fa-table" style={{marginRight:"10px"}}></i>Admin Page</h5></Link>
                     </div>
                     <div className="p-4">
-                        <Link to='/QrGenerator'><h5 className="text-white h4">Qr Page</h5></Link>
+                        <Link to='/QrGenerator'><h5 className="text-white h4"><i class="fa-solid fa-qrcode" style={{marginRight:"10px"}}></i>Qr Page</h5></Link>
                     </div>
                 </div>
-                <nav className="navbar navbar-dark ">
+                <nav className="navbar ">
                     <div className="container-fluid">
                         <button
                             className="navbar-toggler"
