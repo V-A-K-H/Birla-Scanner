@@ -24,11 +24,19 @@
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   margin:20px;
+  margin-top: 20px;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+.container1 {
+  max-width: 800px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .footer-social-icon{
   max-width: 100%;
@@ -118,7 +126,7 @@
   color: white;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
@@ -131,6 +139,11 @@
 
   .textbox {
     flex-basis: 100%;
+  } 
+}
+@media only screen and (max-width: 768px){
+  container0{
+    margin: 0 auto;
   }
 }
 
@@ -202,6 +215,7 @@ ul {
 .footer-section {
 background: #151414;
 position: relative;
+
 }
 .footer-cta {
 border-bottom: 1px solid #373636;
