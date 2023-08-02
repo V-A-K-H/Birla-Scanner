@@ -3,7 +3,7 @@ body {
   font-size: x-large;
 	margin: 0;
 	padding: 0;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
 
@@ -44,27 +44,33 @@ main {
 	}
 }
 .button {
-    
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 1px 20px 0px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  } 
-  .button {
-    background-color: #009FBD;
-    color:black; 
-    border: 2px solid black;
-    border-bottom-left-radius: 25px;
-  border-top-right-radius: 25px;
-  margin-right: 5px;
-  }
-  .button:hover {
-    background-color: aqua;
-    
-  }
+  gap: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: WHITE;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-color: rgba(255, 255, 255, 0.333);
+  border-radius: 40px 40px 40px 40px;
+  padding: 16px 24px 16px 28px;
+  transform: translate(0px, 0px) rotate(0deg);
+  transition: 0.2s;
+  /* box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%); */
+ }
+ 
+ .button:hover {
+  color: white;
+  background-color: black;
+  box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+ }
+ 
+ .button:active {
+  box-shadow: none;
+ }
   
   
