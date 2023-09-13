@@ -1,5 +1,7 @@
 const express = require('express')
 const connectDB=require('./config/db')
+const http=require('http')
+const socket=require('socket.io')
 // const morgan = require('morgan') 
 // morgan is used for logger.
 const cors=require('cors')

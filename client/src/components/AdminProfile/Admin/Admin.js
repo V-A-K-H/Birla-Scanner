@@ -3,7 +3,10 @@ import "./Admin.css";
 import { Link, NavLink } from "react-router-dom";
 import Loader from "../../MainComponents/Loader/Loader";
 import { API } from "../../../config";
+import io from 'socket.io-client'
+const socket=io(API)
 const Admin = () => {
+
   const [studentData, setStudentData] = useState(null);
   const [year, setYear] = useState(0);
   const fetchStudentData = async () => {

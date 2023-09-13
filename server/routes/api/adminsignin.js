@@ -3,9 +3,22 @@ const adminauthenticate = require('../../middleware/adminauthenticate');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+
+const http=require('http')
+const socket=require('socket.io')
+const server=http.createServer(express());
+const io=socket(server)
 // const auth = require('../../middleware/auth');
 /* global localStorage, */
 const config = require('config');
+io.on('connection', (socket) => {
+  console.log('Client connected');
+  
+
+  socket.on('disconnect', () => {
+    console.log('Client disconnected');
+  });
+});
 const { check, validationResult } = require('express-validator');
 const Admin = require('../../models/admin');
 const student = require('../../models/student');
