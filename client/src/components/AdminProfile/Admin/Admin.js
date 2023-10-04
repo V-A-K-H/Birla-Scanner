@@ -3,10 +3,15 @@ import "./Admin.css";
 import { Link, NavLink } from "react-router-dom";
 import Loader from "../../MainComponents/Loader/Loader";
 import { API } from "../../../config";
-import io from 'socket.io-client'
-const socket=io(API)
-const Admin = () => {
+import {io} from 'socket.io-client'
+const SOCKET_API=API.replace("/api","")
+console.log(SOCKET_API)
+const socket=io(SOCKET_API, {
+  autoConnect: false,
+})
 
+const Admin = () => {
+  const [load, setLoad] = useState(false);
   const [studentData, setStudentData] = useState(null);
   const [year, setYear] = useState(0);
   const fetchStudentData = async () => {
@@ -23,33 +28,43 @@ const Admin = () => {
         }
       );
       const response = await result.json();
+      console.log(response)
       const StudentArray = [];
       response.map((elem) => {
         StudentArray.push(elem);
       });
-
       setStudentData(
         StudentArray.sort((a, b) => {
           return b.access - a.access;
         })
       );
+      setLoad(false)
     } catch (err) {
       console.warn(err);
+      setLoad(false)
     }
   };
+  const handleDatabaseChange = (arg) => {
+    alert("Student Accessing");
+    fetchStudentData();
+  };
+
+  // after the component renders the first time, this checks if there is any change in the database
+  // with the help of socket it can see wheather the socket contains any message if it does, it alerts and reloads
   useEffect(() => {
-    // fetch data every 10 seconds
-    setInterval(() => {
-      fetchStudentData();
-      setTimeout(() => {
-        setLoad(true);
-      }, 1125);
-    }, 1000);
+    // fetch data every at every render
+    fetchStudentData()
+    socket.connect();
+    
+    socket.on('database-change', handleDatabaseChange);
+    console.log("database changed")
+    // Clean up the socket subscription when the component unmounts
+    return () => {
+      socket.off('database-change',handleDatabaseChange)
+      socket.disconnect();
+    };
   }, []);
-
-  const [load, setLoad] = useState(false);
-
-  if (!load)
+  if (load)
     return (
       <>
         <Loader />
