@@ -28,7 +28,6 @@ const Admin = () => {
         }
       );
       const response = await result.json();
-      console.log(response)
       const StudentArray = [];
       response.map((elem) => {
         StudentArray.push(elem);
@@ -45,8 +44,14 @@ const Admin = () => {
     }
   };
   const handleDatabaseChange = (arg) => {
-    alert("Student Accessing");
-    fetchStudentData();
+    if (arg) {
+      const {name,access,year}=arg
+      const resultStr=`${name} from ${year} year is ${access?'out':'in'}`
+      alert(resultStr)
+      fetchStudentData();
+    }
+
+
   };
 
   // after the component renders the first time, this checks if there is any change in the database
@@ -57,7 +62,6 @@ const Admin = () => {
     socket.connect();
     
     socket.on('database-change', handleDatabaseChange);
-    console.log("database changed")
     // Clean up the socket subscription when the component unmounts
     return () => {
       socket.off('database-change',handleDatabaseChange)
@@ -77,6 +81,7 @@ const Admin = () => {
         // if (elem.year == year) { }
         const outingInfo =
           elem.outinginfo[Object.keys(elem.outinginfo).length - 1];
+        console.log(studentData[3].outinginfo)
         // use new date to convert string into date object, not only Date()
         const Status = elem.access ? "out" : "In";
         let exitsession = "AM";

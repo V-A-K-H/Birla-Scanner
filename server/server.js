@@ -8,11 +8,18 @@ const app = express()
 const student = require('./models/student');
 const { createServer } = require("http");
 const { Server } = require("socket.io");
+// connected to a stream, which outputs whenever there is a change in the database.
+// we emit/ send that message to the frontend
 try {
   const changeStream=student.watch();
-  changeStream.on("change", (change) => {
+  
+  changeStream.on("change",async  (change) => {
     console.log(change)
-    io.emit("database-change", change);
+    const {documentKey}=change
+    console.log("the document key is given by", documentKey)
+    const res=await student.findById(change.documentKey._id).select('name access year')
+    console.log(res)
+    io.emit("database-change", res);
   });
 }
 catch (e) {
