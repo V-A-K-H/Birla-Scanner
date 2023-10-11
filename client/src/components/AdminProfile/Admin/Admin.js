@@ -45,8 +45,8 @@ const Admin = () => {
   };
   const handleDatabaseChange = (arg) => {
     if (arg) {
-      const {name,access,year}=arg
-      const resultStr=`${name} from ${year} year is ${access?'out':'in'}`
+      const {name,access,year,photolink}=arg
+      const resultStr=`${name} from ${year} year is ${access} with ${photolink}?'out':'in'}`
       alert(resultStr)
       fetchStudentData();
     }
