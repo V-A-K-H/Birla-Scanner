@@ -103,13 +103,19 @@ router.post('/', async (req, res) => {
             "access": true,
             "devices": "D01"
         } ]
-    prasooninfo.map(async (elem)=> {
-        const salt=await bcrypt.genSalt(10);
-        elem.password=await bcrypt.hash(elem.password,salt);
-        await new student(elem).save()
-
-    })
-    res.status(200).json("sucess")
+        try {
+            await StudentInfo.map(async (elem) => {
+              const salt = await bcrypt.genSalt(10);
+              elem.password = await bcrypt.hash(elem.password, salt);
+              await new student(elem).save();
+              console.log("Successfully posted");
+            });
+          
+            res.status(200).json("Success");
+          } catch (error) {
+            console.error("Error saving data:", error);
+            res.status(500).json({ error: "Internal Server Error" });
+          }
 
 
 
