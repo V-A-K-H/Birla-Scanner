@@ -3,6 +3,7 @@ import './App.css';
 
 import SignUp from './components/SignUp/SignUp'
 import HomePage from './components/HomePage/HomePage';
+import LandingPage from './components/LandingPage/landingPage';
 import Profile from './components/UserProfile/Profile/Profile';
 import Loader from './components/MainComponents/Loader/Loader';
 import Admin from './components/AdminProfile/Admin/Admin';
@@ -22,7 +23,7 @@ function App() {
     <>
         <Router>
           <Routes>
-            <Route path="/" element={<HomePage/>}></Route>
+            <Route path="/" element={<LandingPage/>}></Route>
             <Route path="signup" element={<SignUp />}></Route>
             <Route path="qrscanner" element={<UserRoute element={<QrScanner/>}/>}></Route>
             <Route path="scanconfirm" element={<UserRoute element={<ScanConfirm/>}/>}></Route>
