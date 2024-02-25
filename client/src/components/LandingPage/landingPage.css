@@ -164,7 +164,7 @@
     position: relative;
     border-radius: 48px;
     /* box-shadow: inset 4px 4px 4px #000;s */
-    /* background-color: antiquewhite; */
+    background-color: rgb(175, 195, 195);
     /* overflow: hidden; */
   
   
@@ -221,6 +221,8 @@
     margin-top: 50px;
     margin-left: 75px;
     margin-right: 75px;
+    /* background-color: rgb(175, 195, 195); */
+    
   }
   .chooseUsHeader {
     display: flex;
@@ -229,6 +231,7 @@
     justify-content: center;
     margin-bottom: 40px;
     border-radius: 48px;
+    /* background-color: rgb(175, 195, 195); */
     /* box-shadow:  4px 4px 4px #000; */
   }
   .chooseUsHeaderTitle {
@@ -243,6 +246,7 @@
     border-radius: 48px;
     padding-top: 10px;
     padding-right: 20px;
+    background-color: rgb(175, 195, 195);
     box-shadow: inset 4px 4px 4px #000;
   }
   .featureAnimation {

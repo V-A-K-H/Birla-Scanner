@@ -24,6 +24,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<LandingPage/>}></Route>
+            <Route path="HomePage" element={<HomePage/>}></Route>
             <Route path="signup" element={<SignUp />}></Route>
             <Route path="qrscanner" element={<UserRoute element={<QrScanner/>}/>}></Route>
             <Route path="scanconfirm" element={<UserRoute element={<ScanConfirm/>}/>}></Route>

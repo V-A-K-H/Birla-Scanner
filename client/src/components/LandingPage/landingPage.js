@@ -9,8 +9,19 @@ import './landingPage.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faQuoteLeft, faDownload, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'; // Import the icons you need
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import HomePage from '../HomePage/HomePage';
 
 function LandingPage() {
+    let whouse=localStorage.getItem('Auth')
+    const navigate=useNavigate()
+    useEffect(()=> {
+        whouse=localStorage.getItem('Auth')
+        if (whouse=="user") {
+            // window.alert("not signed in")
+            navigate('HomePage')
+        }
+    },[whouse])
   const userReviews = [
     {
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?',
@@ -49,7 +60,7 @@ function LandingPage() {
           {<img src='https://drive.google.com/uc?export=view&id=1qd7rQwfIUEIrhOPP6qZvOZNujOCrmXDS'/>}
         </div>
         <button className='login'>
-          LogIn
+          <Link to = "signUp">Login</Link>
         </button>
       </div>
       <div className='dwarpal'>
