@@ -95,34 +95,36 @@ function LandingPage() {
 <header class="mainHeading">
    <div class="mainHeading__content">
       <article class="mainHeading__text">
-         <p class="mainHeading__preTitle">nature</p>
-         <h2 class="mainHeading__title">behind the mountains</h2>
+         <p class="mainHeading__preTitle">DWARPAL</p>
+         <h2 class="mainHeading__title">College Entry/Exit Authenticator</h2>
          <p class="mainHeading__description">
             Far far away, behind the word mountains, far from the countries
             Vokalia and Consonantia, there live the blind texts.
          </p>
-         <button class="cta">know more</button>
+         <button class="cta">Download App</button>
       </article>
 
       <figure class="mainHeading__image">
-         <img
-            src="https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
-            alt=""
-         />
+         <div class="phone-slideshow">
+  <div class="screen-mask">
+    <ul class="phone-slideshow-list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>
       </figure>
    </div>
       </header>
       {/* Section End */}
 
-      {/* Cutouts Display */}
-      <div className="appDemo">
-        <img className="img1" src={mockup1} />
-        <img className="img2" src={mockup2} />
-        <img className="img3" src={mockup1} />
-        <img className="img4" src={mockup4} />
-        <img className="img5" src={mockup5} />
-      </div>
-      {/* Section End */}
 
       
 
