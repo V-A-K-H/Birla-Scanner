@@ -66,11 +66,11 @@ function LandingPage() {
 
 {/* Hero Banner */}
 <nav class="mainNav">
-   <div class="mainNav__logo">Logo</div>
+   <div class="mainNav__logo">DWARPAL</div>
    <div class="mainNav__links">
-      <a href="" class="mainNav__link">About</a>
-      <a href="" class="mainNav__link">Projects</a>
-      <a href="" class="mainNav__link">Team</a>
+      <a href="" class="mainNav__link">WHY US?</a>
+      <a href="" class="mainNav__link">Reviews</a>
+      <a href="" class="mainNav__link">Developers</a>
       <a class="mainNav__link"><Link to="signUp">Login</Link></a>
    </div>
    <div class="mainNav__icon">
