@@ -177,7 +177,7 @@ const Admin = () => {
     }
   };
   return (
-    <body>
+    <div className="adminBody">
       <div style={{ marginLeft: "3%", marginBottom: "2%", marginTop: "2%" }}>
         <button
           className="button button"
@@ -238,7 +238,7 @@ const Admin = () => {
           </tbody>
         </table>
       </main>
-    </body>
+    </div>
   );
 };
 export default Admin;
