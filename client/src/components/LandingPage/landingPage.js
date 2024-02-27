@@ -17,6 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"; // Import the icons you need
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import HomePage from "../HomePage/HomePage";
+import logo from "../../../src/logo.svg"
 
 function LandingPage() {
   let whouse = localStorage.getItem("Auth");
@@ -66,7 +67,7 @@ function LandingPage() {
         <div className="navigation">
           <div className="logo">
             {
-              <img src="https://drive.google.com/uc?export=view&id=1qd7rQwfIUEIrhOPP6qZvOZNujOCrmXDS" />
+              <img src={logo} />
             }
           </div>
           <button className="login">
@@ -98,7 +99,7 @@ function LandingPage() {
             </div>
           </div>
           <div className="right">
-            <img src={Asset3}></img>
+            <img src="https://c4.wallpaperflare.com/wallpaper/915/930/406/action-figures-3d-desktop-deadpool-iron-man-wallpaper-preview.jpg"></img>
           </div>
         </div>
       </div>
