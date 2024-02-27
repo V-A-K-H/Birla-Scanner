@@ -17,7 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"; // Import the icons you need
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import HomePage from "../HomePage/HomePage";
-import logo from "../../../src/logo.svg"
+import logo from "../../../src/logo.svg";
 
 function LandingPage() {
   let whouse = localStorage.getItem("Auth");
@@ -62,47 +62,59 @@ function LandingPage() {
 
   return (
     <>
-      <div className="main">
-        
-        <div className="navigation">
-          <div className="logo">
-            {
-              <img src={logo} />
-            }
-          </div>
-          <button className="login">
-            <Link to="signUp">Login</Link>
-          </button>
-        </div>
-        <div className="dwarpal">DWARPAL</div>
-        <div className="mainHead">
-          <div className="left">
-            <div className="searchBar">
-              {/* <div className='searchIcon'><FontAwesomeIcon icon={faSearch} style={{width: 25, height: 25}} /></div>  */}
-              <div className="searchContent">Download our App</div>
-              <div className="download">
-                <FontAwesomeIcon
-                  icon={faDownload}
-                  style={{ width: 34, height: 34 }}
-                />
-              </div>
-            </div>
-            <div className="info">
-              DwarPal is a Qr-Code scanning based digital solution to ease the
-              maintain the records of entrance and exit from a campus.
-            </div>
-            <div className="developers">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              quos vero accusantium, possimus aperiam neque exercitationem magni
-              fugit a, molestiae quae impedit vitae minus corporis. Quos vero
-              illum modi rerum.
-            </div>
-          </div>
-          <div className="right">
-            <img src="https://c4.wallpaperflare.com/wallpaper/915/930/406/action-figures-3d-desktop-deadpool-iron-man-wallpaper-preview.jpg"></img>
-          </div>
-        </div>
-      </div>
+      
+
+{/* Hero Banner */}
+<nav class="mainNav">
+   <div class="mainNav__logo">Logo</div>
+   <div class="mainNav__links">
+      <a href="" class="mainNav__link">About</a>
+      <a href="" class="mainNav__link">Projects</a>
+      <a href="" class="mainNav__link">Team</a>
+      <a class="mainNav__link"><Link to="signUp">Login</Link></a>
+   </div>
+   <div class="mainNav__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+         <g data-name="Layer 2" fill="#9197AE">
+            <g data-name="menu-2">
+               <rect
+                  width="24"
+                  height="24"
+                  transform="rotate(180 12 12)"
+                  opacity="0"
+               />
+               <circle cx="4" cy="12" r="1" />
+               <rect x="7" y="11" width="14" height="2" rx=".94" ry=".94" />
+               <rect x="3" y="16" width="18" height="2" rx=".94" ry=".94" />
+               <rect x="3" y="6" width="18" height="2" rx=".94" ry=".94" />
+            </g>
+         </g>
+      </svg>
+   </div>
+</nav>
+<header class="mainHeading">
+   <div class="mainHeading__content">
+      <article class="mainHeading__text">
+         <p class="mainHeading__preTitle">nature</p>
+         <h2 class="mainHeading__title">behind the mountains</h2>
+         <p class="mainHeading__description">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+         </p>
+         <button class="cta">know more</button>
+      </article>
+
+      <figure class="mainHeading__image">
+         <img
+            src="https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
+            alt=""
+         />
+      </figure>
+   </div>
+      </header>
+      {/* Section End */}
+
+      {/* Cutouts Display */}
       <div className="appDemo">
         <img className="img1" src={mockup1} />
         <img className="img2" src={mockup2} />
@@ -110,6 +122,9 @@ function LandingPage() {
         <img className="img4" src={mockup4} />
         <img className="img5" src={mockup5} />
       </div>
+      {/* Section End */}
+
+      
 
       <div className="chooseUs">
         <div className="chooseUsHeader">
@@ -207,64 +222,165 @@ function LandingPage() {
             <img src={qrScan} />
           </div>
         </div>
-        <div className="userReview">
-          <div className="userReviewLeft">
-            <div className="userReviewLeftTitle">
-              What Our Users Say About Us
+      </div>
+{/* Section End */}
+      {/* Feedback section */}
+      <div className="Feedback-section">
+        <h2>What Our Users Say About Us</h2>
+
+        <div className="timeline">
+          <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+            s
+            <div className="timeline__event__icon ">
+              <i className="lni-sport"></i>
             </div>
-            <div className="swipe">
-              <div className="arrowLeft" onClick={() => changeReview("prev")}>
-                <FontAwesomeIcon
-                  icon={faArrowLeft}
-                  style={{ width: 48, height: 48 }}
-                />
-              </div>
-              <div className="arrowRight" onClick={() => changeReview("next")}>
-                <FontAwesomeIcon
-                  icon={faArrowRight}
-                  style={{ width: 48, height: 48 }}
-                />
+            <div className="timeline__event__date">September 1985</div>
+            <div className="timeline__event__content ">
+              <div className="timeline__event__title">Super Mario Brothers</div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
               </div>
             </div>
           </div>
-          <div className="userReviewRight">
-            <div className="quoteLeft">
-              <FontAwesomeIcon
-                icon={faQuoteLeft}
-                style={{ width: 34, height: 34 }}
-              />
+
+          <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
             </div>
-            <div className="review">
-              {currentReview.text}
-              <div style={{ fontSize: 28, fontWeight: 700, marginTop: 10 }}>
-                {currentReview.author}
+            <div className="timeline__event__date">June 1986</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">
+                Super Mario Bros: The Lost Levels
               </div>
-              <div>
-                <b>{currentReview.position}</b>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">October 1988</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">Super Mario Bros. 2</div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline__event animated fadeInUp timeline__event--type1">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">October 1988</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">Super Mario Bros. 3</div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <div className="footerBackground">
-          <div className="footer" style={{ alignSelf: "flex-end" }}>
-            <div className="footerLeft">
-              <div style={{ fontSize: 48, fontWeight: 700 }}>
-                What Our Users Say About Us
-              </div>
-            </div>
-            <div className="footerRight">
-              <div className="raj121">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a
-                praesentium officia assumenda impedit ab recusandae eum quam
-                tempore, porro nisi sint reprehenderit rerum consequuntur sunt
-                non ullam et magnam?
-              </div>
-            </div>
+
+      {/* Developers Details Display */}
+      <ul className="cards">
+  <li>
+    <a href="" className="card_developer">
+      <img src="https://i.imgur.com/oYiTqum.jpg" className="card__image" alt="" />
+      <div className="card__overlay">
+        <div className="card__header">
+          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+          <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+          <div className="card__header-text">
+            <h3 className="card__title">Jessica Parker</h3>     
           </div>
         </div>
+        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
       </div>
+    </a>      
+  </li>
+  <li>
+    <a href="" className="card_developer">
+      <img src="https://i.imgur.com/2DhmtJ4.jpg" className="card__image" alt="" />
+      <div className="card__overlay">        
+        <div className="card__header">
+          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img className="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+          <div className="card__header-text">
+            <h3 className="card__title">kim Cattrall</h3>
+          </div>
+        </div>
+        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="" className="card_developer">
+      <img src="https://i.imgur.com/oYiTqum.jpg" className="card__image" alt="" />
+      <div className="card__overlay">
+        <div className="card__header">
+          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+          <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+          <div className="card__header-text">
+            <h3 className="card__title">Jessica Parker</h3>  
+          </div>
+        </div>
+        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="" className="card_developer">
+      <img src="https://i.imgur.com/2DhmtJ4.jpg" className="card__image" alt="" />
+      <div className="card__overlay">
+        <div className="card__header">
+          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img className="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+          <div className="card__header-text">
+            <h3 className="card__title">kim Cattrall</h3> 
+          </div>          
+        </div>
+        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+      </div>
+    </a>
+  </li>    
+</ul>
+      {/* Section End */}
+
+      {/* Footer */}
+      <footer className="new_footer_area bg_color">
+        <div className="new_footer_top">
+          <div className="footer_bg">
+            <div className="footer_bg_one"></div>
+            <div className="footer_bg_two"></div>
+          </div>
+        </div>
+      </footer>
+      {/* Footer End */}
     </>
   );
 }
