@@ -1,6 +1,10 @@
 import Asset3 from "../../../src/Asset3.png";
 import image from "../../../src/image.png";
 import qrScan from "../../../src/qr-scan.gif";
+import roy from "../../../src/roy.jpg";
+import raj from "../../../src/aryan.jpg";
+import kittu from "../../../src/kritik.jpg";
+import vivek from "../../../src/vivekbhatt.jpg";
 import mockup1 from "../../../src/mockup1.png";
 import mockup2 from "../../../src/mockup2.png";
 import mockup4 from "../../../src/mockup4.png";
@@ -31,14 +35,12 @@ function LandingPage() {
   }, [whouse]);
   const userReviews = [
     {
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?",
       author: "Dr. Sandesh Tripathi",
       position: "HOD of CSE branch at Birla Institute of Applied Sciences",
     },
     {
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?",
       author: "Aryan Raj",
       position: "CSE Student at Birla Institute of Applied Sciences",
     },
@@ -62,22 +64,28 @@ function LandingPage() {
 
   return (
     <>
-      
-
-{/* Hero Banner */}
-<nav class="mainNav">
-   <div class="mainNav__logo">DWARPAL</div>
-   <div class="mainNav__links">
-      <a href="" class="mainNav__link">WHY US?</a>
-      <a href="" class="mainNav__link">Reviews</a>
-      <a href="" class="mainNav__link">Developers</a>
-      <a class="mainNav__link"><Link to="signUp">Login</Link></a>
-   </div>
-   <div class="mainNav__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-         <g data-name="Layer 2" fill="#9197AE">
-            <g data-name="menu-2">
-               <rect
+      {/* Hero Banner */}
+      <nav class="mainNav">
+        <div class="mainNav__logo">DWARPAL</div>
+        <div class="mainNav__links">
+          <a href="" class="mainNav__link">
+            WHY US?
+          </a>
+          <a href="" class="mainNav__link">
+            Reviews
+          </a>
+          <a href="" class="mainNav__link">
+            Developers
+          </a>
+          <a class="mainNav__link">
+            <Link to="signUp">Login</Link>
+          </a>
+        </div>
+        <div class="mainNav__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g data-name="Layer 2" fill="#9197AE">
+              <g data-name="menu-2">
+                <rect
                   width="24"
                   height="24"
                   transform="rotate(180 12 12)"
@@ -95,36 +103,34 @@ function LandingPage() {
 <header class="mainHeading">
    <div class="mainHeading__content">
       <article class="mainHeading__text">
-         <p class="mainHeading__preTitle">DWARPAL</p>
-         <h2 class="mainHeading__title">College Entry/Exit Authenticator</h2>
+         <p class="mainHeading__preTitle">nature</p>
+         <h2 class="mainHeading__title">behind the mountains</h2>
          <p class="mainHeading__description">
             Far far away, behind the word mountains, far from the countries
             Vokalia and Consonantia, there live the blind texts.
          </p>
-         <button class="cta">Download App</button>
+         <button class="cta">know more</button>
       </article>
 
       <figure class="mainHeading__image">
-         <div class="phone-slideshow">
-  <div class="screen-mask">
-    <ul class="phone-slideshow-list">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-</div>
+         <img
+            src="https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
+            alt=""
+         />
       </figure>
    </div>
       </header>
       {/* Section End */}
 
+      {/* Cutouts Display */}
+      <div className="appDemo">
+        <img className="img1" src={mockup1} />
+        <img className="img2" src={mockup2} />
+        <img className="img3" src={mockup1} />
+        <img className="img4" src={mockup4} />
+        <img className="img5" src={mockup5} />
+      </div>
+      {/* Section End */}
 
       
 
@@ -225,7 +231,7 @@ function LandingPage() {
           </div>
         </div>
       </div>
-{/* Section End */}
+      {/* Section End */}
       {/* Feedback section */}
       <div className="Feedback-section">
         <h2>What Our Users Say About Us</h2>
@@ -310,67 +316,97 @@ function LandingPage() {
 
       {/* Developers Details Display */}
       <ul className="cards">
-  <li>
-    <a href="" className="card_developer">
-      <img src="https://i.imgur.com/oYiTqum.jpg" className="card__image" alt="" />
-      <div className="card__overlay">
-        <div className="card__header">
-          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div className="card__header-text">
-            <h3 className="card__title">Jessica Parker</h3>     
-          </div>
-        </div>
-        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>      
-  </li>
-  <li>
-    <a href="" className="card_developer">
-      <img src="https://i.imgur.com/2DhmtJ4.jpg" className="card__image" alt="" />
-      <div className="card__overlay">        
-        <div className="card__header">
-          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <img className="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-          <div className="card__header-text">
-            <h3 className="card__title">kim Cattrall</h3>
-          </div>
-        </div>
-        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="" className="card_developer">
-      <img src="https://i.imgur.com/oYiTqum.jpg" className="card__image" alt="" />
-      <div className="card__overlay">
-        <div className="card__header">
-          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div className="card__header-text">
-            <h3 className="card__title">Jessica Parker</h3>  
-          </div>
-        </div>
-        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="" className="card_developer">
-      <img src="https://i.imgur.com/2DhmtJ4.jpg" className="card__image" alt="" />
-      <div className="card__overlay">
-        <div className="card__header">
-          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <img className="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-          <div className="card__header-text">
-            <h3 className="card__title">kim Cattrall</h3> 
-          </div>          
-        </div>
-        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>    
-</ul>
+        <li>
+          <a href="" className="card_developer">
+            <img src={raj} className="card__image" alt="" />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                <div className="card__header-text">
+                  <h3 className="card__title">
+                    <a href="https://www.linkedin.com/in/aryan-raj7/">
+                      Aryan Raj
+                    </a>
+                  </h3>
+                </div>
+              </div>
+              <p className="card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores, blanditiis?
+              </p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" className="card_developer">
+            <img src={roy} className="card__image" alt="" />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                <div className="card__header-text">
+                  <h3 className="card__title">
+                    <a href="https://www.linkedin.com/in/harshit-roy/">
+                      Harshit Roy
+                    </a>
+                  </h3>
+                </div>
+              </div>
+              <p className="card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores, blanditiis?
+              </p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" className="card_developer">
+            <img src={kittu} className="card__image" alt="" />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                <div className="card__header-text">
+                  <h3 className="card__title">
+                    <a href="https://www.linkedin.com/in/kritik-srivastava/">
+                      Kritik Srivastava
+                    </a>
+                  </h3>
+                </div>
+              </div>
+              <p className="card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores, blanditiis?
+              </p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" className="card_developer">
+            <img src={vivek} className="card__image" alt="" />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                <div className="card__header-text">
+                  <h3 className="card__title">
+                    <a href="https://www.linkedin.com/in/vivekbhatt3011/">Vivek Bhatt</a>
+                  </h3>
+                </div>
+              </div>
+              <p className="card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores, blanditiis?
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
       {/* Section End */}
 
       {/* Footer */}
