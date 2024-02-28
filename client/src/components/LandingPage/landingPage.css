@@ -82,7 +82,8 @@
   height: 100vh;
   position: relative;
   padding: 0 40px;
-  background-color: aqua;
+  background:url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4480a755-3ccf-49a2-a1de-9c86902eb53a/d5xvbnp-6008071c-1ffa-4200-af92-c8b1ba9e1bd5.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ0ODBhNzU1LTNjY2YtNDlhMi1hMWRlLTljODY5MDJlYjUzYVwvZDV4dmJucC02MDA4MDcxYy0xZmZhLTQyMDAtYWY5Mi1jOGIxYmE5ZTFiZDUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.t9R5CNTDvOtx72JXD-QWr-6XXGFZQQKtCIL_c7NEzDE");
+  background-size: cover;
 }
 @media screen and (max-width: 799px) {
   .mainHeading {
@@ -705,8 +706,6 @@
     margin-right: 5px;
   }
   .chooseUsHeader {
-    border-radius: 32px;
-    box-shadow: 4px 4px 4px #000;
     padding-bottom: 5px;
     margin-bottom: 20px;
   }
@@ -1032,6 +1031,16 @@
   content: none;
 }
 @media (max-width: 786px) {
+  .mainHeading__content{
+    left:25%
+  }
+  .chooseUs{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .features{
+    flex-direction: column;
+  }
   .timeline__event {
     flex-direction: column;
     align-self: center;

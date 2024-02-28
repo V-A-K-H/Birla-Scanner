@@ -92,6 +92,7 @@ function LandingPage() {
       </svg>
    </div>
 </nav>
+
 <header class="mainHeading">
    <div class="mainHeading__content">
       <article class="mainHeading__text">
