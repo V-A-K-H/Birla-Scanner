@@ -1,18 +1,18 @@
 import "./QrScanner.css";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import QrReader from "react-qr-scanner";
 import { API } from "../../../config";
 import { useLocation, useNavigate } from "react-router-dom";
 import { DecryptData } from "../../../EncryptDevice";
 const QrScanner = () => {
-  const navigate=useNavigate()
-  const location=useLocation()
-  const {purpose}=location.state?location.state: {purpose: null};
-  const [access,setAccess]=useState(false)
-  useEffect(()=> {
-    
-    const FetchAccess=async ()=> {
-      const result=await fetch(`${API}/StudentInfo/columns/access`,{
+  const navigate = useNavigate()
+  const location = useLocation()
+  const { purpose } = location.state ? location.state : { purpose: null };
+  const [access, setAccess] = useState(false)
+  useEffect(() => {
+
+    const FetchAccess = async () => {
+      const result = await fetch(`${API}/StudentInfo/columns/access`, {
         mode: "cors",
         method: "GET",
         headers: {
@@ -20,7 +20,7 @@ const QrScanner = () => {
           "x-auth-token": localStorage.getItem('sessionUser')
         }
       })
-      const response=await result.json()
+      const response = await result.json()
       console.log(response[0].access)
       if (!response[0].access) {
         console.log(response)
@@ -28,38 +28,38 @@ const QrScanner = () => {
           window.alert("Fill Purpose then come");
           navigate("/");
         }
-      
+
       }
       setAccess(response[0].access)
 
     }
     try {
-        FetchAccess()
+      FetchAccess()
     }
     catch (err) {
-       window.err(err)
+      window.err(err)
     }
 
-  },[access])
+  }, [access])
 
-  const [timerCount,setTimerCount]=useState(false)
+  const [timerCount, setTimerCount] = useState(false)
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
   const [data, setData] = useState("");
-  const UpdateTime=async(scanTime)=> {
+  const UpdateTime = async (scanTime) => {
     console.log("connecting backend...")
-    const arr=scanTime.split("$$")
+    const arr = scanTime.split("$$")
     console.log(arr)
     try {
-    const ScanData={
-      time:arr[0],
-      purpose: purpose,
-      deviceId: arr[1]
-    } 
-    console.log(ScanData.time,typeof(ScanData.time),typeof(arr[0]))
-      const result=await fetch(`${API}/StudentInfo`,{
-        method:"PUT",
+      const ScanData = {
+        time: arr[0],
+        purpose: purpose,
+        deviceId: arr[1]
+      }
+      console.log(ScanData.time, typeof (ScanData.time), typeof (arr[0]))
+      const result = await fetch(`${API}/StudentInfo`, {
+        method: "PUT",
         mode: "cors",
         headers: {
           "content-type": "application/json",
@@ -74,11 +74,10 @@ const QrScanner = () => {
     }
   }
   const handleScan = async (scanData) => {
- 
+
     if (scanData && scanData !== "") {
-      if ((((new Date().getTime())-(new Date(scanData.text.split("$$")[0]).getTime())))>=7000) 
-      {
-        console.log((((new Date().getTime()/1000)-(new Date(scanData.text.split("$$")[0]).getTime()))/1000)<=7)
+      if ((((new Date().getTime()) - (new Date(scanData.text.split("$$")[0]).getTime()))) >= 7000) {
+        console.log((((new Date().getTime() / 1000) - (new Date(scanData.text.split("$$")[0]).getTime())) / 1000) <= 7)
         window.alert("Invalid / Old Qr ")
         return window.location.reload(false)
       }
@@ -94,12 +93,12 @@ const QrScanner = () => {
   };
   const handleError = (err) => {
     console.error(err);
-  };  
-  
+  };
+
   return (
     <div className="App" >
       <div className="purpose-show">
-        Status : {access?"I am out ":"I am in"}
+        Status : {access ? "I am out " : "I am in"}
       </div>
       <button
         className="openscanner"
@@ -115,23 +114,23 @@ const QrScanner = () => {
             <option value={"environment"}><span className="cameramodeoption">Back Camera</span></option>
             <option value={"user"}><span className="cameramodeoption">Front Camera</span></option>
           </select>
-         
+
           <QrReader className="qrreader"
-          constraints={{
-            video: {  facingMode: selected==="user"? "user": {exact: "environment"} },
-            audio: false
-          }}
+            constraints={{
+              video: { facingMode: selected === "user" ? "user" : { exact: "environment" } },
+              audio: false
+            }}
             delay={1000}
             onError={handleError}
             onScan={handleScan}
-            // chooseDeviceId={()=>selected}
-      
+          // chooseDeviceId={()=>selected}
+
           />
         </>
       )}
-      
+
     </div>
   );
-};  
+};
 export default QrScanner;
-  
+
