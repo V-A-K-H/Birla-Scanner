@@ -8,7 +8,8 @@ const CryptoJS=require('crypto-js')
 router.get('/columns/:columnid', authenticate, async (req, res) => {
     const studentProfile = await student.find({ _id: req.user.id }).select(req.params.columnid)
     // find returns an array of documents matching the query even if it is only one document, whereas findone return the plan document
-    res.send(studentProfile)
+    console.log(`The data fetched from studentINfo is given by `,studentProfile)
+    return res.send(studentProfile[0])
 })
 router.put('/', authenticate, async (req, res) => {
     console.log(req,res)

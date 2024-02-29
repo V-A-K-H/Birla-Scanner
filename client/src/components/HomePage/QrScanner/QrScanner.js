@@ -21,8 +21,8 @@ const QrScanner = () => {
         }
       })
       const response = await result.json()
-      console.log(response[0].access)
-      if (!response[0].access) {
+      console.log(`fetchAccess response is `,response)
+      if (!response.access) {
         console.log(response)
         if (!purpose) {
           window.alert("Fill Purpose then come");
@@ -30,7 +30,7 @@ const QrScanner = () => {
         }
 
       }
-      setAccess(response[0].access)
+      setAccess(response.access)
 
     }
     try {

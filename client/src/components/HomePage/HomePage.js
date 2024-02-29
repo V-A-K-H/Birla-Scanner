@@ -37,9 +37,8 @@ const HomePage = () => {
         }
       );
       const response = await result.json();
-      console.log(response);
 
-      setUserData(response[0]);
+      setUserData(response);
     } catch (err) {
       console.log(err);
       redirect("/signup");
@@ -102,7 +101,7 @@ const HomePage = () => {
               style={{ backgroundColor: purpose ? "#0B2447" : "black" }}
               className="buttonqr"
             >
-            <Link to="qrscanner" state={{ purpose: purpose }}>
+            <Link to="/qrscanner" state={{ purpose: purpose }}>
               {" "}
               Open QR Scanner
               </Link>

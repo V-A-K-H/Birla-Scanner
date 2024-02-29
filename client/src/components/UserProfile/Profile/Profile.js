@@ -19,7 +19,7 @@ const Profile = () => {
         },
       })
       const response = await result.json()
-      setUserData(response[0])
+      setUserData(response)
     }
     catch (err) {
 
