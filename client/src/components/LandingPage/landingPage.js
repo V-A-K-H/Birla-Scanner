@@ -3,6 +3,8 @@ import image from "../../../src/image.png";
 import qrScan from "../../../src/qr-scan.gif";
 import mockup1 from "../../../src/mockup1.png";
 import mockup2 from "../../../src/mockup2.png";
+import aryan from "../../../src/aryan.jpg";
+import roy from "../../../src/roy.jpg";
 import mockup4 from "../../../src/mockup4.png";
 import mockup5 from "../../../src/mockup5.png";
 import { useState, useEffect, useRef } from "react";
@@ -132,7 +134,7 @@ function LandingPage() {
       <div className="chooseUs">
         <div className="chooseUsHeader">
           <div className="chooseUsHeaderTitle">WHY CHOOSE US?</div>
-          <div style={{ textAlign: "center" }}>
+          <div className="chooseUsHeaderText" style={{ textAlign: "center" }}>
             We offer secure and reliable service to access and maintain the
             information about the student's entry and exit from the college
             campus.
@@ -317,9 +319,9 @@ function LandingPage() {
       <div className="card__overlay">
         <div className="card__header">
           <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+          <img className="card__thumb" src={aryan} alt="" />
           <div className="card__header-text">
-            <h3 className="card__title">Jessica Parker</h3>     
+            <h3 className="card__title">Aryan Raj</h3>     
           </div>
         </div>
         <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -332,9 +334,9 @@ function LandingPage() {
       <div className="card__overlay">        
         <div className="card__header">
           <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <img className="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+          <img className="card__thumb" src={roy} alt="" />
           <div className="card__header-text">
-            <h3 className="card__title">kim Cattrall</h3>
+            <h3 className="card__title">Harshit Roy</h3>
           </div>
         </div>
         <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
