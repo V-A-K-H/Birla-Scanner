@@ -45,8 +45,8 @@ const Admin = () => {
   };
   const handleDatabaseChange = (arg) => {
     if (arg) {
-      const {name,access,year}=arg
-      const resultStr=`${name} from ${year} year is ${access?'out':'in'}`
+      const {name,access,year,photolink}=arg
+      const resultStr=`${name} from ${year} year is ${access} with ${photolink}?'out':'in'}`
       alert(resultStr)
       fetchStudentData();
     }
@@ -177,7 +177,7 @@ const Admin = () => {
     }
   };
   return (
-    <body>
+    <div className="adminBody">
       <div style={{ marginLeft: "3%", marginBottom: "2%", marginTop: "2%" }}>
         <button
           className="button button"
@@ -238,7 +238,7 @@ const Admin = () => {
           </tbody>
         </table>
       </main>
-    </body>
+    </div>
   );
 };
 export default Admin;

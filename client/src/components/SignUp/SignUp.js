@@ -13,6 +13,7 @@ const SignUp = () => {
       password: "",
     }
   )
+
   const { email, password } = formData
   const [admin, setAdmin] = useState(false)
   // console.log(admin)
@@ -22,7 +23,18 @@ const SignUp = () => {
       { ...formData, [e.target.name]: e.target.value }
     )
   }
+  const checkGuest=(e)=> {
+    if (email!="guest@gmail.com") {
+      alert("Not a guest, you are unwelcome")
+      setFormData({...formData,email: "",password:""})
+    }
+    else onSubmit(e) 
+  }
   const onSubmit = async (e) => {
+    if (email=="guest@gmail.com") {
+      alert("Login as a guest you fool")
+      return
+    }
     const whoUse = admin ? "AdminSignIn" : "SignIn";
     const auth=admin?"admin": "user";
     console.log(auth,whoUse,email, password)
@@ -92,7 +104,7 @@ const SignUp = () => {
 
 
           <button type="submit" className="button3">Sign In</button>
-
+          <button type="button" className="button3" onClick={(e)=> checkGuest(e)}>Guest Login</button>
         </form>
 
       </div>

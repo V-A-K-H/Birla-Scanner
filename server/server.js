@@ -17,7 +17,7 @@ try {
     console.log(change)
     const {documentKey}=change
     console.log("the document key is given by", documentKey)
-    const res=await student.findById(change.documentKey._id).select('name access year')
+    const res=await student.findById(change.documentKey._id).select('name access year photolink')
     console.log(res)
     io.emit("database-change", res);
   });
