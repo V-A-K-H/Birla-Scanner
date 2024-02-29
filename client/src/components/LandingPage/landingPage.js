@@ -321,10 +321,10 @@ function LandingPage() {
       <div className="card__overlay">
         <div className="card__header">
           <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <a href="https://www.linkedin.com/in/aryan-raj7/"><img className="card__thumb" src={aryan} alt="" />
+          <img className="card__thumb" src={aryan} alt="" />
           <div className="card__header-text">
-            <h3 className="card__title">Aryan Raj</h3>     
-          </div></a>
+          <a href="https://www.linkedin.com/in/aryan-raj7/"><h3 className="card__title">Aryan Raj</h3></a>    
+          </div>
         </div>
         <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
       </div>
@@ -336,10 +336,10 @@ function LandingPage() {
       <div className="card__overlay">        
         <div className="card__header">
           <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <a href="https://www.linkedin.com/in/harshit-roy/"><img className="card__thumb" src={roy} alt="" />
+          <img className="card__thumb" src={roy} alt="" />
           <div className="card__header-text">
-            <h3 className="card__title">Harshit Roy</h3>
-          </div></a>
+          <a href="https://www.linkedin.com/in/harshit-roy/"><h3 className="card__title">Harshit Roy</h3></a>
+          </div>
         </div>
         <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
       </div>
@@ -351,10 +351,10 @@ function LandingPage() {
       <div className="card__overlay">
         <div className="card__header">
           <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <a href="https://www.linkedin.com/in/kritik-srivastava/"><img className="card__thumb" src={kritik} alt="" />
+          <img className="card__thumb" src={kritik} alt="" />
           <div className="card__header-text">
-            <h3 className="card__title">Kritik Srivastava</h3>  
-          </div></a>
+          <a href="https://www.linkedin.com/in/kritik-srivastava/"><h3 className="card__title">Kritik Srivastava</h3> </a> 
+          </div>
         </div>
         <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
       </div>
@@ -366,10 +366,10 @@ function LandingPage() {
       <div className="card__overlay">
         <div className="card__header">
           <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <a href="https://www.linkedin.com/in/vivekbhatt3011/"><img className="card__thumb" src={vivek} alt="" />
+          <img className="card__thumb" src={vivek} alt="" />
           <div className="card__header-text">
-            <h3 className="card__title">Vivek Bhatt</h3> 
-          </div> </a>         
+          <a href="https://www.linkedin.com/in/vivekbhatt3011/"><h3 className="card__title">Vivek Bhatt</h3> </a>
+          </div>         
         </div>
         <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
       </div>
