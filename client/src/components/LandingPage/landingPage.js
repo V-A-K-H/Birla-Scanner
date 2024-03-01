@@ -135,7 +135,6 @@ function LandingPage() {
 
         <div className="timeline">
           <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
-            s
             <div className="timeline__event__icon ">
               <i className="lni-sport"></i>
             </div>
@@ -177,7 +176,7 @@ function LandingPage() {
             <div className="timeline__event__icon">
               <i className="lni-sport"></i>
             </div>
-            <div className="timeline__event__date">October 1988</div>
+            <div className="timeline__event__date">{userReviews[0].position}</div>
             <div className="timeline__event__content">
               <div className="timeline__event__title">Prof. Neeraj Bisht</div>
               <div className="timeline__event__description">
