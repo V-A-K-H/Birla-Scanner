@@ -129,6 +129,87 @@ function LandingPage() {
    </div>
       </header>
       {/* Section End */}
+      {/* Feedback section */}
+      <div className="Feedback-section">
+        <h2>What Our Users Say About Us</h2>
+
+        <div className="timeline">
+          <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+            s
+            <div className="timeline__event__icon ">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">September 1985</div>
+            <div className="timeline__event__content ">
+              <div className="timeline__event__title">Dr. Sandesh Tripathi</div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">June 1986</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">
+                Prof. Abhay Sharma
+              </div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">October 1988</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">Prof. Neeraj Bisht</div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline__event animated fadeInUp timeline__event--type1">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">October 1988</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">Prof. Kaushal Bhatt </div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
       
@@ -231,87 +312,6 @@ function LandingPage() {
         </div>
       </div>
 {/* Section End */}
-      {/* Feedback section */}
-      <div className="Feedback-section">
-        <h2>What Our Users Say About Us</h2>
-
-        <div className="timeline">
-          <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
-            s
-            <div className="timeline__event__icon ">
-              <i className="lni-sport"></i>
-            </div>
-            <div className="timeline__event__date">September 1985</div>
-            <div className="timeline__event__content ">
-              <div className="timeline__event__title">Super Mario Brothers</div>
-              <div className="timeline__event__description">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
-                  veniam corporis incidunt reprehenderit accusantium id aut
-                  architecto harum quidem dolorem in!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
-            <div className="timeline__event__icon">
-              <i className="lni-sport"></i>
-            </div>
-            <div className="timeline__event__date">June 1986</div>
-            <div className="timeline__event__content">
-              <div className="timeline__event__title">
-                Super Mario Bros: The Lost Levels
-              </div>
-              <div className="timeline__event__description">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
-                  veniam corporis incidunt reprehenderit accusantium id aut
-                  architecto harum quidem dolorem in!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
-            <div className="timeline__event__icon">
-              <i className="lni-sport"></i>
-            </div>
-            <div className="timeline__event__date">October 1988</div>
-            <div className="timeline__event__content">
-              <div className="timeline__event__title">Super Mario Bros. 2</div>
-              <div className="timeline__event__description">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
-                  veniam corporis incidunt reprehenderit accusantium id aut
-                  architecto harum quidem dolorem in!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="timeline__event animated fadeInUp timeline__event--type1">
-            <div className="timeline__event__icon">
-              <i className="lni-sport"></i>
-            </div>
-            <div className="timeline__event__date">October 1988</div>
-            <div className="timeline__event__content">
-              <div className="timeline__event__title">Super Mario Bros. 3</div>
-              <div className="timeline__event__description">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
-                  veniam corporis incidunt reprehenderit accusantium id aut
-                  architecto harum quidem dolorem in!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Developers Details Display */}
       <ul className="cards">
