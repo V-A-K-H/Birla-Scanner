@@ -82,22 +82,9 @@ function LandingPage() {
           </a>
         </div>
         <div class="mainNav__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <g data-name="Layer 2" fill="#9197AE">
-              <g data-name="menu-2">
-                <rect
-                  width="24"
-                  height="24"
-                  transform="rotate(180 12 12)"
-                  opacity="0"
-                />
-                <circle cx="4" cy="12" r="1" />
-                <rect x="7" y="11" width="14" height="2" rx=".94" ry=".94" />
-                <rect x="3" y="16" width="18" height="2" rx=".94" ry=".94" />
-                <rect x="3" y="6" width="18" height="2" rx=".94" ry=".94" />
-              </g>
-            </g>
-          </svg>
+        <a class="mainNav__link">
+            <Link to="signUp">Login</Link>
+          </a>
         </div>
       </nav>
 
@@ -107,8 +94,7 @@ function LandingPage() {
             <p class="mainHeading__preTitle">DWARPAL</p>
             <h2 class="mainHeading__title">College Entry/Exit Authenticator</h2>
             <p class="mainHeading__description">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+            We offer secure and reliable service to access and maintain the information about the student's entry and exit from the college campus.
             </p>
             <button class="cta">Download App</button>
           </article>
@@ -178,9 +164,7 @@ function LandingPage() {
             <div className="timeline__event__icon">
               <i className="lni-sport"></i>
             </div>
-            <div className="timeline__event__date">
-              {userReviews[0].position}
-            </div>
+            <div className="timeline__event__date">May 2024</div>
             <div className="timeline__event__content">
               <div className="timeline__event__title">Prof. Neeraj Bisht</div>
               <div className="timeline__event__description">
