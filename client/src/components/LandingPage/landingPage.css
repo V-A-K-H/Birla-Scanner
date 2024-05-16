@@ -156,6 +156,11 @@
   margin-bottom: 16px;
   color: #ffffff;
 }
+@media screen and (max-width: 799px) {
+  .mainHeading__preTitle {
+    display: none;
+  }
+}
 .mainHeading__title {
   text-transform: uppercase;
   font-weight: 200;
@@ -447,7 +452,7 @@
 }
 @media screen and (max-width: 799px) {
   .phone-slideshow {
-    max-width: 200px;
+    max-width: 180px;
   }
 }
 
