@@ -1027,6 +1027,7 @@
 .timeline__event__icon i {
   font-size: 32px;
 }
+
 .timeline__event__icon:before {
   content: '';
   width: 2px;
@@ -1124,6 +1125,7 @@
     width: 100%;
     margin: 0;
     box-shadow: none;
+    display: none
   }
   .timeline__event__icon:before,
   .timeline__event__icon:after {
