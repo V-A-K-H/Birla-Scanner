@@ -1174,6 +1174,7 @@
   background: url('../../../src/earth.jpg');
 }
 
+
 .card_developer {
   position: relative;
   display: block;
@@ -1185,7 +1186,7 @@
 
 .card__image {
   width: 100%;
-  height: auto;
+  /* height: auto; */
 }
 
 .card__overlay {
@@ -1257,6 +1258,8 @@
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+
+
 
 /* Footer */
 .new_footer_area {
