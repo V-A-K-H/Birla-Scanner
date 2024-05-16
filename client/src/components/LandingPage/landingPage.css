@@ -84,7 +84,7 @@
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    height: 115vh;
+    height: 100vh;
   }
 }
 .mainHeading__content {
@@ -101,7 +101,7 @@
   .mainHeading__content {
     min-height: 500px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     
