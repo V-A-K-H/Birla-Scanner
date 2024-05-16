@@ -84,7 +84,7 @@
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    height: 120vh;
+    height: fit-content;
   }
 }
 .mainHeading__content {
@@ -197,7 +197,6 @@
     width: 70%;
     align-self: center;
     transform: translatey(80px);
-    margin-top: 25px;
     right: -25%;
   }
 }
@@ -415,6 +414,7 @@
 }
 .phone-slideshow-list li:nth-child(3) {
   background-image: url('../../../src/mockup4.png'); /* JPG */
+
 }
 .phone-slideshow-list li:nth-child(4) {
   background-image: url('https://www.goodwall.io/sandbox/wp-content/uploads/sites/5/2021/06/slideshow-slide-04.jpg'); /* JPG */
@@ -445,6 +445,12 @@
   position: relative;
   display: table;
 }
+@media screen and (max-width: 799px) {
+  .phone-slideshow {
+    max-width: 200px;
+  }
+}
+
 .phone-slideshow:before {
   /* Phone Template */
   content: '';
