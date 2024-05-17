@@ -4,6 +4,9 @@ import {Link, NavLink} from 'react-router-dom';
 import Loader from '../../MainComponents/Loader/Loader';
 import {API} from '../../../config';
 import {io} from 'socket.io-client';
+
+import {ToastContainer, toast} from 'react-toastify';
+
 const SOCKET_API = API.replace('/api', '');
 console.log(SOCKET_API);
 const socket = io(SOCKET_API, {
@@ -46,8 +49,10 @@ const Admin = () => {
   const handleDatabaseChange = arg => {
     if (arg) {
       const {name, access, year, photolink} = arg;
-      const resultStr = `${name} from ${year} year is ${access} with ${photolink}?'out':'in'}`;
-      alert(resultStr);
+      const temp = access ? 'OUT' : 'IN';
+      const resultStr = `${name} from ${year} year is ${temp}`;
+      toast.info(resultStr);
+      // alert(resultStr);
       fetchStudentData();
     }
   };
@@ -174,66 +179,69 @@ const Admin = () => {
     }
   };
   return (
-    <div className="adminBody bg-black text-black">
-      <div style={{marginLeft: '3%', marginBottom: '2%', paddingTop: '2%'}}>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(1);
-            setYear(2);
-            setYear(3);
-            setYear(4);
-          }}>
-          All
-        </button>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(1);
-          }}>
-          1st Year
-        </button>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(2);
-          }}>
-          2nd Year
-        </button>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(3);
-          }}>
-          3rd Year
-        </button>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(4);
-          }}>
-          4th Year
-        </button>
+    <>
+      <ToastContainer style={{fontSize: '14px', fontWeight: 'bolder'}} />
+      <div className="adminBody bg-black text-black">
+        <div style={{marginLeft: '3%', marginBottom: '2%', paddingTop: '2%'}}>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(1);
+              setYear(2);
+              setYear(3);
+              setYear(4);
+            }}>
+            All
+          </button>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(1);
+            }}>
+            1st Year
+          </button>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(2);
+            }}>
+            2nd Year
+          </button>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(3);
+            }}>
+            3rd Year
+          </button>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(4);
+            }}>
+            4th Year
+          </button>
+        </div>
+        <main>
+          <table className="table align-middle mb-0 bg-white">
+            <thead className="bg-light">
+              <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Date</th>
+                <th>Purpose</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <TableRow />
+            </tbody>
+          </table>
+        </main>
       </div>
-      <main>
-        <table className="table align-middle mb-0 bg-white">
-          <thead className="bg-light">
-            <tr>
-              <th>Name</th>
-              <th>Year</th>
-              <th>Date</th>
-              <th>Purpose</th>
-              <th>Out</th>
-              <th>In</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <TableRow />
-          </tbody>
-        </table>
-      </main>
-    </div>
+    </>
   );
 };
 export default Admin;
