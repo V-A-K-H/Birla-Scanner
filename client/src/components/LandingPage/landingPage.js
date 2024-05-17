@@ -1,59 +1,61 @@
-import Asset3 from "../../../src/Asset3.png";
-import image from "../../../src/image.png";
-import qrScan from "../../../src/qr-scan.gif";
-import mockup1 from "../../../src/mockup1.png";
-import mockup2 from "../../../src/mockup2.png";
-import mockup4 from "../../../src/mockup4.png";
-import mockup5 from "../../../src/mockup5.png";
-import { useState, useEffect, useRef } from "react";
-import "./landingPage.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Asset3 from '../../../src/Asset3.png';
+import image from '../../../src/image.png';
+import qrScan from '../../../src/qr-scan.gif';
+import mockup1 from '../../../src/mockup1.png';
+import mockup2 from '../../../src/mockup2.png';
+import aryan from '../../../src/aryan.jpg';
+import kritik from '../../../src/kritik.jpg';
+import vivek from '../../../src/vivekbhatt.jpg';
+import roy from '../../../src/roy.jpg';
+import mockup4 from '../../../src/mockup4.png';
+import mockup5 from '../../../src/mockup5.png';
+import {useState, useEffect, useRef} from 'react';
+import './landingPage.css';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faQuoteLeft,
   faDownload,
   faArrowLeft,
   faArrowRight,
-} from "@fortawesome/free-solid-svg-icons"; // Import the icons you need
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import HomePage from "../HomePage/HomePage";
-import logo from "../../../src/logo.svg";
+} from '@fortawesome/free-solid-svg-icons'; // Import the icons you need
+import {Link, Navigate, useNavigate} from 'react-router-dom';
+import HomePage from '../HomePage/HomePage';
+import logo from '../../../src/logo.svg';
 
 function LandingPage() {
-  let whouse = localStorage.getItem("Auth");
+  let whouse = localStorage.getItem('Auth');
   const navigate = useNavigate();
   useEffect(() => {
-    whouse = localStorage.getItem("Auth");
-    if (whouse == "user" || whouse == "admin") {
+    whouse = localStorage.getItem('Auth');
+    if (whouse == 'user' || whouse == 'admin') {
       // window.alert("not signed in")
-      navigate("HomePage");
+      navigate('HomePage');
     }
   }, [whouse]);
   const userReviews = [
     {
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?",
-      author: "Dr. Sandesh Tripathi",
-      position: "HOD of CSE branch at Birla Institute of Applied Sciences",
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?',
+      author: 'Dr. Sandesh Tripathi',
+      position: 'HOD of CSE branch at Birla Institute of Applied Sciences',
     },
     {
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?",
-      author: "Aryan Raj",
-      position: "CSE Student at Birla Institute of Applied Sciences",
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a praesentium officia assumenda impedit ab recusandae eum quam tempore, porro nisi sint reprehenderit rerum consequuntur sunt non ullam et magnam?',
+      author: 'Aryan Raj',
+      position: 'CSE Student at Birla Institute of Applied Sciences',
     },
   ];
 
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
-  const changeReview = (direction) => {
-    if (direction === "next") {
-      setCurrentReviewIndex((prevIndex) =>
-        prevIndex === userReviews.length - 1 ? 0 : prevIndex + 1
+  const changeReview = direction => {
+    if (direction === 'next') {
+      setCurrentReviewIndex(prevIndex =>
+        prevIndex === userReviews.length - 1 ? 0 : prevIndex + 1,
       );
-    } else if (direction === "prev") {
-      setCurrentReviewIndex((prevIndex) =>
-        prevIndex === 0 ? userReviews.length - 1 : prevIndex - 1
+    } else if (direction === 'prev') {
+      setCurrentReviewIndex(prevIndex =>
+        prevIndex === 0 ? userReviews.length - 1 : prevIndex - 1,
       );
     }
   };
@@ -62,77 +64,144 @@ function LandingPage() {
 
   return (
     <>
-      
+      {/* Hero Banner */}
+      <nav class="mainNav">
+        <div class="mainNav__logo">DWARPAL</div>
+        <div class="mainNav__links">
+          <a href="" class="mainNav__link">
+            WHY US?
+          </a>
+          <a href="" class="mainNav__link">
+            Reviews
+          </a>
+          <a href="" class="mainNav__link">
+            Developers
+          </a>
+          <a class="mainNav__link">
+            <Link to="signUp">Login</Link>
+          </a>
+        </div>
+        <div class="mainNav__icon">
+        <a class="mainNav__link">
+            <Link to="signUp">Login</Link>
+          </a>
+        </div>
+      </nav>
 
-{/* Hero Banner */}
-<nav class="mainNav">
-   <div class="mainNav__logo">DWARPAL</div>
-   <div class="mainNav__links">
-      <a href="" class="mainNav__link">WHY US?</a>
-      <a href="" class="mainNav__link">Reviews</a>
-      <a href="" class="mainNav__link">Developers</a>
-      <a class="mainNav__link"><Link to="signUp">Login</Link></a>
-   </div>
-   <div class="mainNav__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-         <g data-name="Layer 2" fill="#9197AE">
-            <g data-name="menu-2">
-               <rect
-                  width="24"
-                  height="24"
-                  transform="rotate(180 12 12)"
-                  opacity="0"
-               />
-               <circle cx="4" cy="12" r="1" />
-               <rect x="7" y="11" width="14" height="2" rx=".94" ry=".94" />
-               <rect x="3" y="16" width="18" height="2" rx=".94" ry=".94" />
-               <rect x="3" y="6" width="18" height="2" rx=".94" ry=".94" />
-            </g>
-         </g>
-      </svg>
-   </div>
-</nav>
+      <header class="mainHeading">
+        <div class="mainHeading__content">
+          <article class="mainHeading__text">
+            <p class="mainHeading__preTitle">DWARPAL</p>
+            <h2 class="mainHeading__title">College Entry/Exit Authenticator</h2>
+            <p class="mainHeading__description">
+            We offer secure and reliable service to access and maintain the information about the student's entry and exit from the college campus.
+            </p>
+            <button class="cta">Download App</button>
+          </article>
 
-<header class="mainHeading">
-   <div class="mainHeading__content">
-      <article class="mainHeading__text">
-         <p class="mainHeading__preTitle">DWARPAL</p>
-         <h2 class="mainHeading__title">College Entry/Exit Authenticator</h2>
-         <p class="mainHeading__description">
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts.
-         </p>
-         <button class="cta">Download App</button>
-      </article>
-
-      <figure class="mainHeading__image">
-         <div class="phone-slideshow">
-  <div class="screen-mask">
-    <ul class="phone-slideshow-list">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-</div>
-      </figure>
-   </div>
+          <figure class="mainHeading__image">
+            <div class="phone-slideshow">
+              <div class="screen-mask">
+                <ul class="phone-slideshow-list">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+          </figure>
+        </div>
       </header>
       {/* Section End */}
+      {/* Feedback section */}
+      <div className="Feedback-section">
+        <h2>What Our Users Say About Us</h2>
 
+        <div className="timeline">
+          <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+            <div className="timeline__event__icon ">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">September 1985</div>
+            <div className="timeline__event__content ">
+              <div className="timeline__event__title">Dr. Sandesh Tripathi</div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
 
-      
+          <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">June 1986</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">Prof. Abhay Sharma</div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">May 2024</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">Prof. Neeraj Bisht</div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline__event animated fadeInUp timeline__event--type1">
+            <div className="timeline__event__icon">
+              <i className="lni-sport"></i>
+            </div>
+            <div className="timeline__event__date">October 1988</div>
+            <div className="timeline__event__content">
+              <div className="timeline__event__title">Prof. Kaushal Bhatt </div>
+              <div className="timeline__event__description">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
+                  veniam corporis incidunt reprehenderit accusantium id aut
+                  architecto harum quidem dolorem in!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="chooseUs">
         <div className="chooseUsHeader">
           <div className="chooseUsHeaderTitle">WHY CHOOSE US?</div>
-          <div style={{ textAlign: "center" }}>
+          <div className="chooseUsHeaderText" style={{textAlign: 'center'}}>
             We offer secure and reliable service to access and maintain the
             information about the student's entry and exit from the college
             campus.
@@ -148,8 +217,7 @@ function LandingPage() {
                     width="38px"
                     version="1.1"
                     id="heart"
-                    viewBox="0 0 471.701 471.701"
-                  >
+                    viewBox="0 0 471.701 471.701">
                     <linearGradient id="gradientColor">
                       <stop offset="5%" stop-color="#7eaaff"></stop>
                       <stop offset="95%" stop-color="#ff48fb"></stop>
@@ -163,7 +231,7 @@ function LandingPage() {
                 <p class="text">
                   It gives you faster access mechanism than traditional methods.
                   Because, scanning Qr-Code need less time rather than writing
-                  the details in the register.{" "}
+                  the details in the register.{' '}
                 </p>
               </div>
             </div>
@@ -175,8 +243,7 @@ function LandingPage() {
                     width="38px"
                     version="1.1"
                     id="heart"
-                    viewBox="0 0 471.701 471.701"
-                  >
+                    viewBox="0 0 471.701 471.701">
                     <linearGradient id="gradientColor">
                       <stop offset="5%" stop-color="#7eaaff"></stop>
                       <stop offset="95%" stop-color="#ff48fb"></stop>
@@ -190,7 +257,7 @@ function LandingPage() {
                 <p class="text">
                   It gives you faster access mechanism than traditional methods.
                   Because, scanning Qr-Code need less time rather than writing
-                  the details in the register.{" "}
+                  the details in the register.{' '}
                 </p>
               </div>
             </div>
@@ -202,8 +269,7 @@ function LandingPage() {
                     width="38px"
                     version="1.1"
                     id="heart"
-                    viewBox="0 0 471.701 471.701"
-                  >
+                    viewBox="0 0 471.701 471.701">
                     <linearGradient id="gradientColor">
                       <stop offset="5%" stop-color="#7eaaff"></stop>
                       <stop offset="95%" stop-color="#ff48fb"></stop>
@@ -226,152 +292,115 @@ function LandingPage() {
           </div>
         </div>
       </div>
-{/* Section End */}
-      {/* Feedback section */}
-      <div className="Feedback-section">
-        <h2>What Our Users Say About Us</h2>
-
-        <div className="timeline">
-          <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
-            s
-            <div className="timeline__event__icon ">
-              <i className="lni-sport"></i>
-            </div>
-            <div className="timeline__event__date">September 1985</div>
-            <div className="timeline__event__content ">
-              <div className="timeline__event__title">Super Mario Brothers</div>
-              <div className="timeline__event__description">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
-                  veniam corporis incidunt reprehenderit accusantium id aut
-                  architecto harum quidem dolorem in!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
-            <div className="timeline__event__icon">
-              <i className="lni-sport"></i>
-            </div>
-            <div className="timeline__event__date">June 1986</div>
-            <div className="timeline__event__content">
-              <div className="timeline__event__title">
-                Super Mario Bros: The Lost Levels
-              </div>
-              <div className="timeline__event__description">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
-                  veniam corporis incidunt reprehenderit accusantium id aut
-                  architecto harum quidem dolorem in!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
-            <div className="timeline__event__icon">
-              <i className="lni-sport"></i>
-            </div>
-            <div className="timeline__event__date">October 1988</div>
-            <div className="timeline__event__content">
-              <div className="timeline__event__title">Super Mario Bros. 2</div>
-              <div className="timeline__event__description">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
-                  veniam corporis incidunt reprehenderit accusantium id aut
-                  architecto harum quidem dolorem in!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="timeline__event animated fadeInUp timeline__event--type1">
-            <div className="timeline__event__icon">
-              <i className="lni-sport"></i>
-            </div>
-            <div className="timeline__event__date">October 1988</div>
-            <div className="timeline__event__content">
-              <div className="timeline__event__title">Super Mario Bros. 3</div>
-              <div className="timeline__event__description">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-                  nam! Nam eveniet ut aliquam ab asperiores, accusamus iure
-                  veniam corporis incidunt reprehenderit accusantium id aut
-                  architecto harum quidem dolorem in!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Section End */}
 
       {/* Developers Details Display */}
       <ul className="cards">
-  <li>
-    <a href="" className="card_developer">
-      <img src="https://i.imgur.com/oYiTqum.jpg" className="card__image" alt="" />
-      <div className="card__overlay">
-        <div className="card__header">
-          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div className="card__header-text">
-            <h3 className="card__title">Jessica Parker</h3>     
-          </div>
-        </div>
-        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>      
-  </li>
-  <li>
-    <a href="" className="card_developer">
-      <img src="https://i.imgur.com/2DhmtJ4.jpg" className="card__image" alt="" />
-      <div className="card__overlay">        
-        <div className="card__header">
-          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <img className="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-          <div className="card__header-text">
-            <h3 className="card__title">kim Cattrall</h3>
-          </div>
-        </div>
-        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="" className="card_developer">
-      <img src="https://i.imgur.com/oYiTqum.jpg" className="card__image" alt="" />
-      <div className="card__overlay">
-        <div className="card__header">
-          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-          <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-          <div className="card__header-text">
-            <h3 className="card__title">Jessica Parker</h3>  
-          </div>
-        </div>
-        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="" className="card_developer">
-      <img src="https://i.imgur.com/2DhmtJ4.jpg" className="card__image" alt="" />
-      <div className="card__overlay">
-        <div className="card__header">
-          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-          <img className="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-          <div className="card__header-text">
-            <h3 className="card__title">kim Cattrall</h3> 
-          </div>          
-        </div>
-        <p className="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>    
-</ul>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/aryan-raj7/"
+            className="card_developer">
+            <img
+              src=" https://i.pinimg.com/originals/14/2c/5f/142c5ff7be07ea802d1dce8ad99ea746.jpg"
+              className="card__image"
+              alt=""
+            />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                <img className="card__thumb" src={aryan} alt="" />
+                <div className="card__header-text">
+                  <h3 className="card__title">Aryan Raj</h3>
+                </div>
+              </div>
+              <p className="card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores, blanditiis?
+              </p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/harshit-roy/"
+            className="card_developer">
+            <img
+              src="https://i.pinimg.com/564x/07/ee/f5/07eef597414c63446b2fdc286fdb2814.jpg"
+              className="card__image"
+              alt=""
+            />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                <img className="card__thumb" src={roy} alt="" />
+                <div className="card__header-text">
+                  <h3 className="card__title">Harshit Roy</h3>
+                </div>
+              </div>
+              <p className="card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores, blanditiis?
+              </p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/kritik-srivastava/"
+            className="card_developer">
+            <img
+              src="https://i.pinimg.com/564x/eb/2c/1a/eb2c1aafdad581c560858bc9c202fd91.jpg"
+              className="card__image"
+              alt=""
+            />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                <img className="card__thumb" src={kritik} alt="" />
+                <div className="card__header-text">
+                  <h3 className="card__title">Kritik Srivastava</h3>
+                </div>
+              </div>
+              <p className="card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores, blanditiis?
+              </p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/vivekbhatt3011/"
+            className="card_developer">
+            <img
+              src="https://i.pinimg.com/564x/13/9b/76/139b76de658bcea3f735d08de7bec462.jpg"
+              className="card__image"
+              alt=""
+            />
+            <div className="card__overlay">
+              <div className="card__header">
+                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <path />
+                </svg>
+                <img className="card__thumb" src={vivek} alt="" />
+                <div className="card__header-text">
+                  <h3 className="card__title">Vivek Bhatt</h3>
+                </div>
+              </div>
+              <p className="card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores, blanditiis?
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
       {/* Section End */}
 
       {/* Footer */}

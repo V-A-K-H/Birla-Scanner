@@ -1,70 +1,73 @@
-import { React, useState, useEffect } from "react";
-import "./Admin.css";
-import { Link, NavLink } from "react-router-dom";
-import Loader from "../../MainComponents/Loader/Loader";
-import { API } from "../../../config";
-import {io} from 'socket.io-client'
-const SOCKET_API=API.replace("/api","")
-console.log(SOCKET_API)
-const socket=io(SOCKET_API, {
+import {React, useState, useEffect} from 'react';
+import './Admin.css';
+import {Link, NavLink} from 'react-router-dom';
+import Loader from '../../MainComponents/Loader/Loader';
+import {API} from '../../../config';
+import {io} from 'socket.io-client';
+
+import {ToastContainer, toast} from 'react-toastify';
+
+const SOCKET_API = API.replace('/api', '');
+console.log(SOCKET_API);
+const socket = io(SOCKET_API, {
   autoConnect: false,
-})
+});
 
 const Admin = () => {
   const [load, setLoad] = useState(false);
   const [studentData, setStudentData] = useState(null);
-  const [year, setYear] = useState(0);
+  const [year, setYear] = useState(1);
   const fetchStudentData = async () => {
     try {
       const result = await fetch(
-        `${API}/AdminSignIn/auth/${localStorage.getItem("Auth")}`,
+        `${API}/AdminSignIn/auth/${localStorage.getItem('Auth')}`,
         {
-          method: "GET",
-          mode: "cors",
+          method: 'GET',
+          mode: 'cors',
           headers: {
-            "Content-Type": "application/json",
-            "x-auth-token": localStorage.getItem("sessionUser"),
+            'Content-Type': 'application/json',
+            'x-auth-token': localStorage.getItem('sessionUser'),
           },
-        }
+        },
       );
       const response = await result.json();
       const StudentArray = [];
-      response.map((elem) => {
+      response.map(elem => {
         StudentArray.push(elem);
       });
       setStudentData(
         StudentArray.sort((a, b) => {
           return b.access - a.access;
-        })
+        }),
       );
-      setLoad(false)
+      setLoad(false);
     } catch (err) {
       console.warn(err);
-      setLoad(false)
+      setLoad(false);
     }
   };
-  const handleDatabaseChange = (arg) => {
+  const handleDatabaseChange = arg => {
     if (arg) {
-      const {name,access,year,photolink}=arg
-      const resultStr=`${name} from ${year} year is ${access} with ${photolink}?'out':'in'}`
-      alert(resultStr)
+      const {name, access, year, photolink} = arg;
+      const temp = access ? 'OUT' : 'IN';
+      const resultStr = `${name} from ${year} year is ${temp}`;
+      toast.info(resultStr);
+      // alert(resultStr);
       fetchStudentData();
     }
-
-
   };
 
   // after the component renders the first time, this checks if there is any change in the database
   // with the help of socket it can see wheather the socket contains any message if it does, it alerts and reloads
   useEffect(() => {
     // fetch data every at every render
-    fetchStudentData()
+    fetchStudentData();
     socket.connect();
-    
+
     socket.on('database-change', handleDatabaseChange);
     // Clean up the socket subscription when the component unmounts
     return () => {
-      socket.off('database-change',handleDatabaseChange)
+      socket.off('database-change', handleDatabaseChange);
       socket.disconnect();
     };
   }, []);
@@ -77,25 +80,25 @@ const Admin = () => {
   const TableRow = () => {
     if (studentData) {
       // return is necessary to run the code
-      return studentData.map((elem) => {
+      return studentData.map(elem => {
         // if (elem.year == year) { }
         const outingInfo =
           elem.outinginfo[Object.keys(elem.outinginfo).length - 1];
-        console.log(studentData[3].outinginfo)
+        console.log(studentData[3].outinginfo);
         // use new date to convert string into date object, not only Date()
-        const Status = elem.access ? "out" : "In";
-        let exitsession = "AM";
+        const Status = elem.access ? 'out' : 'In';
+        let exitsession = 'AM';
         if (elem.year == year) {
           let exithours = new Date(outingInfo.exit).getHours();
           if (exithours > 12) {
             exithours -= 12;
-            exitsession = "PM";
+            exitsession = 'PM';
           }
-          if (exithours == 12 && exitsession == "AM") {
-            exitsession = "PM";
+          if (exithours == 12 && exitsession == 'AM') {
+            exitsession = 'PM';
           }
-          if (exithours == 12 && exitsession == "PM") {
-            exitsession = "AM";
+          if (exithours == 12 && exitsession == 'PM') {
+            exitsession = 'AM';
           }
           if (exithours <= 9) {
             exithours = `0${exithours}`;
@@ -104,17 +107,17 @@ const Admin = () => {
           if (exitmin <= 9) {
             exitmin = `0${exitmin}`;
           }
-          let entrysession = "AM";
+          let entrysession = 'AM';
           let entryhours = new Date(outingInfo.entry).getHours();
           if (entryhours > 12) {
             entryhours -= 12;
-            entrysession = "PM";
+            entrysession = 'PM';
           }
-          if (entryhours == 12 && entrysession == "PM") {
-            entrysession = "AM";
+          if (entryhours == 12 && entrysession == 'PM') {
+            entrysession = 'AM';
           }
-          if (entryhours == 12 && entrysession == "AM") {
-            entrysession = "PM";
+          if (entryhours == 12 && entrysession == 'AM') {
+            entrysession = 'PM';
           }
           if (entryhours <= 9) {
             entryhours = `0${entryhours}`;
@@ -124,13 +127,13 @@ const Admin = () => {
             entrymin = `0${entrymin}`;
           }
           return (
-            <tr>
+            <tr className="text-black">
               <td>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center ">
                   <img
                     src={elem.photolink}
                     alt=""
-                    style={{ width: "58px", height: "58px" }}
+                    style={{width: '58px', height: '58px'}}
                     className="rounded-circle"
                   />
                   <div className="ms-3">
@@ -163,10 +166,9 @@ const Admin = () => {
                 <span
                   className={
                     elem.access
-                      ? "badge badge-late rounded-pill d-inline"
-                      : "badge badge-In rounded-pill d-inline"
-                  }
-                >
+                      ? 'badge badge-late rounded-pill d-inline'
+                      : 'badge badge-In rounded-pill d-inline'
+                  }>
                   {Status}
                 </span>
               </td>
@@ -177,68 +179,69 @@ const Admin = () => {
     }
   };
   return (
-    <div className="adminBody">
-      <div style={{ marginLeft: "3%", marginBottom: "2%", marginTop: "2%" }}>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(0);
-          }}
-        >
-          All
-        </button>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(1);
-          }}
-        >
-          1st Year
-        </button>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(2);
-          }}
-        >
-          2nd Year
-        </button>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(3);
-          }}
-        >
-          3rd Year
-        </button>
-        <button
-          className="button button"
-          onClick={() => {
-            setYear(4);
-          }}
-        >
-          4th Year
-        </button>
+    <>
+      <ToastContainer style={{fontSize: '14px', fontWeight: 'bolder'}} />
+      <div className="adminBody bg-black text-black">
+        <div style={{marginLeft: '3%', marginBottom: '2%', paddingTop: '2%'}}>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(1);
+              setYear(2);
+              setYear(3);
+              setYear(4);
+            }}>
+            All
+          </button>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(1);
+            }}>
+            1st Year
+          </button>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(2);
+            }}>
+            2nd Year
+          </button>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(3);
+            }}>
+            3rd Year
+          </button>
+          <button
+            className="button button"
+            onClick={() => {
+              setYear(4);
+            }}>
+            4th Year
+          </button>
+        </div>
+        <main>
+          <table className="table align-middle mb-0 bg-white">
+            <thead className="bg-light">
+              <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Date</th>
+                <th>Purpose</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <TableRow />
+            </tbody>
+          </table>
+        </main>
       </div>
-      <main>
-        <table className="table align-middle mb-0 bg-white">
-          <thead className="bg-light">
-            <tr>
-              <th>Name</th>
-              <th>Year</th>
-              <th>Date</th>
-              <th>Purpose</th>
-              <th>Out</th>
-              <th>In</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <TableRow />
-          </tbody>
-        </table>
-      </main>
-    </div>
+    </>
   );
 };
 export default Admin;
