@@ -13,7 +13,7 @@ const socket = io(SOCKET_API, {
 const Admin = () => {
   const [load, setLoad] = useState(false);
   const [studentData, setStudentData] = useState(null);
-  const [year, setYear] = useState(0);
+  const [year, setYear] = useState(1);
   const fetchStudentData = async () => {
     try {
       const result = await fetch(
