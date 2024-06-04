@@ -12,14 +12,14 @@ const QrScanner = () => {
   useEffect(() => {
 
     const FetchAccess = async () => {
-      const result = await fetch(`${API}/StudentInfo/columns/access`, {
-        mode: "cors",
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": localStorage.getItem('sessionUser')
-        }
-      })
+        const result = await fetch(`${API}/StudentInfo/columns/access`, {
+          mode: "cors",
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": localStorage.getItem('sessionUser')
+          }
+        })
       const response = await result.json()
       console.log(`fetchAccess response is `,response)
       if (!response.access) {
@@ -41,8 +41,6 @@ const QrScanner = () => {
     }
 
   }, [access])
-
-  const [timerCount, setTimerCount] = useState(false)
   const [selected, setSelected] = useState("environment");
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
