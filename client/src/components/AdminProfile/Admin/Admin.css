@@ -1,47 +1,46 @@
 .adminBody {
-	font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: x-large;
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
 
-tr{
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 900;
+tr {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
 }
-.badge-late{
-    background-color: red;
+.badge-late {
+  background-color: red;
 }
-.badge-Out{
-    background-color: #ffbf00 ;
+.badge-Out {
+  background-color: #ffbf00;
 }
-.badge-In{
-    background-color: green;
+.badge-In {
+  background-color: green;
 }
 main {
-	
-    height: 99vh;
-    border-color: white;
-    
-    overflow-y: scroll;
-    overflow-x: scroll  
+  height: 99vh;
+  border-color: white;
+
+  overflow-y: scroll;
+  overflow-x: scroll;
 }
 
 @media only screen and (min-width: 768px) {
-	main {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-	main {
-		flex-wrap: nowrap;
-	}
+  main {
+    flex-wrap: nowrap;
+  }
 }
 .button {
   gap: 10px;
@@ -61,16 +60,14 @@ main {
   transform: translate(0px, 0px) rotate(0deg);
   transition: 0.2s;
   /* box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%); */
- }
- 
- .button:hover {
+}
+
+.button:hover {
   color: white;
   background-color: black;
   box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
- }
- 
- .button:active {
+}
+
+.button:active {
   box-shadow: none;
- }
-  
-  
+}

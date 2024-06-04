@@ -1,22 +1,24 @@
-const jwt=require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 // const auth = require('../../middleware/auth');
 /* global localStorage, */
 const config = require('config');
-const { check, validationResult } = require('express-validator');
+const {check, validationResult} = require('express-validator');
 
 const User = require('../../models/student');
 
 // @route    GET api/auth
 // @desc     Get user by token
 // @access   Private
-router.get('/',  async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     res.json(user);
-    if (!user) {res.status(500).send("invalid credential")}
+    if (!user) {
+      res.status(500).send('invalid credential');
+    }
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -36,54 +38,36 @@ router.post(
     //   return res.status(400).json({ errors: errors.array() });
     // }
 
-
-    const { email, password } = req.body;
-    console.log(email,password)
+    const {email, password} = req.body;
     try {
-      let user = await User.findOne({ email });
-      console.log(user)
+      let user = await User.findOne({email});
+
       if (!user) {
-        console.log("invalid user",user)
-        return res
-          .status(500)
-          .json({ errors: [{ msg: 'Invalid Credentials' }] });
+        return res.status(500).json({errors: [{msg: 'Invalid Credentials'}]});
       }
       // checks if the user exsists or not
-        const isMatch = await bcrypt.compare(password, user.password);
+      const isMatch = await bcrypt.compare(password, user.password);
 
-        if (!isMatch) {
-          console.log("in is match")
-          return res
-            .status(400)
-            .json({ errors: [{ msg: 'Invalid Credentials' }] });
-        }
+      if (!isMatch) {
+        return res.status(400).json({errors: [{msg: 'Invalid Credentials'}]});
+      }
 
       const payload = {
         user: {
-          id: user.id
-        } 
+          id: user.id,
+        },
       };
-      console.log(user.id)
-      jwt.sign(
-        payload,
-        config.get('jwtSecret'),
-        (err, token) => {
-          if (err) throw err;
-          res.json({ jwtToken:token });
-          console.log(token)
-          // try{localStorage.setItem("sessionUser",token);}
-          // catch( error) {console.log(error)}
-
-        }
-      );
+      jwt.sign(payload, config.get('jwtSecret'), (err, token) => {
+        if (err) throw err;
+        res.json({jwtToken: token});
+        // try{localStorage.setItem("sessionUser",token);}
+      });
     } catch (err) {
       console.error(err.message);
 
       res.status(500).send('Server error');
     }
-  }
+  },
 );
-
-
 
 module.exports = router;
