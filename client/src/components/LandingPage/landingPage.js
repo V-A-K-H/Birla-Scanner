@@ -1,34 +1,18 @@
-import Asset3 from '../../../src/Asset3.png';
-import image from '../../../src/image.png';
 import qrScan from '../../../src/qr-scan.gif';
-import mockup1 from '../../../src/mockup1.png';
-import mockup2 from '../../../src/mockup2.png';
 import aryan from '../../../src/aryan.jpg';
 import kritik from '../../../src/kritik.jpg';
 import vivek from '../../../src/vivekbhatt.jpg';
 import roy from '../../../src/roy.jpg';
-import mockup4 from '../../../src/mockup4.png';
-import mockup5 from '../../../src/mockup5.png';
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect} from 'react';
 import './landingPage.css';
-import {library} from '@fortawesome/fontawesome-svg-core';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {
-  faQuoteLeft,
-  faDownload,
-  faArrowLeft,
-  faArrowRight,
-} from '@fortawesome/free-solid-svg-icons'; // Import the icons you need
-import {Link, Navigate, useNavigate} from 'react-router-dom';
-import HomePage from '../HomePage/HomePage';
-import logo from '../../../src/logo.svg';
+import {Link, useNavigate} from 'react-router-dom';
 
 function LandingPage() {
   let whouse = localStorage.getItem('Auth');
   const navigate = useNavigate();
   useEffect(() => {
     whouse = localStorage.getItem('Auth');
-    if (whouse == 'user' || whouse == 'admin') {
+    if (whouse === 'user' || whouse === 'admin') {
       // window.alert("not signed in")
       navigate('HomePage');
     }
@@ -65,44 +49,48 @@ function LandingPage() {
   return (
     <>
       {/* Hero Banner */}
-      <nav class="mainNav">
-        <div class="mainNav__logo">DWARPAL</div>
-        <div class="mainNav__links">
-          <a href="" class="mainNav__link">
+      <nav className="mainNav">
+        <div className="mainNav__logo">DWARPAL</div>
+        <div className="mainNav__links">
+          <a href="" className="mainNav__link">
             WHY US?
           </a>
-          <a href="" class="mainNav__link">
+          <a href="" className="mainNav__link">
             Reviews
           </a>
-          <a href="" class="mainNav__link">
+          <a href="" className="mainNav__link">
             Developers
           </a>
-          <a class="mainNav__link">
+          <a className="mainNav__link">
             <Link to="signUp">Login</Link>
           </a>
         </div>
-        <div class="mainNav__icon">
-        <a class="mainNav__link">
+        <div className="mainNav__icon">
+          <a className="mainNav__link">
             <Link to="signUp">Login</Link>
           </a>
         </div>
       </nav>
 
-      <header class="mainHeading">
-        <div class="mainHeading__content">
-          <article class="mainHeading__text">
-            <p class="mainHeading__preTitle">DWARPAL</p>
-            <h2 class="mainHeading__title">College Entry/Exit Authenticator</h2>
-            <p class="mainHeading__description">
-            We offer secure and reliable service to access and maintain the information about the student's entry and exit from the college campus.
+      <header className="mainHeading">
+        <div className="mainHeading__content">
+          <article className="mainHeading__text">
+            <p className="mainHeading__preTitle">DWARPAL</p>
+            <h2 className="mainHeading__title">
+              College Entry/Exit Authenticator
+            </h2>
+            <p className="mainHeading__description">
+              We offer secure and reliable service to access and maintain the
+              information about the student's entry and exit from the college
+              campus.
             </p>
-            <button class="cta">Download App</button>
+            <button className="cta">Download App</button>
           </article>
 
-          <figure class="mainHeading__image">
-            <div class="phone-slideshow">
-              <div class="screen-mask">
-                <ul class="phone-slideshow-list">
+          <figure className="mainHeading__image">
+            <div className="phone-slideshow">
+              <div className="screen-mask">
+                <ul className="phone-slideshow-list">
                   <li></li>
                   <li></li>
                   <li></li>
@@ -210,8 +198,8 @@ function LandingPage() {
         <div className="chooseUsFeature">
           <div className="features">
             <div>
-              <div class="card">
-                <div class="icon">
+              <div className="card">
+                <div className="icon">
                   <svg
                     height="38px"
                     width="38px"
@@ -227,8 +215,8 @@ function LandingPage() {
                     </g>
                   </svg>
                 </div>
-                <p class="title">Qr-Scanner</p>
-                <p class="text">
+                <p className="title">Qr-Scanner</p>
+                <p className="text">
                   It gives you faster access mechanism than traditional methods.
                   Because, scanning Qr-Code need less time rather than writing
                   the details in the register.{' '}
@@ -236,8 +224,8 @@ function LandingPage() {
               </div>
             </div>
             <div>
-              <div class="card">
-                <div class="icon">
+              <div className="card">
+                <div className="icon">
                   <svg
                     height="38px"
                     width="38px"
@@ -253,8 +241,8 @@ function LandingPage() {
                     </g>
                   </svg>
                 </div>
-                <p class="title">Qr-Scanner</p>
-                <p class="text">
+                <p className="title">Qr-Scanner</p>
+                <p className="text">
                   It gives you faster access mechanism than traditional methods.
                   Because, scanning Qr-Code need less time rather than writing
                   the details in the register.{' '}
@@ -262,8 +250,8 @@ function LandingPage() {
               </div>
             </div>
             <div>
-              <div class="card">
-                <div class="icon">
+              <div className="card">
+                <div className="icon">
                   <svg
                     height="38px"
                     width="38px"
@@ -279,8 +267,8 @@ function LandingPage() {
                     </g>
                   </svg>
                 </div>
-                <p class="title">No ID Card Needed</p>
-                <p class="text">
+                <p className="title">No ID Card Needed</p>
+                <p className="text">
                   No need to worry about loosing ID card because no physical
                   outing card is needed when you are going for outing.
                 </p>

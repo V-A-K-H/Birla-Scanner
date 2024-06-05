@@ -1,6 +1,5 @@
 import {React, useState, useEffect} from 'react';
 import './Admin.css';
-import {Link, NavLink} from 'react-router-dom';
 import Loader from '../../MainComponents/Loader/Loader';
 import {API} from '../../../config';
 import {io} from 'socket.io-client';
@@ -8,7 +7,7 @@ import {io} from 'socket.io-client';
 import {ToastContainer, toast} from 'react-toastify';
 
 const SOCKET_API = API.replace('/api', '');
-console.log(SOCKET_API);
+
 const socket = io(SOCKET_API, {
   autoConnect: false,
 });
@@ -84,7 +83,7 @@ const Admin = () => {
         // if (elem.year == year) { }
         const outingInfo =
           elem.outinginfo[Object.keys(elem.outinginfo).length - 1];
-        console.log(studentData[3].outinginfo);
+
         // use new date to convert string into date object, not only Date()
         const Status = elem.access ? 'out' : 'In';
         let exitsession = 'AM';
